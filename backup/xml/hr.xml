@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<relation name="xml/hr.xml" pass="hr" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Clientes" x="418px" y="244px">
+      <attributes>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cliente_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Sucursales" x="870px" y="254px">
+      <attributes>
+        <attribute name="sucursal_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="estado" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ciudad" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Envios" x="648px" y="415px">
+      <attributes>
+        <attribute name="envio_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="cliente_id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="sucursales_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Sucursales" child="Envios" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Clientes" child="Envios" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

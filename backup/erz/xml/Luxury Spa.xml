@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<relation name="xml/Luxury Spa.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Paciente" x="302px" y="140px">
+      <attributes>
+        <attribute name="id_paciente" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="sexo" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CURP" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_nacimiento" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Usuario" x="720px" y="175px">
+      <attributes>
+        <attribute name="id_usuario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellidos" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="alta" x="83px" y="186px">
+      <attributes>
+        <attribute name="id_paciente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Egreso" x="556px" y="376px">
+      <attributes>
+        <attribute name="id_paciente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_usuario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Ingresos" x="77px" y="359px">
+      <attributes>
+        <attribute name="id_paciente" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="no_habitaci&#xF3;n" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tratamiento" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Factura" x="322px" y="388px">
+      <attributes>
+        <attribute name="id_paciente" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Paciente" child="alta" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario" child="Paciente" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Factura" child="Paciente" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Ingresos" child="Paciente" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Egreso" child="Paciente" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Egreso" child="Usuario" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

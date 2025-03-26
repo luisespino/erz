@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<relation name="xml/MARSw_BusStation.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Destinos" x="324px" y="221px">
+      <attributes>
+        <attribute name="idDestino" type="Integer" width="12" scale="0" null="false" identity="false" seed="100" increment="1" pk="true"/>
+        <attribute name="NombreDestino" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Costo" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Horarios" x="573px" y="234px">
+      <attributes>
+        <attribute name="IdHorario" type="Integer" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+        <attribute name="horaPartida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="horaLlegada" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Vagones" x="317px" y="405px">
+      <attributes>
+        <attribute name="idVagon" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Ubicacion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NoPasajeros" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Destinos" child="Vagones" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Destinos" child="Horarios" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/holamundo.xml" pass="holamundo" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="eprocedures" x="253px" y="261px"/>
+    <entity name="etasktypes" x="468px" y="251px"/>
+  </entities>
+</relation>

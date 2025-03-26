@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<relation name="xml/Parkinglot.xml" pass="123654" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Estacionamiento" x="497px" y="239px">
+      <attributes>
+        <attribute name="Tarifa" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="No_Control" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Folio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Registro" x="830px" y="202px">
+      <attributes>
+        <attribute name="Nombre_conductor" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Hora_entrada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Modelo_auto" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Hora_salida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="No_control" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Ticket" x="714px" y="433px">
+      <attributes>
+        <attribute name="Tarifa_pago" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Tiempo_durado" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Folio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Estacionamiento" child="Registro" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Estacionamiento" child="Ticket" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

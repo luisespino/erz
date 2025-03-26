@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<relation name="xml/as2.xml" pass="njden3" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="MEMBER" x="145px" y="241px">
+      <attributes>
+        <attribute name="MEMBER_ID" type="Integer" width="12" scale="0" null="false" identity="true" seed="1" increment="1" pk="true"/>
+        <attribute name="MEMBER_TYPE" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FAMILY_NAME" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FIRST_NAME" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ADDRESS" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="AIRCRAFT" x="725px" y="246px">
+      <attributes>
+        <attribute name="REGISTRATION" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="AIRCRAFT_TYPE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PAX" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="AVAILABLE" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="FLIGHT" x="455px" y="238px">
+      <attributes>
+        <attribute name="pax" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="startdate" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="flighthours" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FLIGHT_Number" type="Integer" width="12" scale="0" null="false" identity="true" seed="1" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="MEMBER" child="FLIGHT" card_parent="0N" card_child="11" dependency="true"/>
+    <relationship parent="AIRCRAFT" child="FLIGHT" card_parent="0N" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

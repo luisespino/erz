@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/edt.xml" pass="asimov" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Course" x="248px" y="160px"/>
+    <entity name="Person" x="486px" y="160px"/>
+  </entities>
+</relation>

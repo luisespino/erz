@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/daniel.xml" pass="daniel" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="daniel" x="339px" y="276px"/>
+  </entities>
+</relation>

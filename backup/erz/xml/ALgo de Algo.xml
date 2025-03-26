@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<relation name="xml/ALgo de Algo.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Preguntas" x="251px" y="148px">
+      <attributes>
+        <attribute name="id_pregunta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="pregunta" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Categoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Valor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Respuesta" x="473px" y="147px">
+      <attributes>
+        <attribute name="id_respuesta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_pregunta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Contestacion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="correcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Preguntas" child="Respuesta" card_parent="11" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

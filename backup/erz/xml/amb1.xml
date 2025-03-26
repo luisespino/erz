@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<relation name="xml/amb1.xml" pass="null" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Patient" x="171px" y="347px"/>
+    <entity name="Ambulance" x="1033px" y="351px"/>
+    <entity name="Web Service (Ambulance locator)" x="499px" y="191px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Web Service (Ambulance locator)" child="Patient" card_parent="1N" card_child="" dependency="true"/>
+    <relationship parent="" child="Patient" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="Web Service (Ambulance locator)" child="Ambulance" card_parent="1N" card_child="0N" dependency="true"/>
+    <relationship parent="Web Service (Ambulance locator)" child="Ambulance" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Web Service (Ambulance locator)" child="Ambulance" card_parent="1N" card_child="11" dependency="false"/>
+  </relationships>
+</relation>

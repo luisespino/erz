@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<relation name="xml/BancoSangre.xml" pass="" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Empleado" x="186px" y="145px">
+      <attributes>
+        <attribute name="Id_Emp" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre_emp" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Paterno_emp" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Materno_emp" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="departamento" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Puesto" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Paciente" x="837px" y="325px">
+      <attributes>
+        <attribute name="Id_paciente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NombrePaciente" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DireccionP" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Factor_rhP" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tipoSangreP" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Donador" x="332px" y="333px">
+      <attributes>
+        <attribute name="Id_donador" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_donador" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DireccionD" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="factor_rhD" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tipoSangreD" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Estado" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Donacion" x="608px" y="157px">
+      <attributes>
+        <attribute name="Id_donacion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha_donacion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="urgenciaDonacion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Empleado" child="Donacion" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Donador" child="Donacion" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Paciente" child="Donacion" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

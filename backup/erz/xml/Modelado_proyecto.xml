@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<relation name="xml/Modelado_proyecto.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cajero" x="543px" y="133px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edad" type="Integer" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="turno" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_empleado" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="dinero" x="339px" y="316px">
+      <attributes>
+        <attribute name="cantidad" type="Float" width="7" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="repartidor" x="512px" y="297px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edad" type="Integer" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_empleado" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="cliente" x="524px" y="466px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edad" type="Integer" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Pizza" x="708px" y="305px">
+      <attributes>
+        <attribute name="tama&#xF1;o" type="Varchar" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ingredientes" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="costo" type="Float" width="7" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="repartidor" child="cliente" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="dinero" child="Cajero" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="dinero" child="repartidor" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Pizza" child="Cajero" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Pizza" child="cliente" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Pizza" child="repartidor" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<relation name="xml/tamara21.xml" pass="null" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="profesor" x="261px" y="158px">
+      <attributes>
+        <attribute name="id_profesor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="name" type="Char" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Estudiantes" x="421px" y="157px">
+      <attributes>
+        <attribute name="name" type="Char" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_estudiante" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

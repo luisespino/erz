@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<relation name="xml/routen.xml" pass="12345" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Strasse" x="472px" y="319px">
+      <attributes>
+        <attribute name="start" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ziel" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="weight" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Ort" x="496px" y="147px">
+      <attributes>
+        <attribute name="name" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Route" x="182px" y="330px">
+      <attributes>
+        <attribute name="bewertung" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="startort" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="endort" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Route" child="Strasse" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Ort" child="Strasse" card_parent="0N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

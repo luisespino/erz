@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<relation name="xml/er.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Location" x="333px" y="129px">
+      <attributes>
+        <attribute name="Location_Name" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Address" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="city" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="State" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Zip" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Country" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Currency" x="15px" y="131px">
+      <attributes>
+        <attribute name="" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Currency_Location" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Base_Currency" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Conversion_Rate_To_Base_Currency" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Date_Of_Rate" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Employee" x="203px" y="362px">
+      <attributes>
+        <attribute name="Employee_Name" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Social_Security_Number" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nbr_Dependents" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Type_Code" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Salary" x="19px" y="383px">
+      <attributes/>
+    </entity>
+    <entity name="Hourly" x="37px" y="504px">
+      <attributes/>
+    </entity>
+    <entity name="Job_Assignment" x="451px" y="440px">
+      <attributes>
+        <attribute name="Effective_Date" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Salary" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Performance_Rating" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Status_Inactive" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="System_Date" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Job" x="724px" y="398px">
+      <attributes>
+        <attribute name="Name" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Number" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Pay_Grade" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Description" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Dependent" x="557px" y="173px">
+      <attributes>
+        <attribute name="Dependent_Social_Security_Number" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Dependent_Number" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Dependent_Birth_Date" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Job_Assignment" child="Job" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Currency" child="Employee" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Location" child="Employee" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Employee" child="Dependent" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Employee" child="Job_Assignment" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Employee" child="Salary" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="Employee" child="Hourly" card_parent="01" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

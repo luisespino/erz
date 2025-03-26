@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/prueba_rrpr.xml" pass="prueba" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cliente" x="207px" y="145px"/>
+    <entity name="Factura" x="385px" y="146px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Cliente" child="Factura" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

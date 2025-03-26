@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<relation name="xml/Karengg.xml" pass="pass" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Maquinas" x="40px" y="144px">
+      <attributes>
+        <attribute name="ID_maquina" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="No_serie" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Modelo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Localizacion_actual" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Efectivo" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Productos" x="267px" y="144px">
+      <attributes>
+        <attribute name="ID_prod" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Precio" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Contenido_neto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Maquinas_Tecnicos" x="42px" y="322px">
+      <attributes>
+        <attribute name="ID_maquina" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_emp" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Ventas" x="298px" y="324px">
+      <attributes>
+        <attribute name="ID_venta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_maquina" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_prod" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Tecnicos" x="60px" y="447px">
+      <attributes>
+        <attribute name="ID_emp" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Password" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Productos" child="Ventas" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Maquinas" child="Ventas" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Maquinas" child="Maquinas_Tecnicos" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Tecnicos" child="Maquinas_Tecnicos" card_parent="0N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

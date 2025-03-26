@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<relation name="xml/test2.xml" pass="ivan2611" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Agenda" x="173px" y="175px">
+      <attributes>
+        <attribute name="" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombres" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="usuario" x="350px" y="176px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

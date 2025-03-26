@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<relation name="xml/test-fjch.xml" pass="test" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Test_1" x="268px" y="146px">
+      <attributes>
+        <attribute name="c_t1_id" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Test_2" x="554px" y="137px">
+      <attributes>
+        <attribute name="c_t2_id" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="c_t2_t1_id" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Test_1" child="Test_2" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

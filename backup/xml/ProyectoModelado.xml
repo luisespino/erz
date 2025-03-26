@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<relation name="xml/ProyectoModelado.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="ciudadano" x="206px" y="140px">
+      <attributes>
+        <attribute name="rfc" type="Varchar" width="13" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombres" type="Varchar" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apaterno" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="amaterno" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_nacimiento" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tramite" x="462px" y="177px">
+      <attributes>
+        <attribute name="identificador" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="rfc" type="Varchar" width="13" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="clave_documento" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_expedicion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="documento" x="710px" y="184px">
+      <attributes>
+        <attribute name="clave_documento" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="tipo_documento" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="turno" x="471px" y="395px">
+      <attributes>
+        <attribute name="identificador" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="numero_turno" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fila" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="duracion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="ciudadano" child="tramite" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="tramite" child="turno" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="tramite" child="documento" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

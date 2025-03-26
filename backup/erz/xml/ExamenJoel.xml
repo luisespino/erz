@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<relation name="xml/ExamenJoel.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Registro" x="378px" y="172px">
+      <attributes>
+        <attribute name="hora_atencion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="hora_llegada" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_partida" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Doctor" x="974px" y="181px">
+      <attributes>
+        <attribute name="nombre_doctor" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Paciente" x="679px" y="179px">
+      <attributes>
+        <attribute name="nombre_paciente" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_cita" type="Integer" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Citas" x="704px" y="396px">
+      <attributes>
+        <attribute name="id_cita" type="Integer" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="hora_cita" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Citas" child="Paciente" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Doctor" child="Paciente" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Registro" child="Paciente" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<relation name="xml/ProyectoEspecificaion.xml" pass="123Queso" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Coordinador" x="196px" y="232px">
+      <attributes>
+        <attribute name="Nombre" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Carne" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id" type="Integer" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Instructor" x="202px" y="408px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Cedula" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Sesion" x="505px" y="415px">
+      <attributes>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id" type="Integer" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Actividad" x="495px" y="209px">
+      <attributes>
+        <attribute name="Codigo" type="Varchar" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Categoria" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Lugar" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Cupo" type="Integer" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id" type="Integer" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Inscripcion" x="666px" y="226px">
+      <attributes>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Residente" x="838px" y="235px">
+      <attributes>
+        <attribute name="Nombre" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Carne" type="Varchar" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id" type="Integer" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Coordinador" child="Actividad" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Coordinador" child="Instructor" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Residente" child="Actividad" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Instructor" child="Actividad" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Actividad" child="Sesion" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Sesion" child="Residente" card_parent="01" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

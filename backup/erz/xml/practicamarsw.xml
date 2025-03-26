@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/practicamarsw.xml" pass="321" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="PRODUCTO" x="1072px" y="260px">
+      <attributes>
+        <attribute name="id_producto" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="precio" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="OFERTA" x="560px" y="259px">
+      <attributes>
+        <attribute name="id_oferta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="porcentaje" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="OFERTA" child="PRODUCTO" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

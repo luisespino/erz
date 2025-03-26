@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<relation name="xml/MARs_examen.xml" pass="examen" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Universidad" x="114px" y="175px">
+      <attributes>
+        <attribute name="Nom_universidad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Facultad" x="342px" y="158px">
+      <attributes>
+        <attribute name="Nom_facultad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nom_universidad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Carrera" x="565px" y="173px">
+      <attributes>
+        <attribute name="Nom_carrera" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nom_facultad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="566px" y="327px">
+      <attributes>
+        <attribute name="Num_materia" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nom_docente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Maestro" x="279px" y="308px">
+      <attributes>
+        <attribute name="Num_docente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="RFC" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Coordinador" x="278px" y="409px">
+      <attributes>
+        <attribute name="Num_docente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="RFC" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Alumno" x="824px" y="162px">
+      <attributes>
+        <attribute name="Matricula" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Universidad" child="Facultad" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Facultad" child="Carrera" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Carrera" child="Alumno" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Carrera" child="Materia" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Maestro" child="Materia" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Coordinador" child="Materia" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

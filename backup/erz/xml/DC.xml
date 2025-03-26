@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<relation name="xml/DC.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Empresa" x="263px" y="234px">
+      <attributes>
+        <attribute name="Solicitud de compra" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="compra materia prima" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Bodega" x="534px" y="231px">
+      <attributes>
+        <attribute name="stock" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="resurtido" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Producto" x="755px" y="225px">
+      <attributes>
+        <attribute name="precio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="materia prima" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="c&#xF3;digo de barras" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Empresa" child="Bodega" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Bodega" child="Producto" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

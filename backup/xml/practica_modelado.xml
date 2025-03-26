@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<relation name="xml/practica_modelado.xml" pass="qwerty" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="210px" y="192px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Matricula" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="494px" y="195px">
+      <attributes>
+        <attribute name="IDMat" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Profesor" x="275px" y="337px">
+      <attributes>
+        <attribute name="IDProf" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="[object Window]" child="Alumno" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

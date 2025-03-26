@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/requerimientos.xml" pass="jaguar23" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="uno" x="133px" y="157px"/>
+    <entity name="er" x="130px" y="297px"/>
+  </entities>
+</relation>

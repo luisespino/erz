@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/Proyecto3.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Obra" x="744px" y="168px">
+      <attributes>
+        <attribute name="obra_id" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="descripcion" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="importe_contr" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="importe_ejer" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Ente Auditado" x="354px" y="184px">
+      <attributes>
+        <attribute name="ente_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Obra" child="Ente Auditado" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

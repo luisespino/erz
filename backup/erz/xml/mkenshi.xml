@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<relation name="xml/mkenshi.xml" pass="carlos86" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cuenta" x="430px" y="167px">
+      <attributes>
+        <attribute name="Usuario" type="Varchar" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Contrase&#xF1;a" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="intentos" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

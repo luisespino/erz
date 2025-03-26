@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlacerGroup xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" classCode="ACT" moodCode="RQO">
+   <id xsi:type="II" root="1111" extension="" assigningAuthorityName="" displayable="false"/>
+   <code code="ObservationType" codeSystem="getCodeSystem"/>
+   <component1 typeCode="COMP" contextControlCode="AP" contextConductionInd="false">
+      <observationRequest classCode="ACT" moodCode="RQO">
+         <id xsi:type="II" root="1196" extension="" assigningAuthorityName="" displayable="false"/>
+         <code code="395" codeSystem="getCodeSystem"/>
+         <text xsi:type="ST" representation="TXT" mediaType="text/plain">HCV Genotype::</text>
+         <effectiveTime xsi:type="IVL_TS">
+            <low inclusive="true" value="20090526"/>
+            <high inclusive="true" value="20090527"/>
+         </effectiveTime>
+         <specimen typeCode="SPC" contextControlCode="OP">
+            <specimen classCode="SPEC">
+               <id root="1" extension="" assigningAuthorityName="" displayable="false"/>
+               <code code="BL" codeSystem="getCodeSystem"/>
+               <specimenPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <prefix>Mr.</prefix>
+                     <given>Muhammad</given>
+                     <family>Afzal</family>
+                     <suffix>I</suffix>
+                  </name>
+                  <asContent classCode="ASSIGNED">
+                     <container classCode="CONT" determinerCode="INSTANCE">
+                        <desc xsi:type="ST" representation="TXT" mediaType="text/plain"/>
+                     </container>
+                  </asContent>
+               </specimenPerson>
+            </specimen>
+         </specimen>
+         <recordTarget typeCode="RCT" contextControlCode="OP">
+            <patient classCode="PAT">
+               <id xsi:type="II" root="199450" extension="1" assigningAuthorityName="" displayable="false"/>
+               <statusCode code="RoleStatus"/>
+               <patientPerson classCode="PSN" determinerCode="INSTANCE">
+                  <id xsi:type="II" root="1112" extension="" assigningAuthorityName="" displayable="false"/>
+                  <name xsi:type="EN">
+                     <family>Mr. Yasir Mehmood</family>
+                  </name>
+                  <administrativeGenderCode code="Male" codeSystem="10173"/>
+                  <addr xsi:type="AD">H.No:717:Near:Lawrance:Lanes:R.A.Bazar:Adra^tel#03009794990</addr>
+               </patientPerson>
+            </patient>
+         </recordTarget>
+         <author typeCode="AUT" contextControlCode="OP">
+            <assignedEntity classCode="ASSIGNED">
+               <id xsi:type="II" root="140" extension="" assigningAuthorityName="" displayable="false"/>
+               <addr xsi:type="AD">^tel#</addr>
+               <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <family>respected dr</family>
+                  </name>
+               </assignedPerson>
+            </assignedEntity>
+         </author>
+         <dataEnterer typeCode="ENT" contextControlCode="OP">
+            <assignedEntity classCode="ASSIGNED">
+               <id xsi:type="II" root="1047" extension="" assigningAuthorityName="" displayable="false"/>
+               <addr xsi:type="AD">^tel#</addr>
+               <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <family>Nadeem Shahzad</family>
+                  </name>
+               </assignedPerson>
+            </assignedEntity>
+         </dataEnterer>
+         <verifier typeCode="VRF" contextControlCode="OP">
+            <sequenceNumber value="1"/>
+            <noteText representation="TXT" mediaType="text/plain">noteText</noteText>
+            <time xsi:type="IVL_TS">
+               <low inclusive="false" value="20080606"/>
+               <high inclusive="true" value="20090606"/>
+            </time>
+            <modeCode xsi:type="CS" code="ParticipationMood"/>
+            <signatureCode code="ParticipationSignature"/>
+            <assignedEntity classCode="ASSIGNED">
+               <id xsi:type="II" root="3112" extension="" assigningAuthorityName="" displayable="false"/>
+               <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <family>Verifier Name</family>
+                  </name>
+               </assignedPerson>
+            </assignedEntity>
+         </verifier>
+         <dataEntryLocation typeCode="ELOC" contextControlCode="OP">
+            <locatedEntity classCode="LOCE">
+               <id xsi:type="II" root="15" extension="" assigningAuthorityName="" displayable="false"/>
+               <location classCode="PLC" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <given>Genotyping</given>
+                  </name>
+               </location>
+            </locatedEntity>
+         </dataEntryLocation>
+         <subjectOf2 typeCode="SUBJ" contextControlCode="AN" contextConductionInd="false">
+            <sequenceNumber value="1"/>
+            <seperatableInd value="false"/>
+            <annotation classCode="ACT" moodCode="EVN">
+               <code xsi:type="CE" code="ActCode" codeSystem="getCodeSystem"/>
+               <text representation="TXT" mediaType="text/plain"/>
+               <author typeCode="AUT" contextControlCode="ON">
+                  <assignedEntity classCode="ASSIGNED">
+                     <id xsi:type="II" root="3115" extension="" assigningAuthorityName="" displayable="false"/>
+                     <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                        <name xsi:type="EN">
+                           <prefix>Miss</prefix>
+                           <given>Sidra</given>
+                           <family>Aftab</family>
+                           <suffix>I</suffix>
+                        </name>
+                     </assignedPerson>
+                  </assignedEntity>
+               </author>
+            </annotation>
+         </subjectOf2>
+      </observationRequest>
+   </component1>
+   <component1 typeCode="COMP" contextControlCode="AP" contextConductionInd="false">
+      <observationRequest classCode="ACT" moodCode="RQO">
+         <id xsi:type="II" root="1152" extension="" assigningAuthorityName="" displayable="false"/>
+         <code code="0355" codeSystem="getCodeSystem"/>
+         <text xsi:type="ST" representation="TXT" mediaType="text/plain">URINE R/E::</text>
+         <effectiveTime xsi:type="IVL_TS">
+            <low inclusive="true" value="20090526"/>
+            <high inclusive="true" value="20090527"/>
+         </effectiveTime>
+         <specimen typeCode="SPC" contextControlCode="OP">
+            <specimen classCode="SPEC">
+               <id root="7" extension="" assigningAuthorityName="" displayable="false"/>
+               <code code="UR" codeSystem="getCodeSystem"/>
+               <specimenPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <prefix>Mr.</prefix>
+                     <given>Muhammad</given>
+                     <family>Afzal</family>
+                     <suffix>I</suffix>
+                  </name>
+                  <asContent classCode="ASSIGNED">
+                     <container classCode="CONT" determinerCode="INSTANCE">
+                        <desc xsi:type="ST" representation="TXT" mediaType="text/plain"/>
+                     </container>
+                  </asContent>
+               </specimenPerson>
+            </specimen>
+         </specimen>
+         <recordTarget typeCode="RCT" contextControlCode="OP">
+            <patient classCode="PAT">
+               <id xsi:type="II" root="199450" extension="1" assigningAuthorityName="" displayable="false"/>
+               <statusCode code="RoleStatus"/>
+               <patientPerson classCode="PSN" determinerCode="INSTANCE">
+                  <id xsi:type="II" root="1112" extension="" assigningAuthorityName="" displayable="false"/>
+                  <name xsi:type="EN">
+                     <family>Mr. Yasir Mehmood</family>
+                  </name>
+                  <administrativeGenderCode code="Male" codeSystem="10173"/>
+                  <addr xsi:type="AD">H.No:717:Near:Lawrance:Lanes:R.A.Bazar:Adra^tel#03009794990</addr>
+               </patientPerson>
+            </patient>
+         </recordTarget>
+         <author typeCode="AUT" contextControlCode="OP">
+            <assignedEntity classCode="ASSIGNED">
+               <id xsi:type="II" root="140" extension="" assigningAuthorityName="" displayable="false"/>
+               <addr xsi:type="AD">^tel#</addr>
+               <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <family>respected dr</family>
+                  </name>
+               </assignedPerson>
+            </assignedEntity>
+         </author>
+         <dataEnterer typeCode="ENT" contextControlCode="OP">
+            <assignedEntity classCode="ASSIGNED">
+               <id xsi:type="II" root="1047" extension="" assigningAuthorityName="" displayable="false"/>
+               <addr xsi:type="AD">^tel#</addr>
+               <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <family>Nadeem Shahzad</family>
+                  </name>
+               </assignedPerson>
+            </assignedEntity>
+         </dataEnterer>
+         <verifier typeCode="VRF" contextControlCode="OP">
+            <sequenceNumber value="1"/>
+            <noteText representation="TXT" mediaType="text/plain">noteText</noteText>
+            <time xsi:type="IVL_TS">
+               <low inclusive="false" value="20080606"/>
+               <high inclusive="true" value="20090606"/>
+            </time>
+            <modeCode xsi:type="CS" code="ParticipationMood"/>
+            <signatureCode code="ParticipationSignature"/>
+            <assignedEntity classCode="ASSIGNED">
+               <id xsi:type="II" root="3112" extension="" assigningAuthorityName="" displayable="false"/>
+               <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <family>Verifier Name</family>
+                  </name>
+               </assignedPerson>
+            </assignedEntity>
+         </verifier>
+         <dataEntryLocation typeCode="ELOC" contextControlCode="OP">
+            <locatedEntity classCode="LOCE">
+               <id xsi:type="II" root="14" extension="" assigningAuthorityName="" displayable="false"/>
+               <location classCode="PLC" determinerCode="INSTANCE">
+                  <name xsi:type="EN">
+                     <given>Routine Test</given>
+                  </name>
+               </location>
+            </locatedEntity>
+         </dataEntryLocation>
+         <subjectOf2 typeCode="SUBJ" contextControlCode="AN" contextConductionInd="false">
+            <sequenceNumber value="1"/>
+            <seperatableInd value="false"/>
+            <annotation classCode="ACT" moodCode="EVN">
+               <code xsi:type="CE" code="ActCode" codeSystem="getCodeSystem"/>
+               <text representation="TXT" mediaType="text/plain"/>
+               <author typeCode="AUT" contextControlCode="ON">
+                  <assignedEntity classCode="ASSIGNED">
+                     <id xsi:type="II" root="3115" extension="" assigningAuthorityName="" displayable="false"/>
+                     <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                        <name xsi:type="EN">
+                           <prefix>Miss</prefix>
+                           <given>Sidra</given>
+                           <family>Aftab</family>
+                           <suffix>I</suffix>
+                        </name>
+                     </assignedPerson>
+                  </assignedEntity>
+               </author>
+            </annotation>
+         </subjectOf2>
+      </observationRequest>
+   </component1>
+</PlacerGroup>
+

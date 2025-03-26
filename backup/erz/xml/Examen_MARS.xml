@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<relation name="xml/Examen_MARS.xml" pass="hola" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Oficina" x="250px" y="150px">
+      <attributes>
+        <attribute name="num_cubiculo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="num_computadora" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="SALA DE JUNTAS" x="586px" y="157px">
+      <attributes>
+        <attribute name="num_SalaA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="num_SalaB" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="num_SalaC" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Personal" x="256px" y="403px">
+      <attributes>
+        <attribute name="num_empleados" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="num_sillas" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Oficina" child="SALA DE JUNTAS" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Oficina" child="Personal" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

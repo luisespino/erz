@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/Olee.xml" pass="Jfjfjf" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="profesor" x="250px" y="150px"/>
+    <entity name="alumno" x="250px" y="150px"/>
+  </entities>
+</relation>

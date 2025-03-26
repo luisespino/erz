@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<relation name="xml/college.xml" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="professor" x="706px" y="232px">
+      <attributes>
+        <attribute name="num_professor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="lname_professor" type="Varchar" width="64" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fname_professor" type="Varchar" width="64" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="department" x="330px" y="239px">
+      <attributes>
+        <attribute name="id_department" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="name_department" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="course" x="705px" y="419px">
+      <attributes>
+        <attribute name="code_course" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="title_course" type="Varchar" width="64" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="description_course" type="Varchar" width="128" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="student" x="58px" y="419px">
+      <attributes>
+        <attribute name="num_student" type="Integer" width="12" scale="0" null="false" identity="false" seed="" increment="" pk="true"/>
+        <attribute name="lname_student" type="Varchar" width="64" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fname_student" type="Varchar" width="64" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="class" x="347px" y="427px">
+      <attributes>
+        <attribute name="code_class" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="section_class" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="department" child="professor" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="student" child="class" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="professor" child="class" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="course" child="class" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="department" child="course" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

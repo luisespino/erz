@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/prueba .xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cliente" x="389px" y="152px"/>
+    <entity name="Caso" x="273px" y="146px"/>
+  </entities>
+</relation>

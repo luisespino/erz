@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<relation name="xml/Espe.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="USUARIO" x="242px" y="326px">
+      <attributes>
+        <attribute name="NOMBRE_USUARIO" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="TELEFONO" type="Integer" width="8" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CORREO" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CONTRASENA" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NUM_USUARIO" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="COLECCION_VIRTUAL" x="207px" y="180px">
+      <attributes>
+        <attribute name="ID_COLECCION" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="DESCRIPCION_CV" type="Text" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ALMACENAMIENTO" type="Integer" width="32" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="LISTA_DEFAULT" type="Text" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="LISTA_DE_REPRODUCCION" x="443px" y="230px">
+      <attributes>
+        <attribute name="ID_LISTA" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="NOMBRE_LISTA" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CANTIDAD_MAXIMA" type="Integer" width="500" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="VIDEO" x="716px" y="227px">
+      <attributes>
+        <attribute name="ID_VIDEO" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="DESCRIPCION_VIDEO" type="Text" width="12" scale="0" null="true" identity="false" seed="0" increment="50" pk="false"/>
+        <attribute name="NUM_VISITAS" type="Integer" width="1000" scale="0" null="false" identity="false" seed="0" increment="1" pk="false"/>
+        <attribute name="DURACION_VIDEO" type="Float" width="240" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FECHA_VIDEO" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="TRANSMISION" x="696px" y="357px">
+      <attributes>
+        <attribute name="ID_TRANSMISION" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="SECIONES_MAX" type="Integer" width="32" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NOMBRE_TRANS" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DURACION_TRANS" type="Integer" width="240" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CALIFICACION_X_USUARIO" type="Integer" width="5" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="USUARIOS_X_TRANS" type="Integer" width="32" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FECHA_TRANS" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="BITACORA" x="987px" y="365px">
+      <attributes>
+        <attribute name="ID_BITACORA" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="NUM_VISITAS" type="Integer" width="1000" scale="0" null="false" identity="false" seed="0" increment="1" pk="false"/>
+        <attribute name="FECHA_BITACORA" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="HORA_BITACORA" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CATEGORIA" x="709px" y="521px">
+      <attributes>
+        <attribute name="ID_CATEGORIA" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="NOMBRE_CATEGORIA" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ANFITRION" x="461px" y="414px">
+      <attributes>
+        <attribute name="ID_SUBSCRIPCION" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="PUNTUACION" type="Integer" width="5" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NOM_EMISOR" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CANTIDAD_SUB" type="Char" width="1000" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ROL" x="255px" y="446px">
+      <attributes>
+        <attribute name="ID_ROL" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="NOMBRE_ROL" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="VIDEO" child="LISTA_DE_REPRODUCCION" card_parent="0N" card_child="1N" dependency="true"/>
+    <relationship parent="VIDEO" child="TRANSMISION" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="TRANSMISION" child="BITACORA" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="CATEGORIA" child="TRANSMISION" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="ANFITRION" child="TRANSMISION" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="USUARIO" child="ANFITRION" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="ROL" child="USUARIO" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="USUARIO" child="TRANSMISION" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="USUARIO" child="COLECCION_VIRTUAL" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="COLECCION_VIRTUAL" child="LISTA_DE_REPRODUCCION" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

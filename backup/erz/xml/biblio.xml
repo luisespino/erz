@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/Biblio.xml" pass="Espino" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Libro" x="359px" y="162px"/>
+    <entity name="Copia" x="360px" y="276px"/>
+    <entity name="Autor" x="518px" y="127px"/>
+    <entity name="Materia" x="512px" y="217px"/>
+    <entity name="Persona" x="350px" y="377px"/>
+  </entities>
+</relation>

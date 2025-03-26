@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<relation name="xml/lenguajez.xml" pass="lenguajez" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="DATE" x="153px" y="236px">
+      <attributes>
+        <attribute name="fecha" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="dfhfg" x="348px" y="209px">
+      <attributes/>
+    </entity>
+  </entities>
+</relation>

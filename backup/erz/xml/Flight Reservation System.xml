@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/Flight Reservation System.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="clerk" x="393px" y="150px"/>
+    <entity name="client" x="250px" y="150px"/>
+  </entities>
+</relation>

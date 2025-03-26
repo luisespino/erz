@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<relation name="xml/proyecto_mars.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="pedido" x="371px" y="242px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="total" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="producto" x="573px" y="232px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="precio" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_caducidad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="cliente" x="597px" y="421px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellidos" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="email" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_nacimiento" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cuenta" x="363px" y="465px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="contrase&#xF1;a" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Cuenta" child="pedido" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Cuenta" child="cliente" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="cliente" child="pedido" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="producto" child="pedido" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

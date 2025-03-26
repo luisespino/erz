@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/testdavidmeli.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="hjj" x="226px" y="160px"/>
+    <entity name="jkjh" x="490px" y="184px"/>
+  </entities>
+  <relationships>
+    <relationship parent="jkjh" child="hjj" card_parent="0N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<relation name="xml/fg.xml" pass="hg" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="persona" x="408px" y="160px"/>
+    <entity name="estudiante" x="272px" y="293px"/>
+    <entity name="maestro" x="599px" y="299px"/>
+  </entities>
+  <relationships>
+    <relationship parent="persona" child="estudiante" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="persona" child="maestro" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

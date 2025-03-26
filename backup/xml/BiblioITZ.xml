@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<relation name="xml/BiblioITZ.xml" pass="itrejos" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Libro" x="266px" y="143px"/>
+    <entity name="Ejemplar" x="254px" y="268px"/>
+    <entity name="Autor" x="122px" y="117px"/>
+    <entity name="Materia" x="118px" y="203px"/>
+    <entity name="Usuario" x="418px" y="269px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Libro" child="Ejemplar" card_parent="0N" card_child="11" dependency="true"/>
+    <relationship parent="Usuario" child="Ejemplar" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Libro" child="Autor" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Libro" child="Materia" card_parent="0N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

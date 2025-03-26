@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<relation name="xml/Consultorio.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Clientes" x="267px" y="140px">
+      <attributes>
+        <attribute name="ClienteID" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Integer" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Correo" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Anotaciones" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Citas" x="460px" y="165px">
+      <attributes>
+        <attribute name="CitaID" type="Integer" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha" type="DateTime" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Hora" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Observaciones" type="Varchar" width="" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DetalleCita" x="362px" y="344px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Clientes" child="DetalleCita" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Citas" child="DetalleCita" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

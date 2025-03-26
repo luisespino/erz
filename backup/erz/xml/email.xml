@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<relation name="xml/email.xml" pass="email" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="sysco234" x="269px" y="184px"/>
+    <entity name="@" x="743px" y="179px"/>
+    <entity name="yahoo.com" x="362px" y="184px"/>
+    <entity name="franciscog_tablada@live.com.ar" x="462px" y="182px"/>
+  </entities>
+</relation>

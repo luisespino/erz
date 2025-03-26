@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<relation name="xml/tavuu.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Paciente" x="252px" y="184px">
+      <attributes>
+        <attribute name="num_paciente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_llegada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_antencion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_salida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="doctor_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Consultorios" x="637px" y="215px">
+      <attributes>
+        <attribute name="consultorio_id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ubicacion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Doctores" x="445px" y="196px">
+      <attributes>
+        <attribute name="doctor_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="consultorio_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Paciente" child="Doctores" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Doctores" child="Consultorios" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

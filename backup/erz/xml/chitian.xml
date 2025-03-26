@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/chitian.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="title" x="148px" y="149px"/>
+  </entities>
+</relation>

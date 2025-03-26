@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<relation name="xml/pablo.xml" pass="null" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="IdeaDeNegocio" x="785px" y="504px">
+      <attributes/>
+    </entity>
+    <entity name="Participantes" x="1050px" y="415px">
+      <attributes>
+        <attribute name="ID_PARTICIPANTE" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Carnet" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Categoria" x="799px" y="216px">
+      <attributes/>
+    </entity>
+    <entity name="Administrador" x="452px" y="212px">
+      <attributes/>
+    </entity>
+    <entity name="Etapa" x="506px" y="336px">
+      <attributes/>
+    </entity>
+    <entity name="Calificacion" x="481px" y="425px">
+      <attributes/>
+    </entity>
+    <entity name="Juez" x="293px" y="493px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Participantes" child="IdeaDeNegocio" card_parent="1N" card_child="01" dependency="false"/>
+    <relationship parent="IdeaDeNegocio" child="Categoria" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Categoria" child="Administrador" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Juez" child="Administrador" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Etapa" child="Administrador" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Calificacion" child="Etapa" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Calificacion" child="IdeaDeNegocio" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Calificacion" child="Juez" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="IdeaDeNegocio" child="Administrador" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Juez" child="IdeaDeNegocio" card_parent="0N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

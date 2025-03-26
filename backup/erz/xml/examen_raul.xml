@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<relation name="xml/examen_raul.xml" pass="examen" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Universidad" x="195px" y="230px">
+      <attributes>
+        <attribute name="id_nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Alumno" x="461px" y="195px">
+      <attributes>
+        <attribute name="id_alum" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_car" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Facultad" x="199px" y="379px">
+      <attributes>
+        <attribute name="nom_fac" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Carrera" x="199px" y="525px">
+      <attributes>
+        <attribute name="id_car" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_cor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="440px" y="525px">
+      <attributes>
+        <attribute name="id_mat" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="obligatoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="optativa" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="num_creditos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Docente" x="726px" y="568px">
+      <attributes>
+        <attribute name="id_doc" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cordinador" x="185px" y="692px">
+      <attributes>
+        <attribute name="id_cor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_doc" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Clase" x="591px" y="343px">
+      <attributes>
+        <attribute name="id_class" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_mat" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_doc" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_alum" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Universidad" child="Facultad" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Facultad" child="Carrera" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Carrera" child="Cordinador" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Carrera" child="Alumno" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Cordinador" child="Docente" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Materia" child="Clase" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Docente" child="Clase" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Carrera" child="Materia" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Cordinador" child="Materia" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Alumno" child="Clase" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

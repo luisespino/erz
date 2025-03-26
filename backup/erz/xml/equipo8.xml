@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<relation name="xml/equipo8.xml" pass="1234" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Producto" x="555px" y="145px">
+      <attributes>
+        <attribute name="ID_PRODUCTO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE_PRODUCTO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PRECIO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Ventas" x="557px" y="292px">
+      <attributes>
+        <attribute name="ID_VENTA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="TOTAL_VENTA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Proveedores" x="918px" y="148px">
+      <attributes>
+        <attribute name="ID_PROVEEDOR" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE_PROVEEDOR" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Clientes" x="934px" y="300px">
+      <attributes>
+        <attribute name="NOMBRE_CLIENTE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ID_CLIENTE" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="APELLIDOS" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Ventas" child="Clientes" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Producto" child="Ventas" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Producto" child="Proveedores" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

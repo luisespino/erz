@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/Modelado_271387.xml" pass="271387" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="LABORATORIOS" x="284px" y="147px">
+      <attributes>
+        <attribute name="num_laboratorio" type="Integer" width="5" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="edificio" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripci&#xF3;n" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="COMPUTADORAS" x="781px" y="166px">
+      <attributes>
+        <attribute name="num_maquina" type="Integer" width="5" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="COMPUTADORAS" child="LABORATORIOS" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<relation name="xml/ieu-ikrauss.xml" pass="ieu-ikrauss" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="487px" y="150px">
+      <attributes>
+        <attribute name="nombre" type="Varchar" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="contrasena" type="Varchar" width="8" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_usuario" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="bliblioteca" x="246px" y="163px">
+      <attributes>
+        <attribute name="Id_biblioteca" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre_Biblio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="bliblioteca" child="Usuario" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

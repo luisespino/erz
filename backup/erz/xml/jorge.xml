@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<relation name="xml/jorge.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="llega_paciente" x="353px" y="449px">
+      <attributes>
+        <attribute name="apellidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edad" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="informe" x="1204px" y="458px">
+      <attributes>
+        <attribute name="fech_salida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="no_paciente" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="intervencion_des" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre_paciente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="atencion" x="772px" y="285px">
+      <attributes>
+        <attribute name="No_consul" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nom_doctor" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="intervencion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fech_atemcion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_intervencion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="llega_paciente" child="atencion" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="llega_paciente" child="atencion" card_parent="1N" card_child="0N" dependency="true"/>
+    <relationship parent="llega_paciente" child="atencion" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="llega_paciente" child="atencion" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="llega_paciente" child="atencion" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="atencion" child="informe" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="llega_paciente" child="atencion" card_parent="01" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<relation name="xml/alone.xml" pass="alone" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cart&#xE3;o" x="300px" y="277px">
+      <attributes>
+        <attribute name="cardId" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="cardType" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

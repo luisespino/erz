@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<relation name="xml/a241737.xml" pass="a241737" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="paciente" x="526px" y="222px">
+      <attributes>
+        <attribute name="id_nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="seguro social" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="sexo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="registro" x="530px" y="490px">
+      <attributes>
+        <attribute name="id_paciente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="llegada" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="atencion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="salida" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="paciente" child="registro" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

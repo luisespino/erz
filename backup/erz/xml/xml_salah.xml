@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<relation name="xml/salah.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Salah" x="247px" y="398px"/>
+    <entity name="Lul" x="250px" y="150px"/>
+    <entity name="Paul" x="241px" y="282px"/>
+  </entities>
+</relation>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<relation name="xml/catalogotienda.xml" pass="tienda" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Producto" x="372px" y="348px">
+      <attributes>
+        <attribute name="Id_producto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Costo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripci&#xF2;n" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Administrador" x="131px" y="189px">
+      <attributes>
+        <attribute name="Id_Empleado" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Catalogo" x="150px" y="355px">
+      <attributes>
+        <attribute name="Categoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripci&#xF2;n" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cliente" x="375px" y="187px">
+      <attributes>
+        <attribute name="Id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direcci&#xF2;n" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Administrador" child="Catalogo" card_parent="1N" card_child="0N" dependency="true"/>
+    <relationship parent="Catalogo" child="Producto" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Producto" child="Cliente" card_parent="11" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

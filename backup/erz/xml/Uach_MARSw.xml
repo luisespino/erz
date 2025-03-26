@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/UACH_MARSw.xml" pass="holo" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="laboratorio" x="156px" y="145px">
+      <attributes>
+        <attribute name="num_laboratorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

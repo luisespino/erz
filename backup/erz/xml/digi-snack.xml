@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/digi-snack.xml" pass="Solaris2011" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Producto" x="751px" y="210px"/>
+    <entity name="M&#xE1;quina" x="551px" y="324px"/>
+    <entity name="Punto de Venta" x="524px" y="244px"/>
+    <entity name="L&#xED;nea Slot" x="748px" y="324px"/>
+    <entity name="Proveedor" x="361px" y="321px"/>
+    <entity name="Usuario" x="486px" y="410px"/>
+    <entity name="Sector" x="556px" y="154px"/>
+    <entity name="Pedido" x="769px" y="412px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Producto" child="L&#xED;nea Slot" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="M&#xE1;quina" child="L&#xED;nea Slot" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="Sector" child="Punto de Venta" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="M&#xE1;quina" child="Punto de Venta" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Sector" child="Sector" card_parent="0N" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<relation name="xml/prueba3.xml" pass="al0118" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="PROFESSOR" x="250px" y="150px">
+      <attributes>
+        <attribute name="num" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="lname" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fname" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DEPARTMENT" x="421px" y="175px">
+      <attributes>
+        <attribute name="code" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="name" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="DEPARTMENT" child="PROFESSOR" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

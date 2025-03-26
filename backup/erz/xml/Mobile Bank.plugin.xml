@@ -1,0 +1,463 @@
+<?xml version="1.0" standalone="yes"?>
+<DesignPatternPlugin>
+  <Components>
+    <ComponentName>Plugin</ComponentName>
+    <ComponentAuthor>Plugin</ComponentAuthor>
+    <Summary />
+  </Components>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>مانده حساب</ClassName>
+    <Summary>Eachof the  subclass implements a behavior associated with a state of Context
+Class added from the design pattern:State</Summary>
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>دریافت شماره مشتری</ClassName>
+    <Summary>Eachof the  subclass implements a behavior associated with a state of Context
+Class added from the design pattern:State</Summary>
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>منوی اصلی همراه بانک</ClassName>
+    <Summary>This class defines the interface of interest to clients and
+ maintains an instance of a ConcreteState subclass that defines the current state. 
+Class added from the design pattern:State</Summary>
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>حالت خدمات سپرده</ClassName>
+    <Summary>This class defines an interface for encapsulating the behavior associated 
+with a particular state of the Context. 
+
+Class added from the design pattern:State</Summary>
+    <ClassType>abstract</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>پرداخت قسط</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>صورتحساب</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>خرید شارژ سیم کارت</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>انتقال وجه</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>Mediator</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>abstract</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>پرداخت قسط از حساب</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>شماره وام</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>مبلغ</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>رمز دوم</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Classes>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>تایید</ClassName>
+    <Visibility />
+    <Summary />
+    <ClassType>concrete</ClassType>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Classes>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>دریافت شماره مشتری</ClassName>
+    <MethodName>Get customer number</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>99828738</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>منوی اصلی همراه بانک</ClassName>
+    <MethodName>Request</MethodName>
+    <Visibility>public</Visibility>
+    <Summary>state.Handle()</Summary>
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>1512853873</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>حالت خدمات سپرده</ClassName>
+    <MethodName>Deposit service</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>-1716199847</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>مانده حساب</ClassName>
+    <MethodName>Deposit balance</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>-301759379</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>پرداخت قسط</ClassName>
+    <MethodName>payment</MethodName>
+    <Visibility>public</Visibility>
+    <Summary>[Inherited from Base Class : حالت خدمات سپرده of Component:Plugin]</Summary>
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>2010655650</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>صورتحساب</ClassName>
+    <MethodName>account</MethodName>
+    <Visibility>public</Visibility>
+    <Summary>[Inherited from Base Class : حالت خدمات سپرده of Component:Plugin]</Summary>
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>-1454921783</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>خرید شارژ سیم کارت</ClassName>
+    <MethodName>Buy charge</MethodName>
+    <Visibility>public</Visibility>
+    <Summary>[Inherited from Base Class : حالت خدمات سپرده of Component:Plugin]</Summary>
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>1435269844</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>انتقال وجه</ClassName>
+    <MethodName>Money transfer</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>-652503088</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>Mediator</ClassName>
+    <MethodName>payment</MethodName>
+    <Visibility>public</Visibility>
+    <Summary>[Inherited from Base Class : پرداخت قسط of Component:Plugin]</Summary>
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>1667715243</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>پرداخت قسط از حساب</ClassName>
+    <MethodName>Payment Deposit</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>510219073</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>شماره وام</ClassName>
+    <MethodName>Loan Number</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>-466867026</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>مبلغ</ClassName>
+    <MethodName>Amount</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>-1505805015</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>رمز دوم</ClassName>
+    <MethodName>Second Password</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>864952895</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Methods>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>تایید</ClassName>
+    <MethodName>Done</MethodName>
+    <Visibility>public</Visibility>
+    <Summary />
+    <ReturnType>void</ReturnType>
+    <MethodType>concrete</MethodType>
+    <MethodID>-613419732</MethodID>
+    <MetaInfo>&lt;MetaInfo /&gt;</MetaInfo>
+  </Methods>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>حالت خدمات سپرده</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>مانده حساب</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>حالت خدمات سپرده</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>دریافت شماره مشتری</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>حالت خدمات سپرده</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>پرداخت قسط</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>حالت خدمات سپرده</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>صورتحساب</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>حالت خدمات سپرده</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>خرید شارژ سیم کارت</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>حالت خدمات سپرده</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>انتقال وجه</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>Mediator</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>پرداخت قسط از حساب</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>Mediator</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>شماره وام</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>Mediator</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>مبلغ</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>Mediator</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>رمز دوم</DerivedClassName>
+  </Inheritances>
+  <Inheritances>
+    <BaseClassComponent>Plugin</BaseClassComponent>
+    <BaseClassName>Mediator</BaseClassName>
+    <DerivedClassComponent>Plugin</DerivedClassComponent>
+    <DerivedClassName>تایید</DerivedClassName>
+  </Inheritances>
+  <Aggregates>
+    <AggregatorClassComponent>Plugin</AggregatorClassComponent>
+    <AggregatorClass>منوی اصلی همراه بانک</AggregatorClass>
+    <AggregateeClassComponent>Plugin</AggregateeClassComponent>
+    <AggregateeClass>حالت خدمات سپرده</AggregateeClass>
+    <RelationOrder>Single</RelationOrder>
+    <RelationName>State</RelationName>
+  </Aggregates>
+  <Aggregates>
+    <AggregatorClassComponent>Plugin</AggregatorClassComponent>
+    <AggregatorClass>پرداخت قسط</AggregatorClass>
+    <AggregateeClassComponent>Plugin</AggregateeClassComponent>
+    <AggregateeClass>Mediator</AggregateeClass>
+    <RelationOrder>Single</RelationOrder>
+    <RelationName>Mediator</RelationName>
+  </Aggregates>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>مانده حساب</ClassName>
+    <XCoOrdinate>529</XCoOrdinate>
+    <YCoOrdinate>112</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>دریافت شماره مشتری</ClassName>
+    <XCoOrdinate>518</XCoOrdinate>
+    <YCoOrdinate>152</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>منوی اصلی همراه بانک</ClassName>
+    <XCoOrdinate>45</XCoOrdinate>
+    <YCoOrdinate>59</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>حالت خدمات سپرده</ClassName>
+    <XCoOrdinate>366</XCoOrdinate>
+    <YCoOrdinate>52</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>پرداخت قسط</ClassName>
+    <XCoOrdinate>549</XCoOrdinate>
+    <YCoOrdinate>193</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>صورتحساب</ClassName>
+    <XCoOrdinate>550</XCoOrdinate>
+    <YCoOrdinate>235</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>خرید شارژ سیم کارت</ClassName>
+    <XCoOrdinate>545</XCoOrdinate>
+    <YCoOrdinate>283</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>انتقال وجه</ClassName>
+    <XCoOrdinate>539</XCoOrdinate>
+    <YCoOrdinate>323</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>Mediator</ClassName>
+    <XCoOrdinate>96</XCoOrdinate>
+    <YCoOrdinate>279</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>پرداخت قسط از حساب</ClassName>
+    <XCoOrdinate>236</XCoOrdinate>
+    <YCoOrdinate>363</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>شماره وام</ClassName>
+    <XCoOrdinate>244</XCoOrdinate>
+    <YCoOrdinate>399</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>مبلغ</ClassName>
+    <XCoOrdinate>264</XCoOrdinate>
+    <YCoOrdinate>438</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>رمز دوم</ClassName>
+    <XCoOrdinate>239</XCoOrdinate>
+    <YCoOrdinate>476</YCoOrdinate>
+  </UIDetails>
+  <UIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <ClassName>تایید</ClassName>
+    <XCoOrdinate>267</XCoOrdinate>
+    <YCoOrdinate>511</YCoOrdinate>
+  </UIDetails>
+  <Misc>
+    <Detail>DesignPatternName</Detail>
+    <Info>New Design Pattern</Info>
+  </Misc>
+  <Misc>
+    <Detail>Category</Detail>
+    <Info />
+  </Misc>
+  <Misc>
+    <Detail>Details</Detail>
+    <Info>{\rtf1\fbidis\ansi\ansicpg1256\deff0\deflang1065{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}
+\viewkind4\uc1\pard\ltrpar\f0\fs17\par
+}
+</Info>
+  </Misc>
+  <ComponentUIDetails>
+    <ComponentName>Plugin</ComponentName>
+    <Width>1212</Width>
+    <Height>800</Height>
+  </ComponentUIDetails>
+</DesignPatternPlugin>

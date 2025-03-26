@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<relation name="xml/Nose.xml" pass="Koala123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Entrenador" x="72px" y="167px">
+      <attributes>
+        <attribute name="ID_ENTRENADOR" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="APELLIDO_ENTREN" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NOMBRE_ENTREN" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Equipo" x="294px" y="161px">
+      <attributes>
+        <attribute name="ID_EQUIPO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="INSTITUCION" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="LOCALIDAD" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NOMBRE_EQUIPO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Torneo" x="526px" y="191px">
+      <attributes>
+        <attribute name="ID_TORNEO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ANNO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CATEGORIA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="GENERO_TORNEO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PREMIO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="SEMESTRE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NOMBRE_TORNEO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Partido" x="529px" y="397px">
+      <attributes>
+        <attribute name="ID_TORNEO_P" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_PARTIDO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="HORA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FECHA_PARTIDO" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="LUGAR" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Jugador" x="81px" y="279px">
+      <attributes>
+        <attribute name="ID_JUGADOR" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ALTURA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="APELLIDO_JUG" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CARRERA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="EMAIL" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ESTADO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="GENERO_JUG" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NOMBRE_JUG" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PESO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="POSICION" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="TELEFONO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FECHA_NAC_JUG" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ALINEACION_POR_PARTIDO" x="241px" y="519px">
+      <attributes>
+        <attribute name="ID_JUGADOR_AP" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_PARTIDO_AP" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ESTADO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="MINUTOS_JUGADOS" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="RESULTADO_POR_PARTIDO" x="773px" y="431px">
+      <attributes>
+        <attribute name="ID_RESULTADO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_PARTIDO_RP" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="EQUIPO_CASA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="EQUIPO_VISITA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ESTADO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="GOLES_CASA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="GOLES_VISITA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="TABLA_DE_POSICIONES" x="861px" y="162px">
+      <attributes>
+        <attribute name="ID_EQUIPO_TP" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_TORNEO_TP" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="PARTIDOS_JUGADOS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="GANADOS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="EMPATADOS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PERDIDOS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="GOLES_FAVOR" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="GOLES_CONTRA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DIFERENCIA_GOLES" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PUNTOS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PORCENTAJE_RENDIMIENTO" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CAMBIOS" x="21px" y="640px">
+      <attributes>
+        <attribute name="ID_PARTIDO_C" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_JUGADOR_INGRESO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ID_JUGADOR_SALE" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="MINUTO_CAMBIO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ESTADISTICA_GOLES" x="250px" y="665px">
+      <attributes>
+        <attribute name="ID_JUGADOR_EG" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_PARTIDO_EG" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="MINUTO_GOL" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ESTADISTICA_TARJETAS" x="479px" y="677px">
+      <attributes>
+        <attribute name="ID_JUGADOR_ET" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ID_PARTIDO_ET" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="TIPO_TARJETA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="MINUTO_TARJETA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Torneo" child="Partido" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Partido" child="ALINEACION_POR_PARTIDO" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Partido" child="RESULTADO_POR_PARTIDO" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="ESTADISTICA_GOLES" child="ALINEACION_POR_PARTIDO" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="CAMBIOS" child="ALINEACION_POR_PARTIDO" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="ESTADISTICA_TARJETAS" child="ALINEACION_POR_PARTIDO" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Torneo" child="TABLA_DE_POSICIONES" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Jugador" child="ALINEACION_POR_PARTIDO" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Equipo" child="Entrenador" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="Equipo" child="Jugador" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Partido" child="Equipo" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

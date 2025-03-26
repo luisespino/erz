@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<relation name="xml/Ejemploz.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="251px" y="153px">
+      <attributes>
+        <attribute name="Matricula" type="Integer" width="40" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellidos" type="Char" width="40" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materias" x="474px" y="158px">
+      <attributes>
+        <attribute name="Clave" type="Char" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripci&#xF3;n" type="Char" width="80" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia cursada" x="314px" y="300px">
+      <attributes>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Alumno" child="Materia cursada" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Materias" child="Materia cursada" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

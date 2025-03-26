@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<relation name="xml/ine_prueba.xml" pass="m137744" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="EMPLEADO" x="250px" y="150px">
+      <attributes>
+        <attribute name="id_empleado" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="primer_nombre" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="segundo_nombre" type="Varchar" width="25" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="primer_apelido" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="segundo_apellido" type="Varchar" width="25" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido_casada" type="Char" width="25" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dpi" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nit" type="Varchar" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="email" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="usuario" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="pass" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DEPARTAMENTO" x="431px" y="174px">
+      <attributes>
+        <attribute name="id_depto" type="Varchar" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="region" type="Varchar" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="MUNICIPIO" x="642px" y="172px">
+      <attributes>
+        <attribute name="id_municipio" type="Varchar" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_muni" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_depto" type="Varchar" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ALDEA" x="828px" y="172px">
+      <attributes>
+        <attribute name="id_aldea" type="Varchar" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_aldea" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_municipio" type="Varchar" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CASERIO" x="1000px" y="174px">
+      <attributes>
+        <attribute name="id_caserio" type="Varchar" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_caserio" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_aldea" type="Varchar" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="DEPARTAMENTO" child="MUNICIPIO" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="MUNICIPIO" child="ALDEA" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="ALDEA" child="CASERIO" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

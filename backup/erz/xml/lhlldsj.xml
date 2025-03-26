@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<relation name="xml/lhlldsj.xml" pass="lkhlhfd" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="ljhsdh" x="251px" y="296px">
+      <attributes/>
+    </entity>
+    <entity name="lkhsld" x="246px" y="380px">
+      <attributes/>
+    </entity>
+    <entity name="kns" x=".n" y="399px">
+      <attributes/>
+    </entity>
+    <entity name="295px" x="jl&#xF1;sj&#xF1;" y="400px">
+      <attributes/>
+    </entity>
+    <entity name="386px" x="" y="">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="jl&#xF1;sj&#xF1;" child="jl&#xF1;sj&#xF1;" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="lkhsld" child="lkhsld" card_parent="0N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

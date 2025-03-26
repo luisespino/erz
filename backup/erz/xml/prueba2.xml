@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<relation name="xml/prueba2.xml" pass="prueba2" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Banco" x="250px" y="150px">
+      <attributes>
+        <attribute name="dni" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="saldo" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

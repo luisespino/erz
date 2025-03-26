@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<relation name="xml/xml-fg.xml" pass="alexandra" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="persona" x="450px" y="193px">
+      <attributes>
+        <attribute name="dni" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="genero" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="estudiante" x="275px" y="350px">
+      <attributes>
+        <attribute name="cui" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="esc_prof" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="persona" child="estudiante" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

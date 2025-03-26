@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<relation name="xml/Escolar.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="258px" y="298px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Matricula" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="455px" y="449px">
+      <attributes>
+        <attribute name="Clave" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Maestros" x="601px" y="298px">
+      <attributes>
+        <attribute name="idemp" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Maestros" child="Alumno" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Maestros" child="Materia" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Alumno" child="Materia" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

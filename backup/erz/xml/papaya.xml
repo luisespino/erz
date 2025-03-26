@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<relation name="xml/papaya.xml" pass="frita" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="250px" y="150px">
+      <attributes>
+        <attribute name="Matricula" type="Char" width="40" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="547px" y="210px">
+      <attributes>
+        <attribute name="Clave" type="Char" width="40" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Char" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="MAteriacursada" x="351px" y="309px">
+      <attributes>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Alumno" child="MAteriacursada" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Materia" child="MAteriacursada" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<relation name="xml/3 parcial.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Tarifas" x="642px" y="385px">
+      <attributes>
+        <attribute name="Costo30-60" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Costo61-120" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Costo121-180" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Acceso" x="639px" y="157px">
+      <attributes>
+        <attribute name="Hora_entrada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Hora_salida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Folio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Auto" x="921px" y="186px">
+      <attributes>
+        <attribute name="Placas" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Modelo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Color" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Marca" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cliente" x="347px" y="158px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="IDcliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Acceso" child="Tarifas" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Acceso" child="Auto" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Acceso" child="Cliente" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

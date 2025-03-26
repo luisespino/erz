@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<relation name="xml/digiservice.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Repuesto" x="241px" y="297px">
+      <attributes>
+        <attribute name="ID Repuesto" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Costo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Historial" x="426px" y="193px">
+      <attributes>
+        <attribute name="ID Historial" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Reparacion" x="417px" y="312px">
+      <attributes>
+        <attribute name="ID Reparacion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Tecnico" x="423px" y="426px">
+      <attributes>
+        <attribute name="ID Tecnico" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Maquina" x="603px" y="295px">
+      <attributes>
+        <attribute name="ID Maquina" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Estado" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Error" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cliente" x="606px" y="144px">
+      <attributes>
+        <attribute name="ID Cliente" type="Integer" width="0" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Errores" x="787px" y="297px">
+      <attributes>
+        <attribute name="ID Error" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Reparacion" child="Repuesto" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Historial" child="Reparacion" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Reparacion" child="Tecnico" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Maquina" child="Reparacion" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Cliente" child="Maquina" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Maquina" child="Errores" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

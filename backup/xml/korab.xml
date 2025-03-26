@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<relation name="xml/korab.xml" pass="korab" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="korab" x="590px" y="287px">
+      <attributes>
+        <attribute name="kkk" type="Integer" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="zhuja" x="693px" y="332px">
+      <attributes/>
+    </entity>
+  </entities>
+</relation>

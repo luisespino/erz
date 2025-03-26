@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<relation name="xml/SIMU.xml" pass="a241737" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="ID_PACIENTE" x="499px" y="206px">
+      <attributes>
+        <attribute name="id_usuario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_numero" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ID_DOCTOR" x="765px" y="410px">
+      <attributes>
+        <attribute name="id_doctor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ID_REGISTRO" x="498px" y="395px">
+      <attributes>
+        <attribute name="id_registro" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_fecha" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_hora" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_paciente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="ID_PACIENTE" child="ID_REGISTRO" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="ID_REGISTRO" child="ID_DOCTOR" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/21.xml" pass="21" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="554px" y="255px">
+      <attributes>
+        <attribute name="Nombre" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

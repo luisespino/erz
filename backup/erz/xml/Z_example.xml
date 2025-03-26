@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<relation name="xml/Z_example.xml" pass="123456" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Usuario" x="250px" y="150px">
+      <attributes>
+        <attribute name="Id" type="Integer" width="3" scale="0" null="false" identity="false" seed="1" increment="" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Password" type="Varchar" width="8" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Estatus" type="Integer" width="1" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Intentos" type="Integer" width="1" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

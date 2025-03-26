@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<relation name="xml/Ejemploooooo.xml" pass="1234" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Joya" x="250px" y="150px">
+      <attributes>
+        <attribute name="ID" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Informacion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Disponible" x="602px" y="168px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Disponible" child="Joya" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

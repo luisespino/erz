@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<relation name="xml/emplea.xml" pass="emplea" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="empleado" x="586px" y="285px">
+      <attributes>
+        <attribute name="id_empleado" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_empleado" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="departamento" x="238px" y="286px">
+      <attributes>
+        <attribute name="id_departamento" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_departamento" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="banda_precio" x="313px" y="179px">
+      <attributes/>
+    </entity>
+    <entity name="video" x="568px" y="179px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="departamento" child="empleado" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="banda_precio" child="video" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<relation name="xml/DigiServiceRules.xml" pass="digi" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="REPUESTO" x="252px" y="258px">
+      <attributes>
+        <attribute name="IDREPUESTO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CLIENTE" x="886px" y="241px">
+      <attributes>
+        <attribute name="IDCLIENTE" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="TELEFONO" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DIRECCION" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="HISTORIAL" x="462px" y="130px">
+      <attributes>
+        <attribute name="IDHISTORIAL" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="MAQUINA" x="689px" y="251px">
+      <attributes>
+        <attribute name="IDMAQUINA" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ESTADO" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ERROR" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="REPARACION" x="447px" y="259px">
+      <attributes>
+        <attribute name="ID REPARACION" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="CANTREPUESTOS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="TECNICO" x="462px" y="416px">
+      <attributes>
+        <attribute name="ID TECNICO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="APELLIDO" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="TELEFONO" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="HISTORIAL" child="REPARACION" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="REPARACION" child="TECNICO" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="REPARACION" child="REPUESTO" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="CLIENTE" child="MAQUINA" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="REPARACION" child="MAQUINA" card_parent="0N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/order.xml" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="customer" x="267px" y="215px">
+      <attributes>
+        <attribute name="id_customer" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="name" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="order" x="469px" y="264px">
+      <attributes>
+        <attribute name="id_order" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="order_detail" x="937px" y="278px">
+      <attributes/>
+    </entity>
+    <entity name="product" x="630px" y="535px">
+      <attributes/>
+    </entity>
+  </entities>
+</relation>

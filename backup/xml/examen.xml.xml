@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<relation name="xml/examen.xml.xml" pass="123456789" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="automovil" x="603px" y="467px">
+      <attributes>
+        <attribute name="idauto" type="Integer" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="placas" type="Text" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="color" type="Text" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="idconductor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Entrada" x="442px" y="223px">
+      <attributes>
+        <attribute name="identrada" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="idauto" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="salida" x="672px" y="254px">
+      <attributes>
+        <attribute name="idsalida" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="idtarifa" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="idauto" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tarifa" x="827px" y="172px">
+      <attributes>
+        <attribute name="costo" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tiempo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="idtarifa" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="conductores" x="890px" y="354px">
+      <attributes>
+        <attribute name="idconductor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Text" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Text" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="automovil" child="conductores" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="automovil" child="Entrada" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="salida" child="automovil" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="salida" child="tarifa" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

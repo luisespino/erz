@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<relation name="xml/wilfredo2.xml" pass="wilfredoqi" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Vuelo" x="412px" y="166px">
+      <attributes>
+        <attribute name="Numero" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Reserva" x="641px" y="161px">
+      <attributes>
+        <attribute name="Clave" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Precio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Pagos" x="998px" y="181px">
+      <attributes>
+        <attribute name="Fecha" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Monto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Tarjeta" x="970px" y="355px">
+      <attributes>
+        <attribute name="Nro_tarjeta" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="clave" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tipo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_caducidad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Pasajero" x="650px" y="340px">
+      <attributes>
+        <attribute name="DNI" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nacionalidad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Mail" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="pasaporte" x="408px" y="371px">
+      <attributes>
+        <attribute name="NroPasaporte" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha_vencimiento" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="utlima ciudad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Pasajero" child="pasaporte" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Pasajero" child="Tarjeta" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Pasajero" child="Reserva" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Reserva" child="Vuelo" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Reserva" child="Pagos" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Tarjeta" child="Pagos" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

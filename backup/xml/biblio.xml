@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<relation name="xml/biblio.xml" pass="espino" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="biblioteca" x="283px" y="206px">
+      <attributes>
+        <attribute name="id_biblioteca" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_biblioteca" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="libro" x="308px" y="385px">
+      <attributes>
+        <attribute name="id_libro" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="titulo" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="autor" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_imp" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="prestamo" x="563px" y="394px">
+      <attributes>
+        <attribute name="num_prestamo" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="vigencia" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="usuario" x="559px" y="202px">
+      <attributes>
+        <attribute name="id_usuario" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_usuario" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="biblioteca" child="libro" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="libro" child="prestamo" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="usuario" child="prestamo" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<relation name="xml/52373543.xml" pass="52373543" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="A" x="310px" y="232px">
+      <attributes/>
+    </entity>
+    <entity name="B" x="575px" y="225px">
+      <attributes>
+        <attribute name="A" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="B" child="A" card_parent="01" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

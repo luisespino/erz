@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<relation name="xml/Provedores.xml" pass="sf23s2gg" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="BIMBO" x="250px" y="150px">
+      <attributes>
+        <attribute name="RFC" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="PROVEDORES" x="403px" y="300px">
+      <attributes>
+        <attribute name="RFC" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="PRODUCTO" x="596px" y="136px">
+      <attributes>
+        <attribute name="CODIGO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Tipo_Producto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Precio" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Existencia" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="BIMBO" child="PRODUCTO" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="PRODUCTO" child="PROVEDORES" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

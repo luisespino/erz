@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/truc.xml" pass="truc" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Hum" x="253px" y="413px"/>
+    <entity name="Loc" x="452px" y="415px"/>
+  </entities>
+</relation>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/david.xml" pass="solokps" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="persona" x="314px" y="238px"/>
+    <entity name="cuenta" x="501px" y="240px"/>
+  </entities>
+</relation>

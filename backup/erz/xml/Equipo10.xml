@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<relation name="xml/Equipo10.xml" pass="2424" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="269px" y="165px">
+      <attributes>
+        <attribute name="id_usuario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Edad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tiempo_renta" x="767px" y="310px">
+      <attributes>
+        <attribute name="id_tiempo_renta" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Lapso" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Disponibilidad" x="249px" y="300px">
+      <attributes>
+        <attribute name="id_disponibilidad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre_pelicula" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="existencia" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Renta" x="516px" y="319px">
+      <attributes>
+        <attribute name="id_renta" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Multa" x="793px" y="474px">
+      <attributes>
+        <attribute name="id_multa" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="adeudo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Disponibilidad" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="Disponibilidad" child="Renta" card_parent="0N" card_child="1N" dependency="true"/>
+    <relationship parent="Renta" child="tiempo_renta" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="tiempo_renta" child="Multa" card_parent="1N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

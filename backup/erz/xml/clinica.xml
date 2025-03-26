@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<relation name="xml/clinica.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Paciente" x="195px" y="246px">
+      <attributes>
+        <attribute name="idPaciente" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hrLlegada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hrAtencion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hrPartida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tiempoTotal" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

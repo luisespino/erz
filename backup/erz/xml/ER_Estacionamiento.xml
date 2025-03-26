@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<relation name="xml/ER_Estacionamiento.xml" pass="root" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Automovil" x="637px" y="166px">
+      <attributes>
+        <attribute name="matricula" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="marca" type="Char" width="30" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="modelo" type="Char" width="30" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="horaentrada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="horasalida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Conductor" x="962px" y="173px">
+      <attributes>
+        <attribute name="noconductor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="30" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="appaterno" type="Char" width="30" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apmaterno" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Tarifa" x="355px" y="177px">
+      <attributes>
+        <attribute name="notarifa" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="tiempo" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="total" type="Float" width="12" scale="2" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Conductor" child="Automovil" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Automovil" child="Tarifa" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<relation name="xml/alfa.xml" pass="alfa" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="ubicacion" x="261px" y="141px">
+      <attributes>
+        <attribute name="Codigo" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Equipo" x="261px" y="283px">
+      <attributes>
+        <attribute name="Codigo" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Relacion" x="495px" y="230px">
+      <attributes>
+        <attribute name="cod1" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cod2" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Relacion" child="ubicacion" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Relacion" child="Equipo" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

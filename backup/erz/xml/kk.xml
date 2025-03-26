@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<relation name="xml/kk.xml" pass="kk" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="hh" x="184px" y="227px">
+      <attributes>
+        <attribute name="a" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="b" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="kk" x="483px" y="240px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="hh" child="kk" card_parent="1N" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

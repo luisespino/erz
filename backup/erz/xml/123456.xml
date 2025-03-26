@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<relation name="xml/123456.xml" pass="123456" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="student" x="251px" y="150px">
+      <attributes>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="name" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="class" x="419px" y="156px">
+      <attributes>
+        <attribute name="classid" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

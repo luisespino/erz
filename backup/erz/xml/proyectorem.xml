@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<relation name="xml/proyectorem.xml" pass="proyectorem" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="cliente" x="154px" y="143px">
+      <attributes>
+        <attribute name="id_cliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_nacimiento" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="compra" x="419px" y="160px">
+      <attributes>
+        <attribute name="folio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_cliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="codigo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="producto" x="658px" y="160px">
+      <attributes>
+        <attribute name="codigo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="precio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="suministro" x="655px" y="348px">
+      <attributes>
+        <attribute name="no_factura" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="codigo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_cliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="provedores" x="655px" y="541px">
+      <attributes>
+        <attribute name="id_cliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="cliente" child="compra" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="producto" child="compra" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="producto" child="suministro" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="provedores" child="suministro" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<relation name="xml/assignment.xml" pass=";lkj;lkj" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="agent" x="309px" y="300px">
+      <attributes>
+        <attribute name="agentid" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="cph" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="skill" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="task" x="707px" y="306px">
+      <attributes>
+        <attribute name="taskid" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="rskill" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="cost" x="519px" y="311px">
+      <attributes>
+        <attribute name="agentid" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="taskid" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="agentcost" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="agent" child="cost" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="task" child="cost" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

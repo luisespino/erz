@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<relation name="xml/probar.xml" pass="12345" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="persona" x="275px" y="228px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="alumno" x="588px" y="225px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

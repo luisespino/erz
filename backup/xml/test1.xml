@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<relation name="xml/test1.xml" pass="test1" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="USER" x="378px" y="269px">
+      <attributes>
+        <attribute name="PK1" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="USER_ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="SURNAME" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NAME" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="TITLE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DOB" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PRIMARY_EMAIL" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PRIMARY_ROLE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ROW_STATUS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FK_DATA_SRC" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_CREATED" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_MODIFIED" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="COURSE" x="609px" y="257px">
+      <attributes>
+        <attribute name="PK1" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="COURSE_ID" type="Varchar" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="COURSE_NAME" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="LEVEL" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FK_SCHOOL" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ROW_STATUS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FK_DATA_SRC" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_START" type="DateTime" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_END" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_CREATED" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_MODIFIED" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FK_DATA_SRC" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ENROLLMENT" x="831px" y="264px">
+      <attributes>
+        <attribute name="PK1" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+        <attribute name="FK_USER" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FK_COURSE" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_CREATED" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DATE_MODIFIED" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ROW_STATUS" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FK_DATA_SRC" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

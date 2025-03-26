@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<relation name="xml/Estacionamiento.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Estacionamiento" x="491px" y="131px">
+      <attributes>
+        <attribute name="Id_Estacionamiento" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Conductor" x="491px" y="448px">
+      <attributes>
+        <attribute name="Id_Conductor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_p" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_m" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Automovil" x="689px" y="289px">
+      <attributes>
+        <attribute name="Placas" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Modelo" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Estancia" x="831px" y="497px">
+      <attributes>
+        <attribute name="Hora_Entrada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Hora_Salida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id_Estancia" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Tarifas" x="312px" y="298px">
+      <attributes>
+        <attribute name="Tarifa_1" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Tarifa_2" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Tarifa_3" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Automovil" child="Estancia" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Estacionamiento" child="Tarifas" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Estacionamiento" child="Automovil" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Automovil" child="Conductor" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

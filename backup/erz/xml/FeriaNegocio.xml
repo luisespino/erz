@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<relation name="xml/FeriaNegocio.xml" pass="12345678" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Administrador" x="225px" y="152px">
+      <attributes>
+        <attribute name="id_admin" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cedula" type="Integer" width="999999999" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="puestoTec" type="Varchar" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Categoria" x="654px" y="149px">
+      <attributes>
+        <attribute name="id_Categoria" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_Cat" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion_Cat" type="Varchar" width="150" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Etapa" x="420px" y="261px">
+      <attributes>
+        <attribute name="id_etapa" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_Etapa" type="Varchar" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion_Etapa" type="Char" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Calificacion" x="385px" y="367px">
+      <attributes>
+        <attribute name="id_calificacion" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="puntuacion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="IdeaDeNegocio" x="628px" y="368px">
+      <attributes>
+        <attribute name="id_Idea" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_Idea" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion_Idea" type="Varchar" width="200" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Participante" x="815px" y="370px">
+      <attributes>
+        <attribute name="id_participante" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="carnet" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre_participante" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Juez" x="226px" y="359px">
+      <attributes>
+        <attribute name="id_juez" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="cedula_Juez" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre_Juez" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Categoria" child="Administrador" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Juez" child="Administrador" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Etapa" child="Administrador" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="IdeaDeNegocio" child="Etapa" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Participante" child="IdeaDeNegocio" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Calificacion" child="IdeaDeNegocio" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="IdeaDeNegocio" child="Categoria" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Calificacion" child="Juez" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

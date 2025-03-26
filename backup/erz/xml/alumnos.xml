@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<relation name="xml/alumnos.xml" pass="jona2015" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="ALUMNO" x="238px" y="202px">
+      <attributes>
+        <attribute name="Matricula" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apalledios" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CARRERA" x="547px" y="211px">
+      <attributes>
+        <attribute name="idCarrera" type="Char" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Char" width="45" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="ALUMNO" child="CARRERA" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

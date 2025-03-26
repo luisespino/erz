@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<relation name="xml/examenmed.xml" pass="123456" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Problemas" x="551px" y="269px">
+      <attributes>
+        <attribute name="Id" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Paciente" x="183px" y="418px">
+      <attributes>
+        <attribute name="Id_pac" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_medico" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Medico" x="308px" y="227px">
+      <attributes>
+        <attribute name="Id_medico" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Horas" x="389px" y="498px">
+      <attributes>
+        <attribute name="Entrada" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Salida" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_pac" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Atencion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Paciente" child="Horas" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="Paciente" child="Medico" card_parent="1N" card_child="01" dependency="true"/>
+    <relationship parent="Problemas" child="Medico" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

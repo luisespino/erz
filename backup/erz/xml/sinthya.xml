@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<relation name="xml/sinthya.xml" pass="sinthya" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="usuario" x="131px" y="155px">
+      <attributes>
+        <attribute name="id_usuario" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_nac" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="copia_video" x="107px" y="362px">
+      <attributes>
+        <attribute name="id_copia_video" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="banda_precio" x="558px" y="158px">
+      <attributes>
+        <attribute name="id_precio_banda" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="precio" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="video" x="473px" y="358px">
+      <attributes>
+        <attribute name="id_video" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="titulo" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="categoria" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="usuario" child="copia_video" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="video" child="copia_video" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="banda_precio" child="video" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

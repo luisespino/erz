@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<relation name="xml/mars_245330.xml" pass="exam" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="universidad" x="78px" y="225px">
+      <attributes>
+        <attribute name="id_universidad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_univ" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="facultad" x="72px" y="350px">
+      <attributes>
+        <attribute name="id_facultad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_facultad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="alumno" x="313px" y="342px">
+      <attributes>
+        <attribute name="id_alumno" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_alumno" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="carrera" x="311px" y="210px">
+      <attributes>
+        <attribute name="id_carrera" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_carrera" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="materias" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="materia" x="431px" y="499px">
+      <attributes>
+        <attribute name="id_materia" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_materia" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="docente" x="557px" y="350px">
+      <attributes>
+        <attribute name="id_docente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_docente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="coordinador" x="579px" y="230px">
+      <attributes>
+        <attribute name="id_coordinador" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_coordinador" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="facultad" child="universidad" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="carrera" child="facultad" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="carrera" child="alumno" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="coordinador" child="carrera" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="docente" child="alumno" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="alumno" child="materia" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="docente" child="materia" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

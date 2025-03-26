@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<relation name="xml/raynaud.xml" pass="rivera" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="65px" y="116px"/>
+    <entity name="Contrase&#xF1;a" x="66px" y="151px"/>
+    <entity name="Intentos" x="67px" y="186px"/>
+  </entities>
+</relation>

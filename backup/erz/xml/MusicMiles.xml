@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<relation name="xml/MusicMiles.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Artista" x="473px" y="151px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="canciones" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="pais" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cancion" x="250px" y="150px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="genero" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Artista" child="Cancion" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

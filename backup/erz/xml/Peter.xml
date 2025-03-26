@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/Peter.xml" pass="kxandula" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Teacher" x="285px" y="155px"/>
+    <entity name="Class" x="263px" y="251px"/>
+  </entities>
+</relation>

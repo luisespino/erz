@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/clase.xml" pass="abc" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Bla" x="311px" y="301px"/>
+    <entity name="Ble" x="680px" y="282px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Bla" child="Ble" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

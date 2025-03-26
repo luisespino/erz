@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<relation name="xml/GABY.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="USUARIO" x="257px" y="139px">
+      <attributes>
+        <attribute name="ID_USUARIO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NOMBRE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FECHA_NAC" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DIRECCION" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="BANDA_PRECIO" x="502px" y="158px">
+      <attributes>
+        <attribute name="ID_BANDA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="PRECIO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="COPIA_VIDEO" x="246px" y="323px">
+      <attributes>
+        <attribute name="ID_COPIA_VIDEO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="VIDEO" x="514px" y="306px">
+      <attributes>
+        <attribute name="ID_VIDEO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="TITULO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CATEGORIA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="BANDA_PRECIO" child="VIDEO" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="USUARIO" child="COPIA_VIDEO" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="VIDEO" child="COPIA_VIDEO" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

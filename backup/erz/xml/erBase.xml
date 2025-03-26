@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<relation name="xml/erBase.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="838px" y="156px">
+      <attributes>
+        <attribute name="Matricula" type="Integer" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Maestro" x="909px" y="467px">
+      <attributes>
+        <attribute name="RFC" type="Char" width="20" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="292px" y="185px">
+      <attributes>
+        <attribute name="Clave" type="Char" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Creditos" type="Integer" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Grupo" x="558px" y="305px">
+      <attributes>
+        <attribute name="Clave" type="Integer" width="3" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Hora" type="Integer" width="3" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Aula" x="218px" y="435px">
+      <attributes>
+        <attribute name="Clave" type="Integer" width="3" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Grupo" child="Maestro" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

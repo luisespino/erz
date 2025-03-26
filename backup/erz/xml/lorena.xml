@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/lorena.xml" pass="lorena" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Estudiante" x="427px" y="178px">
+      <attributes>
+        <attribute name="Id_Estudiante" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NombreEs" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Actividades" x="801px" y="186px">
+      <attributes>
+        <attribute name="Id_Actividades" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NombreAc" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Estudiante" child="Actividades" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

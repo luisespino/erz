@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<relation name="xml/Encuesta_WPM.xml" pass="wipema" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Encuesta" x="511px" y="244px"/>
+    <entity name="Grupo" x="341px" y="246px"/>
+    <entity name="usuario" x="334px" y="339px"/>
+    <entity name="rol" x="353px" y="419px"/>
+    <entity name="instrumento_aplicado" x="712px" y="248px"/>
+    <entity name="reporte" x="520px" y="420px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Grupo" child="Encuesta" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Encuesta" child="reporte" card_parent="1N" card_child="0N" dependency="true"/>
+    <relationship parent="usuario" child="Grupo" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="usuario" child="rol" card_parent="0N" card_child="1N" dependency="true"/>
+    <relationship parent="rol" child="reporte" card_parent="1N" card_child="0N" dependency="true"/>
+    <relationship parent="Encuesta" child="instrumento_aplicado" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

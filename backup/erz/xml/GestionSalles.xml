@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<relation name="xml/GestionSalles.xml" pass="PrelenboB" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Salle" x="311px" y="206px">
+      <attributes>
+        <attribute name="no-salle" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="no-batiment" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

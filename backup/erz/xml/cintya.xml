@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<relation name="xml/cintya.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="CategoriaMaterial" x="54px" y="148px">
+      <attributes>
+        <attribute name="idCategoriaMaterial" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Material" x="282px" y="131px">
+      <attributes>
+        <attribute name="idMaterial" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Composicion" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CantidadUnidad" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CantidadGramos" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Estante" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CategoriaMaterial_idCategoriaMaterial" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Reporte_has_Material" x="52px" y="257px">
+      <attributes>
+        <attribute name="Reporte_idReporte" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Material_idMaterial" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Material_cantidad" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Reporte" x="120px" y="370px">
+      <attributes>
+        <attribute name="idReporte" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Titulo" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Text" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FechaInicio" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FechaFin" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Reporte_has_herramienta" x="282px" y="317px">
+      <attributes>
+        <attribute name="Reporte_idReporte" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Herramienta_idHerramienta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Herramienta_cantidad" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="herramienta" x="251px" y="442px">
+      <attributes>
+        <attribute name="idHerramienta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="idInventaioUach" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Cantidad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Condicion" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Observaciones_Generales" type="Text" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Foto" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CategoriaHerramienta_idCategoriaHerramienta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CategoriaHerramienta" x="29px" y="510px">
+      <attributes>
+        <attribute name="idCategoriaHerramienta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="CategoriaMaterial" child="Material" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Material" child="Reporte_has_Material" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Reporte" child="Reporte_has_Material" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Reporte" child="Reporte_has_herramienta" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="herramienta" child="Reporte_has_herramienta" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="CategoriaHerramienta" child="herramienta" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

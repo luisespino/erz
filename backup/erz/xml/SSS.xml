@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<relation name="xml/SSS.xml" pass="SSSS" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Scheme" x="405px" y="209px"/>
+    <entity name="Attribute" x="397px" y="338px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Scheme" child="Attribute" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Scheme" child="Scheme" card_parent="0N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

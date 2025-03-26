@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<relation name="xml/MARSw_sammy.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="177px" y="184px">
+      <attributes>
+        <attribute name="No_usuario" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_paterno" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_materno" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Administrador" x="64px" y="363px">
+      <attributes>
+        <attribute name="No_usuario(FK)" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Bibliotecario" x="241px" y="364px">
+      <attributes>
+        <attribute name="No_usuario(FK)" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Horario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Libro" x="745px" y="215px">
+      <attributes>
+        <attribute name="No_libro" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Autor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Prestamo" x="497px" y="193px">
+      <attributes>
+        <attribute name="No_pestamo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="No_socio(FK)" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="No_libro(FK)" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="No_empleado(FK)" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Administrador" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Usuario" child="Bibliotecario" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Usuario" child="Prestamo" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Libro" child="Prestamo" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

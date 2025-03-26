@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<relation name="xml/ingenieria de software.xml" pass="12345" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="persona" x="250px" y="150px"/>
+    <entity name="alumno" x="240px" y="264px"/>
+    <entity name="profesor" x="684px" y="223px"/>
+  </entities>
+</relation>

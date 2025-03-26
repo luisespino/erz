@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/jorge254048.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="laboratorio" x="417px" y="345px">
+      <attributes>
+        <attribute name="num_laboratorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edificio" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="computadoras" x="863px" y="339px">
+      <attributes>
+        <attribute name="num_computadora" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="num_laboratorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="computadoras" child="laboratorio" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

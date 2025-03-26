@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/eqipo2.xml" pass="eqipo2" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="laboratorio" x="223px" y="170px">
+      <attributes>
+        <attribute name="num_laboratorio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edificio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="computadora" x="571px" y="169px">
+      <attributes>
+        <attribute name="num_computadora" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edificio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="laboratorio" child="computadora" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

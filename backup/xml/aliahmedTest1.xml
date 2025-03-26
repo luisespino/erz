@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<relation name="xml/aliahmedTest1.xml" pass="ali" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Patient" x="446px" y="152px">
+      <attributes>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Name" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Address" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Admin" x="641px" y="438px">
+      <attributes>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Name" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="privilegeLevel" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Role=Admin" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Staff" x="625px" y="215px">
+      <attributes>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Name" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Nurse" x="476px" y="354px">
+      <attributes>
+        <attribute name="Role=Nurse" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ClearanceLevel" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Doctor" x="785px" y="352px">
+      <attributes>
+        <attribute name="Role=Doctor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PermissionSet" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ResourceObject" x="196px" y="383px">
+      <attributes>
+        <attribute name="SensitivityLevel" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="XACML-RBAC-PolicyDecisionPoint" x="112px" y="191px">
+      <attributes>
+        <attribute name="ACPolicy" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Subjects" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ResourceObjects" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Misuser" x="856px" y="184px">
+      <attributes>
+        <attribute name="MisuserClassType" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="TargetResourceObject(s)" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="PII" x="443px" y="495px">
+      <attributes/>
+    </entity>
+    <entity name="PFII" x="285px" y="545px">
+      <attributes/>
+    </entity>
+    <entity name="PMI-PFMH" x="85px" y="527px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Doctor" child="Staff" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Nurse" child="Staff" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Admin" child="Staff" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="PMI-PFMH" child="ResourceObject" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="PFII" child="ResourceObject" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="PII" child="ResourceObject" card_parent="01" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

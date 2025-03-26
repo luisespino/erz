@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/DigiServiceTV.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Contrato" x="59px" y="190px"/>
+    <entity name="Historial" x="57px" y="296px"/>
+    <entity name="Cliente_DigiService" x="268px" y="188px"/>
+    <entity name="Usuario_DigiTV" x="279px" y="299px"/>
+    <entity name="Administrador" x="272px" y="401px"/>
+  </entities>
+</relation>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<relation name="xml/banka.xml" pass="a" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Bank" x="394px" y="172px">
+      <attributes/>
+    </entity>
+    <entity name="Client" x="94px" y="149px">
+      <attributes>
+        <attribute name="IdentificationNumber" type="Integer" width="12" scale="0" null="false" identity="true" seed="1" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Account" x="180px" y="277px">
+      <attributes>
+        <attribute name="Bilance" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="AccountNumber" type="Integer" width="12" scale="0" null="false" identity="true" seed="573" increment="7" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Account" child="Client" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Account" child="Bank" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

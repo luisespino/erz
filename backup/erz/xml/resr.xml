@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<relation name="xml/resr.xml" pass="12345" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="student" x="308px" y="322px">
+      <attributes>
+        <attribute name="sname" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fach" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="age" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="buch" x="668px" y="333px">
+      <attributes>
+        <attribute name="titel" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="author" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="student" child="buch" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

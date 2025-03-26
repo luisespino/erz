@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<relation name="xml/Agenda.xml" pass="uapnetcell" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="81px" y="177px">
+      <attributes>
+        <attribute name="codigo" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="curso" x="741px" y="180px">
+      <attributes>
+        <attribute name="codigo" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="matricula" x="452px" y="214px">
+      <attributes>
+        <attribute name="codigo_matricula" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Alumno" child="matricula" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="curso" child="matricula" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

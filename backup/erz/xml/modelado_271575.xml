@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/modelado_271575.xml" pass="joel" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Laboratorios" x="179px" y="142px">
+      <attributes>
+        <attribute name="num_laboratorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="edificio" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Computadoras" x="403px" y="146px">
+      <attributes>
+        <attribute name="num_maquina" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="num_laboratorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Computadoras" child="Laboratorios" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

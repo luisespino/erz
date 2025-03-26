@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<relation name="xml/xml_aaa.xml" pass="aaa" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Projecto" x="434px" y="222px">
+      <attributes>
+        <attribute name="NomeProjeto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cliente" x="217px" y="167px">
+      <attributes>
+        <attribute name="Nome" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ID" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Area" x="604px" y="261px">
+      <attributes>
+        <attribute name="NomeArea" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Local" x="754px" y="314px">
+      <attributes>
+        <attribute name="NomeLocal" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="folha" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Projecto" child="Area" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Area" child="Local" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Cliente" child="Projecto" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Area" child="Area" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

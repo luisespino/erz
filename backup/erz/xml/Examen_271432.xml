@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<relation name="xml/Examen_271432.xml" pass="drmr2093" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Pacientes" x="34px" y="143px">
+      <attributes>
+        <attribute name="paciente_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="servicio_medico" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="entradas_salidas" x="412px" y="223px">
+      <attributes>
+        <attribute name="e_s_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="paciente_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="doctor_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_llegada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_atencion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_salida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="doctores" x="41px" y="383px">
+      <attributes>
+        <attribute name="doctor_id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="consultorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Pacientes" child="entradas_salidas" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="doctores" child="entradas_salidas" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

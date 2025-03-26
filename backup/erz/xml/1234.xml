@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/1234.xml" pass="1234" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Documento" x="-2px" y="454px"/>
+    <entity name="Carpeta" x="10px" y="369px"/>
+    <entity name="Usuario" x="113px" y="279px"/>
+    <entity name="Servicios" x="107px" y="194px"/>
+    <entity name="Cuenta" x="274px" y="279px"/>
+    <entity name="Funcionario (Fotocopiadora)" x="363px" y="204px"/>
+    <entity name="CentroFotocopiado" x="401px" y="305px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Servicios" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Usuario" child="Carpeta" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Carpeta" child="Documento" card_parent="0N" card_child="01" dependency="true"/>
+    <relationship parent="Usuario" child="Cuenta" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Funcionario (Fotocopiadora)" child="Cuenta" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Funcionario (Fotocopiadora)" child="CentroFotocopiado" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

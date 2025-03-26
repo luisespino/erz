@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<relation name="xml/tp_clases.xml" pass="tp_clases" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="clases" x="319px" y="195px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="0" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="atributo" x="235px" y="349px">
+      <attributes>
+        <attribute name="" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Char" width="0" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Relaciones" x="548px" y="179px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="0" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Generacion" x="738px" y="349px">
+      <attributes/>
+    </entity>
+    <entity name="Asociacion" x="481px" y="356px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="atributo" child="clases" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Generacion" child="Relaciones" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Relaciones" child="Asociacion" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="clases" child="Relaciones" card_parent="01" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

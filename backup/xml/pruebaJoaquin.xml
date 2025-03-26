@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<relation name="xml/pruebaJoaquin.xml" pass="123" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Cliente" x="198px" y="206px"/>
+    <entity name="Factura" x="396px" y="207px"/>
+    <entity name="CuentaUsuario" x="433px" y="377px"/>
+    <entity name="CasosAtendidos" x="625px" y="258px"/>
+    <entity name="Subscripcion" x="432px" y="319px"/>
+    <entity name="Paquete" x="625px" y="322px"/>
+    <entity name="Canal" x="625px" y="382px"/>
+    <entity name="Catalogo" x="626px" y="444px"/>
+    <entity name="Proveedor" x="626px" y="504px"/>
+    <entity name="Contrato" x="435px" y="448px"/>
+    <entity name="RegistroUso" x="433px" y="516px"/>
+  </entities>
+  <relationships>
+    <relationship parent="Cliente" child="Factura" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

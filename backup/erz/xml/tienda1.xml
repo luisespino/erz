@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/tienda1.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="almacen" x="537px" y="277px">
+      <attributes>
+        <attribute name="codigo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="categoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="producto" x="223px" y="259px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="codigo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="cantidad" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="medicion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="producto" child="almacen" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

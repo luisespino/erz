@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<relation name="xml/Examen.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Conductor" x="252px" y="138px">
+      <attributes>
+        <attribute name="IDConductor" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Tel&#xE9;fono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Autom&#xF3;vil" x="427px" y="147px">
+      <attributes>
+        <attribute name="IDAutom&#xF3;vil" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Caracteristicas" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Entradas" x="620px" y="157px">
+      <attributes>
+        <attribute name="HotraEntrada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Salidas" x="440px" y="268px">
+      <attributes>
+        <attribute name="HoraSalida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="TarifaMovimiento" x="576px" y="260px">
+      <attributes>
+        <attribute name="TarifaInicial" type="Integer" width="12" scale="2" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="TarifaIncial TarifaTiempoTranscurrido" type="Integer" width="12" scale="2" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Conductor" child="Autom&#xF3;vil" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Salidas" child="Autom&#xF3;vil" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Entradas" child="Autom&#xF3;vil" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Salidas" child="TarifaMovimiento" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Entradas" child="TarifaMovimiento" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/Daniel_mijares_ramirez_10.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Uno" x="250px" y="148px">
+      <attributes>
+        <attribute name="I" type="Char" width="12" scale="0" null="true" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="II" type="Float" width="40" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="dos" x="467px" y="147px">
+      <attributes>
+        <attribute name="A" type="Char" width="12" scale="0" null="true" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="I" type="Char" width="12" scale="0" null="true" identity="true" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Uno" child="dos" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

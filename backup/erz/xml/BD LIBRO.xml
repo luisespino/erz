@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/BD LIBRO.xml" pass="" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="alumnio" x="288px" y="290px"/>
+    <entity name="customer" x="582px" y="266px"/>
+  </entities>
+</relation>

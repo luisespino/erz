@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<relation name="xml/juan.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cliente" x="334px" y="201px">
+      <attributes>
+        <attribute name="Id_cliente" type="Integer" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Ape_paterno" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Ape_materno" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Compra" x="545px" y="196px">
+      <attributes>
+        <attribute name="Id_cancion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="creditos" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="total" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Canciones" x="719px" y="208px">
+      <attributes>
+        <attribute name="Id_cancion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cancion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Cliente" child="Compra" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Canciones" child="Compra" card_parent="1N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

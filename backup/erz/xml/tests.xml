@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<relation name="xml/tests.xml" pass="123" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Customer" x="481px" y="147px">
+      <attributes>
+        <attribute name="ID" type="Integer" width="12" scale="0" null="false" identity="true" seed="1" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Account" x="265px" y="284px">
+      <attributes>
+        <attribute name="CODE" type="Varchar" width="30" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Transaction" x="521px" y="381px">
+      <attributes>
+        <attribute name="ID" type="Integer" width="12" scale="0" null="false" identity="true" seed="1" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Customer" child="Account" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

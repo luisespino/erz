@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/arre.xml" pass="arre" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="dwight" x="250px" y="150px"/>
+  </entities>
+</relation>

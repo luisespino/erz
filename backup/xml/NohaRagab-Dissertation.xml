@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<relation name="xml/NohaRagab-Dissertation.xml" pass="test" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Patient" x="1223px" y="286px">
+      <attributes>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Name" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Credentials" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="StaffBase" x="792px" y="202px">
+      <attributes>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Name" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Misuser" x="559px" y="576px">
+      <attributes>
+        <attribute name="Classification" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Taregt: ResourceObject" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Permissions" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ResourceObject" x="842px" y="576px">
+      <attributes>
+        <attribute name="ID" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Nurse" x="735px" y="361px">
+      <attributes>
+        <attribute name="Role=Nurse" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Doctor" x="862px" y="386px">
+      <attributes>
+        <attribute name="Role=Doc" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Admin" x="959px" y="303px">
+      <attributes>
+        <attribute name="Role=Admin" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="PolicyManager" x="580px" y="311px">
+      <attributes>
+        <attribute name="Role=PM" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="PII" x="1086px" y="453px">
+      <attributes>
+        <attribute name="SensitivityLevel = 2" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="PFII" x="927px" y="452px">
+      <attributes>
+        <attribute name="SensitivityLevel = 1" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="PMI-PFMH" x="1141px" y="540px">
+      <attributes>
+        <attribute name="SensitivityLevel = 3" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="XACML-RBAC-AccessControl" x="474px" y="421px">
+      <attributes>
+        <attribute name="SubjectsList" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ResourceObject" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ActionsList" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="StaffBase" child="PolicyManager" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="StaffBase" child="Nurse" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="StaffBase" child="Doctor" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="StaffBase" child="Admin" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="ResourceObject" child="PFII" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="ResourceObject" child="PII" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="PMI-PFMH" child="ResourceObject" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Misuser" child="ResourceObject" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="XACML-RBAC-AccessControl" child="Misuser" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Patient" child="PFII" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Patient" child="PII" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Patient" child="PMI-PFMH" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

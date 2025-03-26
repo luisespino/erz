@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<relation name="xml/dtv.xml" pass="dcc1" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="37px" y="124px">
+      <attributes>
+        <attribute name="id_usuario" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="54" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="estado" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido1" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido2" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="telefono" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="correoElectronico" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="contrase&#xF1;a" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ciudad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="pais" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Tarjeta" x="389px" y="265px">
+      <attributes>
+        <attribute name="id_tarjeta" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="numero" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fechacad" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tipo" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="acreedor" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Catalogo" x="-2px" y="359px">
+      <attributes>
+        <attribute name="id_catalogo" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fechacad" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="catalogoproducto" x="186px" y="338px">
+      <attributes>
+        <attribute name="id_catalogoprod" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Paquete" x="360px" y="466px">
+      <attributes>
+        <attribute name="id_paquete" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="tipo" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="precio" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="desc" type="Varchar" width="120" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="caducidad" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="estado" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Contrato" x="607px" y="442px">
+      <attributes>
+        <attribute name="id_contrato" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cantav" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cantdi" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="desc" type="Varchar" width="120" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hatencion" type="Varchar" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="precio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Factura" x="566px" y="116px">
+      <attributes>
+        <attribute name="id_factura" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="monto" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="estado" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fechaCreacion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fechaVencimiento" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Canal" x="147px" y="468px">
+      <attributes>
+        <attribute name="id_canal" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="desc" type="Varchar" width="120" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tarifa" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="genero" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="logotipo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="HistorialCompra" x="250px" y="116px">
+      <attributes>
+        <attribute name="id_historial" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="monto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="LineaFactura" x="859px" y="137px">
+      <attributes/>
+    </entity>
+    <entity name="EMPRESASERVICIO" x="906px" y="478px">
+      <attributes>
+        <attribute name="id_empresa" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="telefono" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CuentaUsuario" x="689px" y="235px">
+      <attributes>
+        <attribute name="id_cuentausuario" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cantidad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="registrouso" x="864px" y="299px">
+      <attributes>
+        <attribute name="id_registrouso" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="horasUso" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="minutosUso" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="segundosUso" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Factura" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Usuario" child="Tarjeta" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario" child="CuentaUsuario" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Catalogo" child="Canal" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Paquete" child="Canal" card_parent="0N" card_child="1N" dependency="true"/>
+    <relationship parent="catalogoproducto" child="Paquete" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="catalogoproducto" child="Contrato" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="CuentaUsuario" child="Contrato" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="CuentaUsuario" child="Paquete" card_parent="0N" card_child="1N" dependency="true"/>
+    <relationship parent="CuentaUsuario" child="registrouso" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="EMPRESASERVICIO" child="Contrato" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="registrouso" child="LineaFactura" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="HistorialCompra" child="Factura" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Factura" child="LineaFactura" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

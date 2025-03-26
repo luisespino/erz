@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<relation name="xml/a1.xml" pass="a1......." version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="books" x="647px" y="195px">
+      <attributes>
+        <attribute name="book_id" type="Text" width="13" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="title" type="Text" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="pages" type="Integer" width="4" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="edition" type="Integer" width="2" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="year" type="Integer" width="4" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="staff_id" type="Integer" width="3" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="description" type="Text" width="2500" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="copies" x="657px" y="454px">
+      <attributes>
+        <attribute name="copy_id" type="Varchar" width="13" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="book_id" type="Text" width="13" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="location" type="Text" width="9" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="staff" x="426px" y="204px">
+      <attributes>
+        <attribute name="staff_id" type="Integer" width="3" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="username" type="Text" width="25" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="password" type="Text" width="32" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="privs" type="Integer" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="last_name" type="Text" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="first_name" type="Text" width="35" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="loans" x="423px" y="414px">
+      <attributes>
+        <attribute name="loan_id" type="Integer" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="loan_date" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="loan_time" type="DateTime" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="due_date" type="DateTime" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="return_date" type="Char" width="6" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="copy_id" type="Text" width="13" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="user_id" type="Text" width="13" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="staff_id" type="Text" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="users" x="233px" y="438px">
+      <attributes>
+        <attribute name="user_id" type="Text" width="13" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="status" type="Integer" width="1" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="last_name" type="Text" width="35" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="first_name" type="Text" width="35" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="email" type="Text" width="255" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="staff" child="books" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="books" child="copies" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="copies" child="loans" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="staff" child="loans" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="users" child="loans" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

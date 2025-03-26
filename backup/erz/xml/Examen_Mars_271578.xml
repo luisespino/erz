@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<relation name="xml/Examen_Mars_271578.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Paciente" x="379px" y="255px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Tiempo" x="676px" y="250px">
+      <attributes>
+        <attribute name="id" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="hora_llegada" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_atencion" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_partida" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Graficas" x="501px" y="541px">
+      <attributes>
+        <attribute name="id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tiempo_espera" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tiempo_excesivo" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="consulta" x="238px" y="402px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="num_cuarto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="doctor" x="132px" y="512px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="especializacion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Paciente" child="Tiempo" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Graficas" child="Tiempo" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="doctor" child="consulta" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Paciente" child="consulta" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

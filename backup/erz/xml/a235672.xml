@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<relation name="xml/a235672.xml" pass="a235672" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Banda_de_precio" x="532px" y="196px">
+      <attributes>
+        <attribute name="ID_BANDA_PRECIO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Usuario" x="250px" y="150px">
+      <attributes>
+        <attribute name="id_usuario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Fecha" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Copia_de_Video" x="225px" y="337px">
+      <attributes>
+        <attribute name="ID_copia_video" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="VIDEO" x="563px" y="323px">
+      <attributes>
+        <attribute name="ID_VIDEO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="TITULO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Categoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Copia_de_Video" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="VIDEO" child="Copia_de_Video" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Banda_de_precio" child="VIDEO" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

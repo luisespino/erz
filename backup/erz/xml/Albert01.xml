@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<relation name="xml/Albert01.xml" pass="Albert01" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="UsuarioCuenta" x="255px" y="237px">
+      <attributes>
+        <attribute name="alias" type="Varchar" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="password" type="Varchar" width="8" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ListaCuentas" x="787px" y="219px">
+      <attributes>
+        <attribute name="Alias" type="Varchar" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="Password" type="Char" width="8" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="IdCuenta" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="ListaCuentas" child="UsuarioCuenta" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<relation name="xml/CGH.xml" pass="bnc0612" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Profesor" x="1004px" y="123px">
+      <attributes>
+        <attribute name="Cedula" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Grupo" x="618px" y="266px">
+      <attributes>
+        <attribute name="Numero" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Tipo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Capacidad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Cant_matriculados" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id_Grupo" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Horario" x="827px" y="297px">
+      <attributes>
+        <attribute name="Id_Horario" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Aula" x="1005px" y="209px">
+      <attributes>
+        <attribute name="Codigo" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Capacidad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Guia de horario" x="609px" y="418px">
+      <attributes>
+        <attribute name="FechaInicio" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FechaFin" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id_GuiaHorario" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Plan" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="466px" y="301px">
+      <attributes>
+        <attribute name="Codigo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NumHoras" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Periodo" x="849px" y="420px">
+      <attributes>
+        <attribute name="Numero" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Anyo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id_Periodo" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Itinerario" x="817px" y="176px">
+      <attributes>
+        <attribute name="Dia" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id_Itinerario" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Bloque" x="648px" y="169px">
+      <attributes>
+        <attribute name="Hora_inicio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Hora_fin" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Id_Bloque" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Grupo" child="Horario" card_parent="11" card_child="01" dependency="true"/>
+    <relationship parent="Horario" child="Itinerario" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Itinerario" child="Bloque" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Materia" child="Grupo" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Guia de horario" child="Grupo" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Periodo" child="Guia de horario" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Profesor" child="Itinerario" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Aula" child="Itinerario" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

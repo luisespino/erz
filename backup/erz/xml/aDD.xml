@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<relation name="xml/aDD.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="alitas" x="344px" y="322px">
+      <attributes>
+        <attribute name="Tipo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Tama&#xF1;o" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Venta" x="515px" y="322px">
+      <attributes>
+        <attribute name="No. Venta" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="total" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Empleado" x="685px" y="319px">
+      <attributes>
+        <attribute name="No. Empleado" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Puesto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Venta" child="alitas" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Empleado" child="Venta" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

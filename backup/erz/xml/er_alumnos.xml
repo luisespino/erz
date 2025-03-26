@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<relation name="xml/er_alumnos.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="181px" y="293px">
+      <attributes>
+        <attribute name="Matricula" type="Integer" width="40" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre_alumno" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apaterno_alumno" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Amaterno_alumno" type="Char" width="25" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materias" x="701px" y="275px">
+      <attributes>
+        <attribute name="Clave" type="Char" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion_materia" type="Char" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre_materia" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia_cursada" x="450px" y="214px">
+      <attributes>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Alumno" child="Materia_cursada" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Materias" child="Materia_cursada" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

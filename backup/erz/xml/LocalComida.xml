@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<relation name="xml/LocalComida.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="332px" y="287px">
+      <attributes>
+        <attribute name="Identificador" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="50" scale="" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nom_Usuario" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Privilegio" type="Char" width="1" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Contrse&#xF1;a" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Productos" x="515px" y="168px">
+      <attributes>
+        <attribute name="Identificador" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nom_Clave_Prod" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Precio" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Ventas" x="534px" y="403px">
+      <attributes>
+        <attribute name="Identificador" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Total_Venta" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Orden" x="746px" y="292px">
+      <attributes>
+        <attribute name="Id_Prod" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Cantidad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Orden" child="Productos" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Orden" child="Ventas" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Orden" child="Usuario" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

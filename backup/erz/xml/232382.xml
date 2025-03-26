@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<relation name="xml/232382.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="CLIENTE" x="250px" y="150px">
+      <attributes>
+        <attribute name="id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="observaciones" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="MESA" x="272px" y="339px">
+      <attributes>
+        <attribute name="id_mesa" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="ubicacion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="FACTURA" x="435px" y="238px">
+      <attributes>
+        <attribute name="id_factura" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_camarero" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_mesa" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_factura" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DETALLE_FACTURA" x="583px" y="172px">
+      <attributes>
+        <attribute name="id_factura" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_detallefactura" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_cocinero" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="plato" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="importe" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CAMARERO" x="640px" y="354px">
+      <attributes>
+        <attribute name="id_camarero" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="COCINERO" x="878px" y="214px">
+      <attributes>
+        <attribute name="id_cocinero" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cocinero" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="FACTURA" child="CLIENTE" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="FACTURA" child="MESA" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="FACTURA" child="DETALLE_FACTURA" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="CAMARERO" child="FACTURA" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="COCINERO" child="DETALLE_FACTURA" card_parent="01" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<relation name="xml/holo.xml" pass="holo" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="usuario" x="84px" y="161px">
+      <attributes>
+        <attribute name="id_usuario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="vieo" x="340px" y="359px">
+      <attributes>
+        <attribute name="id_video" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="titulo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="categoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="copia_video" x="69px" y="373px">
+      <attributes>
+        <attribute name="id_copia_video" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="banda_precio" x="322px" y="164px">
+      <attributes>
+        <attribute name="id_banda" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="precio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="usuario" child="copia_video" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="banda_precio" child="vieo" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="vieo" child="copia_video" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

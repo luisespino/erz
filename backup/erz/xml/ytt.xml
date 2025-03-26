@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/ytt.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="name" x="250px" y="150px"/>
+    <entity name="ssn" x="140px" y="142px"/>
+  </entities>
+</relation>

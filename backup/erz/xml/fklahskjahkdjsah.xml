@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<relation name="xml/fklahskjahkdjsah.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cliente" x="209px" y="204px">
+      <attributes>
+        <attribute name="id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha_nacimiento" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="cuenta" x="291px" y="357px">
+      <attributes>
+        <attribute name="id_cuenta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="tipo" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dinero" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Tarjeta" x="595px" y="203px">
+      <attributes>
+        <attribute name="id_tarjeta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nip" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Cliente" child="Tarjeta" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="cuenta" child="Tarjeta" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

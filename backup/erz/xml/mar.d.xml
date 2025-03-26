@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<relation name="xml/mar.d.xml" pass="1" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Laboratorio" x="292px" y="156px">
+      <attributes>
+        <attribute name="num_laboratorio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="descripcion" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="num_computadora" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Computadora" x="551px" y="161px">
+      <attributes>
+        <attribute name="num_computadora" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Laboratorio" child="Computadora" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

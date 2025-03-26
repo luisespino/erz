@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/tamrin.xml" pass="null" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="cust" x="395px" y="207px"/>
+    <entity name="rest" x="545px" y="203px"/>
+  </entities>
+</relation>

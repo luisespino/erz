@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<relation name="xml/Examen_MARSw 251888.xml" pass="yolo" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Universidad" x="188px" y="152px">
+      <attributes>
+        <attribute name="no_universidad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Facultad" x="198px" y="229px">
+      <attributes>
+        <attribute name="no_facultad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Carrera" x="201px" y="306px">
+      <attributes>
+        <attribute name="no_carrera" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="creditos" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="coordinador" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Alumno" x="28px" y="311px">
+      <attributes>
+        <attribute name="no_alumno" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="no_carrera(FK)" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="no_carrera2(FK)" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="428px" y="310px">
+      <attributes>
+        <attribute name="no_materia" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="no_carrera(FK)" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="credios" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="no_docente(FK)" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Docente" x="443px" y="220px">
+      <attributes>
+        <attribute name="no_docente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Grupo" x="213px" y="431px">
+      <attributes>
+        <attribute name="no_grupo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Obligatoria" x="367px" y="455px">
+      <attributes/>
+    </entity>
+    <entity name="Optativa" x="505px" y="459px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Universidad" child="Facultad" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Facultad" child="Carrera" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Carrera" child="Alumno" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Alumno" child="Grupo" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Docente" child="Materia" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Materia" child="Grupo" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Materia" child="Obligatoria" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Materia" child="Optativa" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Carrera" child="Materia" card_parent="01" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

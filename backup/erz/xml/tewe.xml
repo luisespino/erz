@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/tewe.xml" pass="tewe" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Buch" x="250px" y="150px"/>
+    <entity name="Student" x="467px" y="344px"/>
+  </entities>
+</relation>

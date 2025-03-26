@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/Giancarlo.xml" pass="uapnetcell" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="nose" x="103px" y="146px"/>
+    <entity name="mkl" x="250px" y="150px"/>
+  </entities>
+</relation>

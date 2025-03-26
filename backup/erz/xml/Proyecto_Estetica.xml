@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<relation name="xml/Proyecto_Estetica.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Cliente" x="111px" y="152px">
+      <attributes>
+        <attribute name="id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Ventas" x="433px" y="159px">
+      <attributes>
+        <attribute name="servicio" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_empleado" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Agenda" x="250px" y="260px">
+      <attributes>
+        <attribute name="servicio" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="mostrar_cliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Empleados" x="432px" y="358px">
+      <attributes>
+        <attribute name="id_empleado" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Pagos" x="83px" y="348px">
+      <attributes>
+        <attribute name="id_empleado" type="Integer" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="mostrar_pago" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Cliente" child="Ventas" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="Pagos" child="Empleados" card_parent="11" card_child="0N" dependency="false"/>
+    <relationship parent="Agenda" child="Cliente" card_parent="11" card_child="0N" dependency="false"/>
+    <relationship parent="Ventas" child="Empleados" card_parent="01" card_child="1N" dependency="false"/>
+  </relationships>
+</relation>

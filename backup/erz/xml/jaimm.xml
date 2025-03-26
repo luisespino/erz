@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/jaimm.xml" pass="jaimm" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="CIUDADANO" x="250px" y="166px">
+      <attributes>
+        <attribute name="id_ciudadano" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre_ciudadano" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DOMICILIO" x="614px" y="166px">
+      <attributes>
+        <attribute name="id_domicilio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="direc_domicilio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="CIUDADANO" child="DOMICILIO" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

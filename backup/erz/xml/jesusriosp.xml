@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<relation name="xml/jesusriosp.xml" pass="JRP6547066" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Expediente" x="163px" y="127px">
+      <attributes>
+        <attribute name="FormArray" type="Char" width="20" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="docArray" type="Char" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="IdsArray" type="Char" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="FormSearch" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

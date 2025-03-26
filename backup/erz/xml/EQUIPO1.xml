@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<relation name="xml/EQUIPO1.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="EMPLEADO" x="148px" y="159px">
+      <attributes>
+        <attribute name="ID_EMPLEADO" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DESCRIPCION" type="Varchar" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DEPARTAMENTO" x="404px" y="159px">
+      <attributes>
+        <attribute name="ID_DEPARTAMENTO" type="Integer" width="4" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE_DEPARTAMENTO" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CIUDAD" x="436px" y="318px">
+      <attributes>
+        <attribute name="NOMBRE_CIUDAD" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DIRECCION" type="Varchar" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="CODIGO POSTAL" type="Integer" width="8" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ID_CIUDAD" type="Integer" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="LOCACIONES" x="115px" y="338px">
+      <attributes>
+        <attribute name="ID_LOCACION" type="Integer" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NOMBRE_LOCACION" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="DEPARTAMENTO" child="EMPLEADO" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="CIUDAD" child="DEPARTAMENTO" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="LOCACIONES" child="CIUDAD" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<relation name="xml/Digi_ServiceTV.xml" pass="espe" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Contrato" x="31px" y="153px">
+      <attributes>
+        <attribute name="idContrato" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="tipoContrato" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fechaVencimiento" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cliente_DigiService" x="197px" y="134px">
+      <attributes>
+        <attribute name="idClienteDigiService" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreCliente" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Usuario_Digitv" x="208px" y="273px">
+      <attributes>
+        <attribute name="idUsuarioDigiTv" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreUsuario" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido1" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido2" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccionUsuario" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="emailUsuario" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tipoUsuario" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="idClienteDigiService" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Historial" x="35px" y="314px">
+      <attributes>
+        <attribute name="idHistorial" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="totalCasos" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="totalHoras" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Administrador" x="433px" y="541px">
+      <attributes>
+        <attribute name="idAdministrador" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreAdministrador" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido1" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido2" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Actividad_Caso" x="697px" y="316px">
+      <attributes>
+        <attribute name="idActividad" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fechaActividad" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Actividad_Investigacion" x="1003px" y="305px">
+      <attributes>
+        <attribute name="fuentesConsultadas" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Actividad_Llamada" x="1013px" y="385px">
+      <attributes>
+        <attribute name="inicioActividad" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="finalActividad" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="numeroTelefono" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Operador" x="204px" y="541px">
+      <attributes>
+        <attribute name="idOperador" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreOperador" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido1" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido2" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Tecnico" x="706px" y="146px">
+      <attributes>
+        <attribute name="idTecnico" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreTecnico" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido1" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido2" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Caso" x="502px" y="291px">
+      <attributes>
+        <attribute name="idCaso" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="fechaInicio" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fechaFinal" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="estado" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tipoCaso" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Base_De_Conocimiento" x="913px" y="143px">
+      <attributes>
+        <attribute name="idBase" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="casoRelacionado" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="solucion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Encargado_De_Tecnicos" x="717px" y="538px">
+      <attributes>
+        <attribute name="idEncargadoTecnicos" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreEncargado" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido1" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido2" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario_Digitv" child="Contrato" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="Usuario_Digitv" child="Cliente_DigiService" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario_Digitv" child="Historial" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Actividad_Caso" child="Actividad_Investigacion" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Actividad_Caso" child="Actividad_Llamada" card_parent="0N" card_child="0N" dependency="true"/>
+    <relationship parent="Administrador" child="Operador" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Tecnico" child="Actividad_Caso" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Tecnico" child="Caso" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Tecnico" child="Base_De_Conocimiento" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Encargado_De_Tecnicos" child="Caso" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Administrador" child="Encargado_De_Tecnicos" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Caso" child="Actividad_Caso" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario_Digitv" child="Caso" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

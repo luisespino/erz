@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<relation name="xml/fgdfgdfgdfg.xml" pass="dgdfgdf" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="PROFESOR" x="327px" y="278px">
+      <attributes>
+        <attribute name="ID_PROF" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="1" pk="true"/>
+        <attribute name="NOMBRE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="APELLIDO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="ESTUDIANTE" x="445px" y="141px">
+      <attributes>
+        <attribute name="MATRICULA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="1" pk="true"/>
+        <attribute name="NOMBRE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="APELLIDO" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CLASE" x="486px" y="392px">
+      <attributes>
+        <attribute name="ID_CLAS" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="1" pk="true"/>
+        <attribute name="NOMBRE_CLASE" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="CARRERA" x="639px" y="278px">
+      <attributes>
+        <attribute name="ID_CAR" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="1" pk="true"/>
+        <attribute name="NOMBRE_CARRERA" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="ESTUDIANTE" child="CARRERA" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="CARRERA" child="CLASE" card_parent="01" card_child="1N" dependency="true"/>
+    <relationship parent="PROFESOR" child="CLASE" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

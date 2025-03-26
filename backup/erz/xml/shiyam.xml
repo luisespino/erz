@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/shiyam.xml" pass="welcome" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="salary" x="247px" y="150px"/>
+    <entity name="people" x="356px" y="202px"/>
+  </entities>
+</relation>

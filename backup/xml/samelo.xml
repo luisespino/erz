@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<relation name="xml/samelo.xml" pass="null" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="E1" x="283px" y="159px">
+      <attributes>
+        <attribute name="e11" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="a1" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="E2" x="508px" y="162px">
+      <attributes>
+        <attribute name="e21" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="a2" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="E3" x="283px" y="246px">
+      <attributes>
+        <attribute name="a3" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="E4" x="506px" y="248px">
+      <attributes>
+        <attribute name="a4" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="E5" x="278px" y="326px">
+      <attributes/>
+    </entity>
+    <entity name="E6" x="506px" y="323px">
+      <attributes/>
+    </entity>
+    <entity name="E7" x="280px" y="381px">
+      <attributes/>
+    </entity>
+    <entity name="E8" x="513px" y="386px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="E1" child="E2" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="E4" child="E3" card_parent="1N" card_child="01" dependency="true"/>
+    <relationship parent="E5" child="E6" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="E8" child="E7" card_parent="1N" card_child="01" dependency="true"/>
+  </relationships>
+</relation>

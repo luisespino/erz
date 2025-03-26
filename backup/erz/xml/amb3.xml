@@ -1,0 +1,26 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<relation name="xml/Amb2.xml" pass="123" version="1.0" relationship_type="Participation">
+<entities>
+<entity name="Patient" x="303px" y="407px">
+<attributes>
+<attribute name="ID" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+<attribute name="LatLon" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+<attribute name="RequestTime" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+</attributes>
+</entity>
+<entity name="Web Service" x="536px" y="205px">
+<attributes/>
+</entity>
+<entity name="Ambulance" x="782px" y="432px">
+<attributes>
+<attribute name="AID" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+<attribute name="LatLon" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+<attribute name="Availability" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+</attributes>
+</entity>
+</entities>
+<relationships>
+<relationship parent="Web Service" child="Patient" card_parent="1N" card_child="11" dependency="true"/>
+<relationship parent="Web Service" child="Ambulance" card_parent="1N" card_child="1N" dependency="true"/>
+</relationships>
+</relation>

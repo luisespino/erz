@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<relation name="xml/aymee.xml" pass="aymee" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="SISTEMA DE BIBLIOTECA" x="250px" y="150px"/>
+    <entity name="AUTENTIFICACION" x="134px" y="224px"/>
+    <entity name="INGRESO" x="229px" y="290px"/>
+    <entity name="REGISTRO" x="231px" y="349px"/>
+  </entities>
+</relation>

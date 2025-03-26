@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<relation name="xml/Modelo-Inventario.xml" pass="1234" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Tipo_Joya" x="786px" y="470px">
+      <attributes>
+        <attribute name="ID_Tipo_Joya" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Informacion_Tipo_Joya" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Piedra" x="795px" y="307px">
+      <attributes>
+        <attribute name="ID_Piedra" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Informacion_Piedra" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Material" x="785px" y="173px">
+      <attributes>
+        <attribute name="ID_Material" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Informacion_Material" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Estado" x="580px" y="171px">
+      <attributes>
+        <attribute name="ID_Estado" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Informacion_Estado" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Pieza" x="578px" y="310px">
+      <attributes>
+        <attribute name="ID_Pieza" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Informacion_Pieza" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Consignatario" x="105px" y="310px">
+      <attributes>
+        <attribute name="ID_Consignatario" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Informacion_Consignatario" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Consignacion" x="362px" y="310px">
+      <attributes>
+        <attribute name="ID_Consignacion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha_Consignacion" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Consignacion" child="Pieza" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="Consignatario" child="Consignacion" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Estado" child="Pieza" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Material" child="Pieza" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Tipo_Joya" child="Pieza" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Pieza" child="Piedra" card_parent="0N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

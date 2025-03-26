@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/ort.xml" pass="12345" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Ort" x="250px" y="150px">
+      <attributes>
+        <attribute name="name" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

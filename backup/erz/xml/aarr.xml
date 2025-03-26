@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/aarr.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="alumno" x="249px" y="151px"/>
+    <entity name="docente" x="248px" y="204px"/>
+  </entities>
+</relation>

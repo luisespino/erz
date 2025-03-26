@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/carla.xml" pass="carla" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="DOCENTE" x="250px" y="150px">
+      <attributes>
+        <attribute name="CedulaDoc" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NombreDoc" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="MATERIA" x="587px" y="154px">
+      <attributes>
+        <attribute name="CodigoMat" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NombreMat" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="DOCENTE" child="MATERIA" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

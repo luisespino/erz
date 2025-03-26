@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<relation name="xml/frete.xml" pass="frete" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="82px" y="170px">
+      <attributes>
+        <attribute name="id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Contrase&#xF1;a" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="NombresApellidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="E-mail" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Escritor" x="323px" y="181px">
+      <attributes>
+        <attribute name="TextoSubidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Pais" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Idioma" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Texto" x="583px" y="174px">
+      <attributes>
+        <attribute name="Tipo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Titulo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Contenido" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Autor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Lector" x="293px" y="339px">
+      <attributes>
+        <attribute name="AutorPreferido" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="TipodeTextoPreferidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Escritor" child="Texto" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Lector" child="Escritor" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario" child="Escritor" card_parent="0N" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario" child="Lector" card_parent="0N" card_child="1N" dependency="true"/>
+    <relationship parent="Texto" child="Lector" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

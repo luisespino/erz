@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<relation name="xml/mdas.xml" pass="asdf" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="cumple" x="703px" y="246px"/>
+    <entity name="asdf" x="445px" y="304px"/>
+    <entity name="asdfasegaseg" x="514px" y="157px"/>
+  </entities>
+</relation>

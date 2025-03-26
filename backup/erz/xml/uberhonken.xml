@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<relation name="xml/uberhonken.xml" pass="Plant" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Human" x="250px" y="150px"/>
+    <entity name="Animal" x="250px" y="150px"/>
+    <entity name="Environment" x="250px" y="150px"/>
+  </entities>
+</relation>

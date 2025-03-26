@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<relation name="xml/nancy123.xml" pass="nancy123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Empresa" x="250px" y="150px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Usuario" x="452px" y="164px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Password" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Publicaciones" x="656px" y="198px">
+      <attributes>
+        <attribute name="Fecha_Publicaci&#xF3;n" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre_Empresa" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Actualizaciones" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Compras_Online" x="456px" y="404px">
+      <attributes>
+        <attribute name="Numero_Cuenta" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Empresa" child="Usuario" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario" child="Publicaciones" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Usuario" child="Compras_Online" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Publicaciones" child="Compras_Online" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

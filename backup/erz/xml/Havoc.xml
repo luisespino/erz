@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/Havoc.xml" pass="havoc" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Geladutomat" x="322px" y="242px">
+      <attributes>
+        <attribute name="Karte_eingef&#xFC;hrt" type="Integer" width="0" scale="1" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

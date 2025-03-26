@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<relation name="xml/examenMod.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Medico" x="250px" y="251px">
+      <attributes>
+        <attribute name="id_Med" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Paciente" x="506px" y="239px">
+      <attributes>
+        <attribute name="Id_Pac" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cita" x="383px" y="403px">
+      <attributes>
+        <attribute name="No_Cita" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Llegada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Salida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Paciente" child="Cita" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Medico" child="Cita" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/Ahmed.xml" pass="mathematiques" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Nada" x="250px" y="150px">
+      <attributes>
+        <attribute name="id" type="Varchar" width="11" scale="1" null="false" identity="false" seed="1" increment="2" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

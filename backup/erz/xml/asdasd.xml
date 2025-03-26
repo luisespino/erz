@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<relation name="xml/asdasd.xml" pass="1qdqsdas" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="da" x="989px" y="253px">
+      <attributes>
+        <attribute name="DaX" type="Integer" width="1200" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="dadada" x="920px" y="271px">
+      <attributes/>
+    </entity>
+    <entity name="Alumnos" x="980px" y="373px">
+      <attributes>
+        <attribute name="Matricula" type="Char" width="12" scale="0" null="false" identity="true" seed="123412412" increment="1" pk="true"/>
+        <attribute name="Nombre" type="Char" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellidos" type="Char" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materias" x="899px" y="170px">
+      <attributes>
+        <attribute name="Clave" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripci&#xF3;n" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="MateriaCursada" x="574px" y="296px">
+      <attributes>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="MateriaCursada" child="Materias" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="MateriaCursada" child="Alumnos" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

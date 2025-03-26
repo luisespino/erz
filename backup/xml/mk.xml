@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<relation name="xml/mk.xml" pass="mk" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="mj" x="370px" y="170px"/>
+    <entity name="ml" x="372px" y="226px"/>
+    <entity name="mn" x="440px" y="170px"/>
+  </entities>
+</relation>

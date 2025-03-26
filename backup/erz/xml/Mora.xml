@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/Mora.xml" pass="Mora" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Producto_CocaCola" x="280px" y="170px">
+      <attributes>
+        <attribute name="Id_ProductoCocaCola" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre_Producto" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Cliente" x="852px" y="167px">
+      <attributes>
+        <attribute name="Id_Cliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre_Cliente" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Cliente" child="Producto_CocaCola" card_parent="1N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<relation name="xml/aerolinea.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="vuelo" x="280px" y="345px">
+      <attributes>
+        <attribute name="numero" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Aeropuerto" x="429px" y="194px">
+      <attributes>
+        <attribute name="ciudad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="pais" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Aerolinea" x="98px" y="191px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Avion" x="276px" y="180px">
+      <attributes>
+        <attribute name="compa&#xF1;ia" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Tipo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="numero" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Asiento" x="104px" y="345px">
+      <attributes>
+        <attribute name="fila" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="letra" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="reserva" x="434px" y="350px">
+      <attributes>
+        <attribute name="clave" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="costo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="pasajero" x="279px" y="464px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="ciudad" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Aerolinea" child="Avion" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Aerolinea" child="vuelo" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="vuelo" child="Asiento" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Avion" child="vuelo" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Aeropuerto" child="vuelo" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="pasajero" child="reserva" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="vuelo" child="reserva" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

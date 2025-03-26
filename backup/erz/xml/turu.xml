@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/turu.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="alumno" x="275px" y="401px"/>
+  </entities>
+</relation>

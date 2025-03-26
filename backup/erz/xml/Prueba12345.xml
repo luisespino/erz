@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<relation name="xml/Prueba12345.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="221px" y="151px">
+      <attributes>
+        <attribute name="Matricula" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="629px" y="150px">
+      <attributes>
+        <attribute name="Id_materia" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="1" pk="true"/>
+        <attribute name="Nombre_materia" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Alumno_Materia" x="407px" y="154px">
+      <attributes>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Estado_mat" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Alumno" child="Alumno_Materia" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Materia" child="Alumno_Materia" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

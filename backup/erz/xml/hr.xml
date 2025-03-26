@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<relation name="xml/Hr.xml" pass="hr" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="tbl_expedientes" x="604px" y="179px">
+      <attributes>
+        <attribute name="id_paciente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Medicacion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tbl_medico_paciente" x="565px" y="413px">
+      <attributes>
+        <attribute name="id_asignacion" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="id_paciente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_medico" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_medico_temporal" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tbl_citas" x="166px" y="411px">
+      <attributes>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Hora" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Varchar" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_asignacion" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tbl_medicos" x="871px" y="193px">
+      <attributes>
+        <attribute name="id_medico" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Cedula" type="Varchar" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_P" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_M" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="F_nac" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="id_usuario" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tbl_usuarios" x="1117px" y="225px">
+      <attributes>
+        <attribute name="id_usuario" type="Varchar" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Password" type="Varchar" width="45" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="tipo_usuario" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tbl_tipo_usuario" x="1097px" y="405px">
+      <attributes>
+        <attribute name="id_tipo_usuario" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Descripcion" type="Varchar" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="tbl_pacientes" x="223px" y="150px">
+      <attributes>
+        <attribute name="id_paciente" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Varchar" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_P" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellido_M" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="F_nac" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Sexo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefono" type="Varchar" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="tbl_expedientes" child="tbl_pacientes" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="tbl_tipo_usuario" child="tbl_usuarios" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="tbl_medicos" child="tbl_usuarios" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="tbl_medico_paciente" child="tbl_medicos" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="tbl_medico_paciente" child="tbl_citas" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="tbl_medico_paciente" child="tbl_pacientes" card_parent="1N" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

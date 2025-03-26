@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/batsmandatabase.xml" pass="" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="bowler" x="522px" y="182px"/>
+  </entities>
+</relation>

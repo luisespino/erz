@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/r.xml" pass="rr" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="car" x="250px" y="150px"/>
+    <entity name="company" x="93px" y="149px"/>
+  </entities>
+</relation>

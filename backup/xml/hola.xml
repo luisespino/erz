@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/hola.xml" pass="yo" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="hlla" x="314px" y="175px"/>
+    <entity name="hell" x="261px" y="300px"/>
+  </entities>
+</relation>

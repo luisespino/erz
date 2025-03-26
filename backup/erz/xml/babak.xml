@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/babak.xml" pass="bagheri" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="stt" x="294px" y="219px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

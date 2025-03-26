@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/jh.xml" pass="null" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="h" x="250px" y="150px"/>
+    <entity name="lkj7" x="223px" y="239px"/>
+  </entities>
+</relation>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<relation name="xml/AeroPassager.xml" pass="lalo" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Datos_pasajero" x="267px" y="308px">
+      <attributes>
+        <attribute name="Id_cliente" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellidos" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Domicilio" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefonos" type="Integer" width="14" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Identificacion" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="NumMaletas" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="PesoMaletas" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="DescEquipaje" type="Char" width="60" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DAtos_personal" x="867px" y="369px">
+      <attributes>
+        <attribute name="Id_empleado" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellidos" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="DAtos_entrega" x="550px" y="382px">
+      <attributes>
+        <attribute name="Id_entrega" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellidos" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Domicilio" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Telefonos" type="Integer" width="14" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre_Aeropuerto" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Zona_Aeropuerto" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="datos_registro" x="551px" y="181px">
+      <attributes>
+        <attribute name="Id_Registro" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Ciudad" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="datos_registro" child="Datos_pasajero" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="datos_registro" child="DAtos_entrega" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="datos_registro" child="DAtos_personal" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<relation name="xml/ulasalle.xml" pass="ulasalle" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="alumno" x="90px" y="189px">
+      <attributes>
+        <attribute name="dni" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellidos" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nacimiento" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Carrera" x="305px" y="178px">
+      <attributes>
+        <attribute name="codigo" type="Integer" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Curso" x="878px" y="261px">
+      <attributes>
+        <attribute name="codigo" type="Integer" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="creditaje" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="semestre" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Grupo" x="851px" y="450px">
+      <attributes>
+        <attribute name="codigo" type="Integer" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+        <attribute name="etiqueta" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="capacidad" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="codigo_curso" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Matricula" x="499px" y="207px">
+      <attributes>
+        <attribute name="codigo" type="Char" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+        <attribute name="codigo_alumno_carrera" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="periodo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Alumno_Carrera" x="233px" y="378px">
+      <attributes>
+        <attribute name="dni_alumno" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="codigo_carrera" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="codigo" type="Integer" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Matricula_Detalle" x="558px" y="363px">
+      <attributes>
+        <attribute name="codigo" type="Integer" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+        <attribute name="codigo_matricula" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="codigo_grupo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="alumno" child="Alumno_Carrera" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="Carrera" child="Alumno_Carrera" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="Alumno_Carrera" child="Matricula" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="Matricula" child="Matricula_Detalle" card_parent="1N" card_child="11" dependency="true"/>
+    <relationship parent="Grupo" child="Matricula_Detalle" card_parent="0N" card_child="11" dependency="true"/>
+    <relationship parent="Curso" child="Grupo" card_parent="0N" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

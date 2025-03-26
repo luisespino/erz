@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<relation name="xml/aaaa.xml" pass=";lkj;lkj" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="agent" x="250px" y="149px">
+      <attributes>
+        <attribute name="agentID" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="overhead" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="skill" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="association" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Task" x="610px" y="151px">
+      <attributes>
+        <attribute name="taskID" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="priority" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="area" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="assignment" x="418px" y="149px">
+      <attributes>
+        <attribute name="agentID" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="taskID" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="cost" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="agent" child="assignment" card_parent="01" card_child="01" dependency="true"/>
+    <relationship parent="Task" child="assignment" card_parent="11" card_child="11" dependency="true"/>
+  </relationships>
+</relation>

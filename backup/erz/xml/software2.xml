@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<relation name="xml/software2.xml" pass="soft" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="alumno" x="194px" y="203px">
+      <attributes>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="idalu" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="curso" x="531px" y="239px">
+      <attributes>
+        <attribute name="idcur" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nivel" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="alumno" child="curso" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

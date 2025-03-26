@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<relation name="xml/invoicing.xml" pass="rob" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="customer" x="309px" y="221px">
+      <attributes>
+        <attribute name="cus_code" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="cus_name" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="invoice" x="586px" y="213px">
+      <attributes>
+        <attribute name="inv_number" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="inv_date" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cus_code" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="invoice_line" x="571px" y="396px">
+      <attributes>
+        <attribute name="inv_number_line" type="Char" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="line_units" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="line_price" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="product" x="303px" y="398px">
+      <attributes>
+        <attribute name="prod_code" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="prod_descript" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="prod_price" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="customer" child="invoice" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="invoice" child="invoice_line" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="product" child="invoice_line" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

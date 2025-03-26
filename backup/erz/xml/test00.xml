@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<relation name="xml/test00.xml" pass="00tset" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="ent00" x="235px" y="195px">
+      <attributes>
+        <attribute name="attr00" type="Char" width="12" scale="0" null="true" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="attr01" type="Varchar" width="12" scale="0" null="true" identity="true" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

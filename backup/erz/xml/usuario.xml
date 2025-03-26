@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<relation name="xml/usuario.xml" pass="usuario" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="309px" y="220px">
+      <attributes>
+        <attribute name="Matricula" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Carrera" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Adeudos" x="569px" y="214px">
+      <attributes>
+        <attribute name="Id_Libros_atrasados" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Cantidad_adeudada" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Fecha_prestamo" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Libros disponibles" x="582px" y="426px">
+      <attributes>
+        <attribute name="Id_Libro" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre_Libro" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Autor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Editorial" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Prestamo_Libros" x="277px" y="441px">
+      <attributes>
+        <attribute name="Id_Libro" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="N&#xFA;mero_Prestamo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Alumno" child="Adeudos" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Alumno" child="Prestamo_Libros" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Prestamo_Libros" child="Libros disponibles" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

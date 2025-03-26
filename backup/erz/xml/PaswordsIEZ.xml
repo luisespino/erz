@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<relation name="xml/PaswordsIEZ.xml" pass="master" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="265px" y="274px">
+      <attributes>
+        <attribute name="UserName" type="Char" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="pass" type="Char" width="8" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

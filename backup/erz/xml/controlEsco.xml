@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<relation name="xml/controlEsco.xml" pass="elticka10" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="alumno" x="36px" y="144px">
+      <attributes>
+        <attribute name="Matricula" type="" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materia" x="370px" y="134px">
+      <attributes>
+        <attribute name="idMateria" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Docente" x="210px" y="288px">
+      <attributes>
+        <attribute name="NumeroEmpleado" type="" width="5" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="" width="45" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Materia" child="alumno" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Materia" child="Docente" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Docente" child="alumno" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

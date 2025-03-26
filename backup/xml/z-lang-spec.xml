@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/z-lang-spec.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="course" x="436px" y="151px"/>
+    <entity name="student" x="250px" y="150px"/>
+  </entities>
+</relation>

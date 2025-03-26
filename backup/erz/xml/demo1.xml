@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<relation name="xml/demo1.xml" pass="demo1" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="cliente" x="-2px" y="215px">
+      <attributes>
+        <attribute name="rut" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="apellido" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="producto" x="224px" y="220px">
+      <attributes>
+        <attribute name="codigo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="precio" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="proveedor" x="454px" y="220px">
+      <attributes>
+        <attribute name="id_proveedor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="direccion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="proveedor" child="producto" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="cliente" child="producto" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

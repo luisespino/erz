@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<relation name="xml/Modelado uach.xml" pass="" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Alumno" x="250px" y="150px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="40" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Matricula" type="Float" width="20" scale="0" null="true" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="Apellidos" type="Char" width="40" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materias" x="387px" y="278px">
+      <attributes>
+        <attribute name="Clave" type="Char" width="20" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="Descripcion" type="Char" width="70" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Nombre" type="Char" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Materias cursadas" x="546px" y="168px">
+      <attributes>
+        <attribute name="Nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Materias cursadas" child="Materias cursadas" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Materias" child="Alumno" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Materias" child="Materias cursadas" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

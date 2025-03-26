@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<relation name="xml/winston.xml" pass="winston" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="cuenta_a_pagar" x="258px" y="196px">
+      <attributes>
+        <attribute name="proveedores" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="empresa" x="651px" y="203px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="cuenta_a_pagar" child="empresa" card_parent="0N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

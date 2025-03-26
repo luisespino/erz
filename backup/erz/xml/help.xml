@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/help.xml" pass="undefined" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="undefined" x="324px" y="240px"/>
+  </entities>
+</relation>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<relation name="xml/Webcast.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="480px" y="404px">
+      <attributes>
+        <attribute name="idUsuario" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Video" x="729px" y="242px">
+      <attributes>
+        <attribute name="idVideo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="propietario" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Canal" x="720px" y="610px">
+      <attributes>
+        <attribute name="idCanal" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreCanal" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Evento" x="991px" y="391px">
+      <attributes>
+        <attribute name="idEvento" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreEvento" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="fecha-hora" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="lugar" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Grupo" x="476px" y="200px">
+      <attributes>
+        <attribute name="idGrupo" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreGrupo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Rol" x="230px" y="399px">
+      <attributes>
+        <attribute name="idRol" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreRol" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Categoria" x="980px" y="191px">
+      <attributes>
+        <attribute name="idCategoria" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombreCategoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Video" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Usuario" child="Canal" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Canal" child="Video" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Evento" child="Video" card_parent="01" card_child="11" dependency="true"/>
+    <relationship parent="Usuario" child="Evento" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Usuario" child="Grupo" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Rol" child="Usuario" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="Categoria" child="Video" card_parent="1N" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

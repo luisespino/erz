@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<relation name="xml/usuario12.xml" pass="usuario12" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Banda_Video" x="533px" y="160px">
+      <attributes>
+        <attribute name="id_banda" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Precio" type="Float" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Video" x="554px" y="366px">
+      <attributes>
+        <attribute name="id_video" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Titulo" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Categoria" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Usuario" x="250px" y="150px">
+      <attributes>
+        <attribute name="id_usuario" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Nombre" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Fecha_nac" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="Direcci&#xF3;n" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Copia_Video" x="240px" y="371px">
+      <attributes>
+        <attribute name="id_copia_video" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Copia_Video" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Video" child="Copia_Video" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Banda_Video" child="Video" card_parent="11" card_child="0N" dependency="true"/>
+  </relationships>
+</relation>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<relation name="xml/Examen 1.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="M&#xE9;dico" x="420px" y="553px">
+      <attributes>
+        <attribute name="m&#xE9;dico_id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="medico_nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Paciente" x="414px" y="257px">
+      <attributes>
+        <attribute name="paciente_id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="paciente_nombre" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Graficas" x="1408px" y="800px">
+      <attributes>
+        <attribute name="graficas_id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Horas" x="1047px" y="784px">
+      <attributes>
+        <attribute name="hora_llegada" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_atenci&#xF3;n" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_partida" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="hora_id" type="Varchar" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="registro" x="443px" y="803px">
+      <attributes>
+        <attribute name="registro_id" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Graficas" child="Horas" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="M&#xE9;dico" child="registro" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="registro" child="Horas" card_parent="11" card_child="11" dependency="true"/>
+    <relationship parent="M&#xE9;dico" child="Paciente" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

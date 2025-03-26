@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<relation name="xml/demo_user.xml" pass="demo_user" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Usuario" x="240px" y="338px">
+      <attributes>
+        <attribute name="cIdUsuario" type="Char" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="cConstrasena" type="Char" width="8" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cNombre" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cPrimerAp" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cSegundoAp" type="Char" width="30" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dtNacimiento" type="DateTime" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cDomicilio" type="Char" width="200" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="lMoroso" type="Char" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="lVigente" type="Char" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dtInscripcion" type="DateTime" width="14" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="lBloqueado" type="Char" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Acceso" x="505px" y="387px">
+      <attributes>
+        <attribute name="cIdUsuario" type="Char" width="6" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="lBoqueado" type="Text" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="iNumIntento" type="Integer" width="1" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dtHrAcceso" type="DateTime" width="22" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="iIDBiblioteca" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Biblioteca" x="18px" y="147px">
+      <attributes>
+        <attribute name="iIDBiblioteca" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="cNombre" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cDomicilio" type="Char" width="200" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cHorario1" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cHorario2" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cHorario3" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Libro" x="14px" y="317px">
+      <attributes>
+        <attribute name="iIDLibro" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="cClaveLibro" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cClasificacion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="lDisponible" type="Text" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cIdUsuario" type="Char" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cUbicacion" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dtSalida" type="DateTime" width="14" scale="0" null="true" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dtDevuelve" type="DateTime" width="14" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cObservacion" type="Char" width="250" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cTitulo" type="Char" width="100" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cAutor" type="Char" width="200" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="iIdEditorial" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="lVigente" type="Char" width="2" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="iIDBiblioteca" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="LibroPrestamo" x="217px" y="150px">
+      <attributes>
+        <attribute name="iIDLibro" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="cIdUsuario" type="Char" width="6" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dtSalida" type="DateTime" width="14" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="dtDevuelto" type="DateTime" width="14" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cObservacion" type="Char" width="250" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Editorial" x="27px" y="613px">
+      <attributes>
+        <attribute name="iIdEditorial" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="cEditorial" type="Char" width="150" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="cPais" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Mayuscula" x="489px" y="154px">
+      <attributes>
+        <attribute name="cLetra" type="Char" width="1" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Digito" x="398px" y="151px">
+      <attributes>
+        <attribute name="iNumero" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Minuscula" x="607px" y="156px">
+      <attributes>
+        <attribute name="cLetra" type="Char" width="1" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Usuario" child="Acceso" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Editorial" child="Libro" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Usuario" child="Libro" card_parent="01" card_child="0N" dependency="true"/>
+    <relationship parent="Biblioteca" child="Usuario" card_parent="11" card_child="1N" dependency="true"/>
+    <relationship parent="Biblioteca" child="Libro" card_parent="11" card_child="0N" dependency="true"/>
+    <relationship parent="Libro" child="LibroPrestamo" card_parent="11" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

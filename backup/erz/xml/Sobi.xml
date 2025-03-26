@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<relation name="xml/Sobi.xml" pass="sdwz" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Catalogo" x="12px" y="340px"/>
+    <entity name="Canal" x="26px" y="426px"/>
+    <entity name="Paquete" x="91px" y="515px"/>
+    <entity name="Catalogo de Productos" x="5px" y="184px"/>
+    <entity name="Empresa Servicio" x="207px" y="406px"/>
+    <entity name="Contrato" x="250px" y="312px"/>
+    <entity name="Usuario" x="209px" y="259px"/>
+    <entity name="Tarjeta" x="319px" y="195px"/>
+    <entity name="Historial Compras" x="70px" y="125px"/>
+    <entity name="Factura" x="319px" y="122px"/>
+    <entity name="Linea Factura" x="468px" y="126px"/>
+    <entity name="CuentaUsuario" x="380px" y="258px"/>
+    <entity name="Registro de Uso" x="423px" y="359px"/>
+  </entities>
+</relation>

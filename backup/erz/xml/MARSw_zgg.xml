@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<relation name="xml/MARSw_zgg.xml" pass="zaretto" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Laboratorio" x="1053px" y="252px">
+      <attributes>
+        <attribute name="num_laboratorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="edificio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Computadora" x="756px" y="249px">
+      <attributes>
+        <attribute name="num_maquina" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="num_laboratorio" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="descripcion" type="Text" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Computadora" child="Laboratorio" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

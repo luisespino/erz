@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<relation name="xml/lols.xml" pass="asd" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="entidad" x="177px" y="260px">
+      <attributes>
+        <attribute name="matricula" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="otra" x="587px" y="249px">
+      <attributes>
+        <attribute name="clave" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="profes" x="386px" y="473px">
+      <attributes>
+        <attribute name="id" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="otra" child="entidad" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="otra" child="profes" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="entidad" child="profes" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

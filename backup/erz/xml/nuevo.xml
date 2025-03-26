@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/nuevo.xml" pass="matechafa" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="nueva" x="299px" y="199px"/>
+  </entities>
+</relation>

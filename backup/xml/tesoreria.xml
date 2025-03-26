@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<relation name="xml/tesoreria.xml" pass="mds2011" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="trajador" x="145px" y="162px">
+      <attributes>
+        <attribute name="cod_trabajador" type="Char" width="12" scale="0" null="false" identity="false" seed="1" increment="1" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

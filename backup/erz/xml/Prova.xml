@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<relation name="xml/Prova.xml" pass="Prova" version="1.0" relationship_type="Participation">
+  <entities>
+    <entity name="Libro" x="149px" y="197px"/>
+    <entity name="Autore" x="474px" y="211px"/>
+    <entity name="editore" x="344px" y="340px"/>
+  </entities>
+</relation>

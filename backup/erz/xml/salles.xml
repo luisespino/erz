@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<relation name="xml/salles.xml" pass="PrelenboB" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Salle" x="276px" y="220px">
+      <attributes>
+        <attribute name="no-etage" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="no-bat" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+        <attribute name="no-salle" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="Batiment" x="524px" y="215px">
+      <attributes>
+        <attribute name="no-bat" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+  </entities>
+</relation>

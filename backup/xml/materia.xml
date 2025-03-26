@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<relation name="xml/materia.xml" pass="1234" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="materia" x="451px" y="392px">
+      <attributes>
+        <attribute name="IDmat" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+      </attributes>
+    </entity>
+    <entity name="alumno" x="613px" y="251px">
+      <attributes/>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="alumno" child="materia" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

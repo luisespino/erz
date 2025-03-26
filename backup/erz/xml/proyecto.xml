@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<relation name="xml/Proyecto.xml" pass="123" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="usuario" x="288px" y="246px">
+      <attributes>
+        <attribute name="seudonimo" type="Char" width="10" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="contrasenia" type="Varchar" width="15" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="jerarquia" type="Char" width="25" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="nombre" type="Char" width="50" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="reporte" x="489px" y="251px">
+      <attributes>
+        <attribute name="reporte_ID" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="1" pk="true"/>
+        <attribute name="fecha" type="DateTime" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="delegacion_ID" type="Integer" width="12" scale="0" null="false" identity="true" seed="0" increment="0" pk="false"/>
+        <attribute name="estacion_ID" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+        <attribute name="comentario" type="Char" width="800" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="delegacion" x="747px" y="238px">
+      <attributes>
+        <attribute name="delegacion_ID" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="estacion" x="753px" y="376px">
+      <attributes>
+        <attribute name="estacion_ID" type="Integer" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="nombre" type="Char" width="20" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="estacion" child="reporte" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="delegacion" child="reporte" card_parent="1N" card_child="1N" dependency="true"/>
+    <relationship parent="usuario" child="reporte" card_parent="1N" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

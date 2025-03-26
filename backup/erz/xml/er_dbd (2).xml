@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="Logical" id="m.1">
+<xsd:complexType>
+<xsd:choice minOccurs="0" maxOccurs="unbounded">
+<xsd:element name="PROYECTO" type="PROYECTOTYPE" id="e.1"/>
+<xsd:element name="TIPO" type="TIPOTYPE" id="e.2"/>
+<xsd:element name="FASE" type="FASETYPE" id="e.3"/>
+<xsd:element name="TIPO_FASE" type="TIPO_FASETYPE" id="e.4"/>
+<xsd:element name="PROYECTO_TIPO" type="PROYECTO_TIPOTYPE" id="e.5"/>
+<xsd:element name="CUADRANTE" type="CUADRANTETYPE" id="e.6"/>
+<xsd:element name="AVANCE_CUADRANTE" type="AVANCE_CUADRANTETYPE" id="e.7"/>
+<xsd:element name="CONFIGURACION" type="CONFIGURACIONTYPE" id="e.8"/>
+<xsd:element name="empleado" type="empleadoTYPE" id="e.9"/>
+<xsd:element name="gasto" type="gastoTYPE" id="e.10"/>
+<xsd:element name="proveedor" type="proveedorTYPE" id="e.11"/>
+<xsd:element name="facturacion" type="facturacionTYPE" id="e.12"/>
+<xsd:element name="cliente" type="clienteTYPE" id="e.13"/></xsd:choice></xsd:complexType>
+<!-- Foreign Key Relationships -->
+<xsd:key name="FASE_PK" id="pk.3"><xsd:selector xpath=".//FASE"/><xsd:field xpath="@id_fase"/></xsd:key>
+<xsd:keyref name="TIPO_FASE_FK1" id="fk.1" refer="FASE_PK"><xsd:selector xpath=".//TIPO_FASE"/><xsd:field xpath="@fase_id"/></xsd:keyref>
+<xsd:key name="TIPO_PK" id="pk.2"><xsd:selector xpath=".//TIPO"/><xsd:field xpath="@id_tipo"/></xsd:key>
+<xsd:keyref name="TIPO_FASE_FK2" id="fk.2" refer="TIPO_PK"><xsd:selector xpath=".//TIPO_FASE"/><xsd:field xpath="@tipo_proyecto_id"/></xsd:keyref>
+<xsd:key name="PROYECTO_PK" id="pk.1"><xsd:selector xpath=".//PROYECTO"/><xsd:field xpath="@id_proyecto"/></xsd:key>
+<xsd:keyref name="PROYECTO_TIPO_FK3" id="fk.3" refer="PROYECTO_PK"><xsd:selector xpath=".//PROYECTO_TIPO"/><xsd:field xpath="@proyecto_id"/></xsd:keyref>
+<xsd:keyref name="PROYECTO_TIPO_FK4" id="fk.4" refer="TIPO_PK"><xsd:selector xpath=".//PROYECTO_TIPO"/><xsd:field xpath="@tipo_id"/></xsd:keyref>
+<xsd:key name="PROYECTO_TIPO_PK" id="pk.5"><xsd:selector xpath=".//PROYECTO_TIPO"/><xsd:field xpath="@id"/></xsd:key>
+<xsd:keyref name="AVANCE_CUADRANTE_FK5" id="fk.5" refer="PROYECTO_TIPO_PK"><xsd:selector xpath=".//AVANCE_CUADRANTE"/><xsd:field xpath="@pt_id"/></xsd:keyref>
+<xsd:key name="TIPO_FASE_PK" id="pk.4"><xsd:selector xpath=".//TIPO_FASE"/><xsd:field xpath="@id"/></xsd:key>
+<xsd:keyref name="AVANCE_CUADRANTE_FK6" id="fk.6" refer="TIPO_FASE_PK"><xsd:selector xpath=".//AVANCE_CUADRANTE"/><xsd:field xpath="@tpf_id"/></xsd:keyref>
+<xsd:key name="CUADRANTE_PK" id="pk.6"><xsd:selector xpath=".//CUADRANTE"/><xsd:field xpath="@id_cuadrante"/></xsd:key>
+<xsd:keyref name="AVANCE_CUADRANTE_FK7" id="fk.7" refer="CUADRANTE_PK"><xsd:selector xpath=".//AVANCE_CUADRANTE"/><xsd:field xpath="@cuadrante_id"/></xsd:keyref>
+<xsd:keyref name="CUADRANTE_FK8" id="fk.8" refer="PROYECTO_PK"><xsd:selector xpath=".//CUADRANTE"/><xsd:field xpath="@proyecto_id"/></xsd:keyref>
+<xsd:keyref name="gasto_FK9" id="fk.9" refer="PROYECTO_PK"><xsd:selector xpath=".//gasto"/><xsd:field xpath="@proyecto_id"/></xsd:keyref>
+<xsd:key name="proveedor_PK" id="pk.11"><xsd:selector xpath=".//proveedor"/><xsd:field xpath="@id_proveedor"/></xsd:key>
+<xsd:keyref name="gasto_FK10" id="fk.10" refer="proveedor_PK"><xsd:selector xpath=".//gasto"/><xsd:field xpath="@proveedor_id"/></xsd:keyref>
+<xsd:key name="cliente_PK" id="pk.13"><xsd:selector xpath=".//cliente"/><xsd:field xpath="@id_cliente"/></xsd:key>
+<xsd:keyref name="facturacion_FK11" id="fk.11" refer="cliente_PK"><xsd:selector xpath=".//facturacion"/><xsd:field xpath="@cliente_id"/></xsd:keyref>
+<xsd:keyref name="facturacion_FK12" id="fk.12" refer="PROYECTO_PK"><xsd:selector xpath=".//facturacion"/><xsd:field xpath="@proyecto_id"/></xsd:keyref>
+<!-- Unique Keys --><xsd:key name="AVANCE_CUADRANTE_PK" id="pk.7"><xsd:selector xpath=".//AVANCE_CUADRANTE"/><xsd:field xpath="@id"/></xsd:key><xsd:key name="CONFIGURACION_PK" id="pk.8"><xsd:selector xpath=".//CONFIGURACION"/><xsd:field xpath="@id_configuracion"/></xsd:key><xsd:key name="empleado_PK" id="pk.9"><xsd:selector xpath=".//empleado"/><xsd:field xpath="@id_empleado"/></xsd:key><xsd:key name="empleadoIX2" id="pk.9"><xsd:selector xpath=".//empleado"/><xsd:field xpath="@usuario"/></xsd:key><xsd:key name="gasto_PK" id="pk.10"><xsd:selector xpath=".//gasto"/><xsd:field xpath="@id_gasto"/></xsd:key><xsd:key name="facturacion_PK" id="pk.12"><xsd:selector xpath=".//facturacion"/><xsd:field xpath="@id_facturacion"/></xsd:key></xsd:element>
+<!-- Entities -->
+<xsd:complexType name="PROYECTOTYPE">
+
+<xsd:attribute name="fecha_fin" type="d.fecha_fin" id="a.5" use="optional">
+</xsd:attribute>
+<xsd:attribute name="gasto_proyectado" type="d.gasto_proyectado" id="a.6" use="optional">
+</xsd:attribute>
+<xsd:attribute name="cobro_proyectado" type="d.cobro_proyectado" id="a.7" use="optional">
+</xsd:attribute>
+<xsd:attribute name="factura_cobro" type="d.factura_cobro" id="a.8" use="optional">
+</xsd:attribute>
+<xsd:attribute name="fecha_facturacion" type="d.fecha_facturacion" id="a.9" use="optional">
+</xsd:attribute>
+<xsd:attribute name="img_ruta" type="d.img_ruta" id="a.10" use="optional">
+</xsd:attribute>
+<xsd:attribute name="creado_por" type="d.creado_por" id="a.11" use="optional">
+</xsd:attribute>
+<xsd:attribute name="creado_el" type="d.creado_el" id="a.12" use="optional" default="sysdate">
+</xsd:attribute>
+<xsd:attribute name="id_proyecto" type="d.id_proyecto" id="a.1" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre_proyecto" type="d.nombre_proyecto" id="a.2" use="optional">
+</xsd:attribute>
+<xsd:attribute name="estado" type="d.estado_2" id="a.3" use="optional" default="'ALTA'">
+</xsd:attribute>
+<xsd:attribute name="fecha_inicio" type="d.fecha_inicio" id="a.4" use="optional" default="sysdate">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="TIPOTYPE">
+
+<xsd:attribute name="id_tipo" type="d.id_tipo" id="a.13" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre" type="d.nombre_2" id="a.14" use="optional">
+</xsd:attribute>
+<xsd:attribute name="estado" type="d.estado" id="a.15" use="optional" default="'ALTA'">
+</xsd:attribute>
+<xsd:attribute name="creado_por" type="d.creado_por" id="a.16" use="optional">
+</xsd:attribute>
+<xsd:attribute name="creado_el" type="d.creado_el" id="a.17" use="optional" default="sysdate">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="FASETYPE">
+
+<xsd:attribute name="id_fase" type="d.id_fase" id="a.18" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre" type="d.nombre_2" id="a.19" use="optional">
+</xsd:attribute>
+<xsd:attribute name="estado" type="d.estado" id="a.20" use="optional" default="'ALTA'">
+</xsd:attribute>
+<xsd:attribute name="creado_por" type="d.creado_por" id="a.21" use="optional">
+</xsd:attribute>
+<xsd:attribute name="creado_el" type="d.creado_el" id="a.22" use="optional" default="sysdate">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="TIPO_FASETYPE">
+
+<xsd:attribute name="id" type="d.id" id="a.23" use="required">
+</xsd:attribute>
+<xsd:attribute name="fase_id" type="d.id_fase" id="a.24" use="optional">
+</xsd:attribute>
+<xsd:attribute name="tipo_proyecto_id" type="d.id_tipo" id="a.25" use="optional">
+</xsd:attribute>
+<xsd:attribute name="estado" type="d.estado" id="a.26" use="optional" default="'ALTA'">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="PROYECTO_TIPOTYPE">
+
+<xsd:attribute name="id" type="d.id" id="a.27" use="required">
+</xsd:attribute>
+<xsd:attribute name="proyecto_id" type="d.id_proyecto" id="a.28" use="optional">
+</xsd:attribute>
+<xsd:attribute name="tipo_id" type="d.id_tipo" id="a.29" use="optional">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="CUADRANTETYPE">
+
+<xsd:attribute name="id_cuadrante" type="d.id_cuadrante" id="a.30" use="required">
+</xsd:attribute>
+<xsd:attribute name="proyecto_id" type="d.id_proyecto" id="a.31" use="optional">
+</xsd:attribute>
+<xsd:attribute name="cuadrante_no" type="d.cuadrante_no" id="a.32" use="optional">
+</xsd:attribute>
+<xsd:attribute name="mts_planta_cuadrante" type="d.mts_planta_cuadrante" id="a.33" use="optional">
+</xsd:attribute>
+<xsd:attribute name="homep_cuadrante" type="d.homep_cuadrante" id="a.34" use="optional">
+</xsd:attribute>
+<xsd:attribute name="comercios_cuadrante" type="d.comercios_cuadrante" id="a.35" use="optional">
+</xsd:attribute>
+<xsd:attribute name="aptos_cuadrante" type="d.aptos_cuadrante" id="a.36" use="optional">
+</xsd:attribute>
+<xsd:attribute name="brazos_cuadrante" type="d.brazos_cuadrante" id="a.37" use="optional">
+</xsd:attribute>
+<xsd:attribute name="cruces_cuadrante" type="d.cruces_cuadrante" id="a.38" use="optional">
+</xsd:attribute>
+<xsd:attribute name="estado" type="d.estado" id="a.39" use="optional" default="'ALTA'">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="AVANCE_CUADRANTETYPE">
+
+<xsd:attribute name="id" type="d.id" id="a.40" use="required">
+</xsd:attribute>
+<xsd:attribute name="pt_id" type="d.id" id="a.41" use="optional">
+</xsd:attribute>
+<xsd:attribute name="tpf_id" type="d.id" id="a.42" use="optional">
+</xsd:attribute>
+<xsd:attribute name="cuadrante_id" type="d.id_cuadrante" id="a.43" use="optional">
+</xsd:attribute>
+<xsd:attribute name="porcentaje" type="d.porcentaje" id="a.44" use="optional" default="0">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="CONFIGURACIONTYPE">
+
+<xsd:attribute name="id_configuracion" type="d.id_configuracion" id="a.45" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre" type="d.nombre_2" id="a.46" use="optional">
+</xsd:attribute>
+<xsd:attribute name="valor" type="d.valor_2" id="a.47" use="optional">
+</xsd:attribute>
+<xsd:attribute name="fecha_creacion" type="d.fecha_creacion" id="a.48" use="optional" default="sysdate">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="empleadoTYPE">
+
+<xsd:attribute name="nit" type="d.nit" id="a.56" use="optional">
+</xsd:attribute>
+<xsd:attribute name="sexo" type="d.sexo" id="a.57" use="optional">
+</xsd:attribute>
+<xsd:attribute name="email" type="d.email" id="a.58" use="optional">
+</xsd:attribute>
+<xsd:attribute name="usuario" type="d.usuario" id="a.59" use="required">
+</xsd:attribute>
+<xsd:attribute name="pass" type="d.pass" id="a.60" use="required">
+</xsd:attribute>
+<xsd:attribute name="id_empleado" type="d.id_empleado" id="a.49" use="required">
+</xsd:attribute>
+<xsd:attribute name="primer_nombre" type="d.primer_nombre" id="a.50" use="required">
+</xsd:attribute>
+<xsd:attribute name="segundo_nombre" type="d.segundo_nombre" id="a.51" use="optional">
+</xsd:attribute>
+<xsd:attribute name="primer_apellido" type="d.primer_apellido" id="a.52" use="optional">
+</xsd:attribute>
+<xsd:attribute name="segundo_apellido" type="d.segundo_apellido" id="a.53" use="optional">
+</xsd:attribute>
+<xsd:attribute name="apellido_casada" type="d.apellido_casada" id="a.54" use="optional">
+</xsd:attribute>
+<xsd:attribute name="dpi" type="d.dpi" id="a.55" use="optional">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="gastoTYPE">
+
+<xsd:attribute name="id_gasto" type="d.id_gasto" id="a.61" use="required">
+</xsd:attribute>
+<xsd:attribute name="proyecto_id" type="d.id_proyecto" id="a.62" use="optional">
+</xsd:attribute>
+<xsd:attribute name="proveedor_id" type="d.id_proveedor" id="a.63" use="optional">
+</xsd:attribute>
+<xsd:attribute name="nit" type="d.nit" id="a.64" use="optional">
+</xsd:attribute>
+<xsd:attribute name="fecha" type="d.fecha" id="a.65" use="optional">
+</xsd:attribute>
+<xsd:attribute name="factura" type="d.factura" id="a.66" use="optional">
+</xsd:attribute>
+<xsd:attribute name="valor" type="d.valor" id="a.67" use="optional">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="proveedorTYPE">
+
+<xsd:attribute name="id_proveedor" type="d.id_proveedor" id="a.68" use="required">
+</xsd:attribute>
+<xsd:attribute name="nit" type="d.nit" id="a.69" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre" type="d.nombre" id="a.70" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre_comercial" type="d.nombre_comercial" id="a.71" use="required">
+</xsd:attribute>
+<xsd:attribute name="telefono" type="d.telefono" id="a.72" use="optional">
+</xsd:attribute>
+<xsd:attribute name="direccion" type="d.direccion" id="a.73" use="optional">
+</xsd:attribute>
+<xsd:attribute name="contacto" type="d.contacto" id="a.74" use="optional">
+</xsd:attribute>
+<xsd:attribute name="tel_contacto" type="d.tel_contacto" id="a.75" use="optional">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="facturacionTYPE">
+
+<xsd:attribute name="id_facturacion" type="d.id_facturacion" id="a.76" use="required">
+</xsd:attribute>
+<xsd:attribute name="cliente_id" type="d.id_cliente" id="a.77" use="required">
+</xsd:attribute>
+<xsd:attribute name="proyecto_id" type="d.id_proyecto" id="a.78" use="required">
+</xsd:attribute>
+<xsd:attribute name="fecha" type="d.fecha" id="a.79" use="required">
+</xsd:attribute>
+<xsd:attribute name="no_factura" type="d.no_factura" id="a.80" use="required">
+</xsd:attribute>
+<xsd:attribute name="serie" type="d.serie" id="a.81" use="required">
+</xsd:attribute>
+<xsd:attribute name="valor" type="d.valor" id="a.82" use="required">
+</xsd:attribute></xsd:complexType>
+<xsd:complexType name="clienteTYPE">
+
+<xsd:attribute name="id_cliente" type="d.id_cliente" id="a.83" use="required">
+</xsd:attribute>
+<xsd:attribute name="nit" type="d.nit" id="a.84" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre" type="d.nombre" id="a.85" use="required">
+</xsd:attribute>
+<xsd:attribute name="nombre_comercial" type="d.nombre_comercial" id="a.86" use="required">
+</xsd:attribute>
+<xsd:attribute name="telefono" type="d.telefono" id="a.87" use="optional">
+</xsd:attribute>
+<xsd:attribute name="direccion" type="d.direccion" id="a.88" use="optional">
+</xsd:attribute>
+<xsd:attribute name="contacto" type="d.contacto" id="a.89" use="optional">
+</xsd:attribute>
+<xsd:attribute name="tel_contacto" type="d.tel_contacto" id="a.90" use="optional">
+</xsd:attribute></xsd:complexType>
+<!-- Domains -->
+<xsd:simpleType name="d.id_cliente"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.nit"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.nombre"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.nombre_2"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.nombre_comercial"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.telefono"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.direccion"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.contacto"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.tel_contacto"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.id_facturacion"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.fecha"><xsd:restriction base="xsd:date"/></xsd:simpleType>
+<xsd:simpleType name="d.no_factura"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.serie"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.valor"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.valor_2"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.id_proveedor"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.id_gasto"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.factura"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.id_empleado"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.primer_nombre"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.segundo_nombre"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.primer_apellido"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.segundo_apellido"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.apellido_casada"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.dpi"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.sexo"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.email"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.usuario"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.pass"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.id_configuracion"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.fecha_creacion"><xsd:restriction base="xsd:date"/></xsd:simpleType>
+<xsd:simpleType name="d.id"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.porcentaje"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.id_cuadrante"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.cuadrante_no"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.mts_planta_cuadrante"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.homep_cuadrante"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.comercios_cuadrante"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.aptos_cuadrante"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.brazos_cuadrante"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.cruces_cuadrante"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.estado"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.estado_2"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.id_fase"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.creado_por"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.creado_el"><xsd:restriction base="xsd:date"/></xsd:simpleType>
+<xsd:simpleType name="d.id_tipo"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.fecha_fin"><xsd:restriction base="xsd:date"/></xsd:simpleType>
+<xsd:simpleType name="d.gasto_proyectado"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.cobro_proyectado"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.factura_cobro"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.fecha_facturacion"><xsd:restriction base="xsd:date"/></xsd:simpleType>
+<xsd:simpleType name="d.img_ruta"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.id_proyecto"><xsd:restriction base="xsd:decimal"/></xsd:simpleType>
+<xsd:simpleType name="d.nombre_proyecto"><xsd:restriction base="xsd:string"/></xsd:simpleType>
+<xsd:simpleType name="d.fecha_inicio"><xsd:restriction base="xsd:date"/></xsd:simpleType></xsd:schema>

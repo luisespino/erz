@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<relation name="xml/alfredo.xml" pass="alfredo" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Biblioteca" x="301px" y="152px">
+      <attributes>
+        <attribute name="Ubicacion" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+    <entity name="Libro" x="318px" y="255px">
+      <attributes>
+        <attribute name="Titulo" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="true"/>
+        <attribute name="Autor" type="Char" width="12" scale="0" null="false" identity="false" seed="0" increment="0" pk="false"/>
+      </attributes>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship parent="Libro" child="Biblioteca" card_parent="01" card_child="1N" dependency="true"/>
+  </relationships>
+</relation>

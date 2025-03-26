@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/funelm.xml" pass="null" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Fun" x="250px" y="150px"/>
+    <entity name="Elm" x="354px" y="148px"/>
+  </entities>
+</relation>

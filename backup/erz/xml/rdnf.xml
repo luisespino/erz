@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<relation name="xml/rdnf.xml" pass="1234" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Funcionario" x="246px" y="246px"/>
+    <entity name="Depto" x="740px" y="289px"/>
+  </entities>
+</relation>

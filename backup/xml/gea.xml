@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<relation name="xml/gea.xml" pass="gea2011" version="1.0" relationship_type="Opposite">
+  <entities>
+    <entity name="Instrumento" x="241px" y="235px"/>
+  </entities>
+</relation>
