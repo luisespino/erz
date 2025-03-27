@@ -2,7 +2,14 @@ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.mi
 
 // Esperamos que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-    mermaid.initialize({ startOnLoad: false });
+    mermaid.initialize({
+        startOnLoad: false,
+        themeVariables: {
+            // Cambiar el tamaño de la fuente global
+            fontFamily: 'Arial, sans-serif', // Puedes cambiar la fuente si lo deseas
+            fontSize: '12px',
+        }
+    });
 
     // Configurar el evento de clic en el botón para generar el diagrama
     document.getElementById('generate-btn').addEventListener('click', async function() {

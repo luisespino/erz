@@ -1,0 +1,5 @@
+.mermaid {
+    font-size: 10px; /* Disminuye el tamaño de la fuente */
+    transform: scale(1); /* Reduce el tamaño en un 80% */
+    transform-origin: 0 0; /* Asegura que el diagrama se escala desde la esquina superior izquierda */
+}
