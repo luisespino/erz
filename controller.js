@@ -55,3 +55,21 @@ document.getElementById('open-btn').addEventListener('click', () => {
         document.getElementById('mermaid-code').value = content;
     });
 });
+
+document.getElementById('transform-btn').addEventListener('click', () => {
+    // Obtener el código Mermaid del área de texto
+    const input = document.getElementById('mermaid-code').value;
+
+    try {
+        // Usar la función parse de mermaid para obtener el AST
+        const ast = mermaid.parse(input);
+
+        // Mostrar el AST en el div con id 'ast'
+        document.getElementById('ast').textContent = JSON.stringify(ast, null, 2);
+    } catch (error) {
+        console.error("Error al procesar el código Mermaid:", error);
+
+        // Mostrar un mensaje de error en el div
+        document.getElementById('ast').textContent = "Error in processing syntax... " + error.message;
+    }
+});
