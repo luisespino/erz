@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    mermaid.contentLoaded();
+
     // Configurar el evento de clic en el botón para generar el diagrama
     document.getElementById('generate-btn').addEventListener('click', async function() {
         const code = document.getElementById('mermaid-code').value;
@@ -31,5 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
         await mermaid.run({
             nodes: [diagram],  // Pasamos el nodo del nuevo <pre> que contiene el código
         });
+    });
+});
+
+document.getElementById('save-btn').addEventListener('click', () => {
+    const code = document.getElementById('mermaid-code').value;
+    saveFile(code, 'mermaid-code.txt');
+});
+
+document.getElementById('open-btn').addEventListener('click', () => {
+    openFile((content) => {
+        document.getElementById('mermaid-code').value = content;
     });
 });
