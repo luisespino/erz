@@ -37,15 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Evento del botón de guardar
 document.getElementById('save-btn').addEventListener('click', () => {
-    const code = document.getElementById('mermaid-code').value;
+    const code = document.getElementById('mermaid-code').value;  // Contenido del código
     let filename = prompt("Enter filename:", "er.txt");  // Preguntar el nombre del archivo
 
-    if (!filename) {  // Si el usuario cancela o no ingresa nada, usar el valor por defecto
-        filename = "er.txt";
+    // Si el usuario cancela (filename es null), no hacer nada
+    if (filename === null) {
+        return;  // Salir de la función sin hacer nada
     }
 
-    saveFile(code, filename); 
+    saveFile(code, filename);  // Llamamos a la función para guardar el archivo
 });
 
 document.getElementById('open-btn').addEventListener('click', () => {
