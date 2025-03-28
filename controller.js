@@ -39,7 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('save-btn').addEventListener('click', () => {
     const code = document.getElementById('mermaid-code').value;
-    saveFile(code, 'mermaid-code.txt');
+    let filename = prompt("Enter filename:", "er.txt");  // Preguntar el nombre del archivo
+
+    if (!filename) {  // Si el usuario cancela o no ingresa nada, usar el valor por defecto
+        filename = "er.txt";
+    }
+
+    saveFile(code, filename); 
 });
 
 document.getElementById('open-btn').addEventListener('click', () => {
