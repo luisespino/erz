@@ -1,5 +1,6 @@
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-import { saveFile, openFile } from './model.mjs';
+import { saveFile, openFile } from './model/io.mjs';
+import { StartRules, SyntaxError, parse } from './model/parser.mjs'
 
 // Esperamos que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
