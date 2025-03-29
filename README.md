@@ -17,15 +17,9 @@
 
 <rel_label> ::= <ID>
 
-<card_left> ::= '|o' 
-            | '||' 
-            | '}o' 
-            | '}|'
+<card_left> ::= '|o' | '||' | '}o' | '}|'
 
-<card_right> ::= 'o|' 
-             | '||' 
-             | 'o{' 
-             | '|{'
+<card_right> ::= 'o|' | '||' | 'o{' | '|{'
 
 <direction> ::= 'DIRECTION' ('TB' | 'BT' | 'LR' | 'RL')
             | 'direction' ('tb' | 'bt' | 'lt' | 'rl')
