@@ -2,6 +2,8 @@
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import erDiagramListener from './erDiagramListener.js';
+import erDiagramVisitor from './erDiagramVisitor.js';
+
 const serializedATN = [4,1,26,91,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,
 2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,
 13,7,13,1,0,1,0,5,0,31,8,0,10,0,12,0,34,9,0,1,0,1,0,1,1,1,1,1,1,3,1,41,8,
@@ -608,6 +610,14 @@ class StartContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitStart(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -649,6 +659,14 @@ class LineContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof erDiagramListener ) {
 	        listener.exitLine(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitLine(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -701,6 +719,14 @@ class RelationContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitRelation(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -734,6 +760,14 @@ class EntContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof erDiagramListener ) {
 	        listener.exitEnt(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitEnt(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -775,6 +809,14 @@ class RelContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitRel(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -810,6 +852,14 @@ class Rel_labelContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitRel_label(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -840,6 +890,14 @@ class Card_leftContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof erDiagramListener ) {
 	        listener.exitCard_left(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitCard_left(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -874,6 +932,14 @@ class Card_rightContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitCard_right(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -904,6 +970,14 @@ class DirectionContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof erDiagramListener ) {
 	        listener.exitDirection(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitDirection(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -952,6 +1026,14 @@ class EntityContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitEntity(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -995,6 +1077,14 @@ class AttrContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitAttr(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -1030,6 +1120,14 @@ class TypeContext extends antlr4.ParserRuleContext {
 		}
 	}
 
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitType(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
+	}
+
 
 }
 
@@ -1063,6 +1161,14 @@ class NameContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof erDiagramListener ) {
 	        listener.exitName(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitName(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
@@ -1102,6 +1208,14 @@ class KeyContext extends antlr4.ParserRuleContext {
 	    if(listener instanceof erDiagramListener ) {
 	        listener.exitKey(this);
 		}
+	}
+
+	accept(visitor) {
+	    if ( visitor instanceof erDiagramVisitor ) {
+	        return visitor.visitKey(this);
+	    } else {
+	        return visitor.visitChildren(this);
+	    }
 	}
 
 
