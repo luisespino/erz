@@ -56,20 +56,30 @@ document.getElementById('open-btn').addEventListener('click', () => {
     });
 });
 
-document.getElementById('transform-btn').addEventListener('click', () => {
+document.getElementById('transform-btn').addEventListener('click', async () => {
     // Obtener el código Mermaid del área de texto
     const input = document.getElementById('mermaid-code').value;
 
     try {
-        // Usar la función parse de mermaid para obtener el AST
-        const ast = mermaid.parse(input);
+        // Usar mermaid.mermaidAPI.getDiagramFromText para obtener la estructura interna
+        const { diagram, parser } = await mermaid.mermaidAPI.getDiagramFromText(input);
 
-        // Mostrar el AST en el div con id 'ast'
-        document.getElementById('ast').textContent = JSON.stringify(ast, null, 2);
+        // Extraer nodos y relaciones usando la API de Mermaid
+        const edges = diagram.getEdges();  // Esto debería devolver los bordes
+        const vertices = diagram.getVertices();  // Esto debería devolver los vértices
+
+        // Mostrar los bordes y vértices en el div 'ast'
+        const result = {
+            edges: edges,
+            vertices: vertices,
+        };
+
+        // Mostrar el resultado
+        document.getElementById('ast').textContent = JSON.stringify(result, null, 2);
     } catch (error) {
         console.error("Error al procesar el código Mermaid:", error);
 
         // Mostrar un mensaje de error en el div
-        document.getElementById('ast').textContent = "Error in processing syntax... " + error.message;
+        document.getElementById('ast').textContent = "Error al procesar el código Mermaid: " + error.message;
     }
 });
