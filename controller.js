@@ -1,6 +1,8 @@
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 import { saveFile, openFile } from './model/io.mjs';
 import { StartRules, SyntaxError, parse } from './model/parser.mjs'
+import { zLatex } from './model/z-latex.mjs'
+
 
 // Esperamos que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
@@ -27,15 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const diagram = document.createElement('pre');
         diagram.classList.add('mermaid');
         diagram.innerHTML = code;
-
+        
         // Agregar el nuevo <pre> al body
-        document.body.appendChild(diagram);
+        document.getElementById("erDiagram").appendChild(diagram);
 
         // Procesar el diagrama usando mermaid.run()
         await mermaid.run({
             nodes: [diagram],  // Pasamos el nodo del nuevo <pre> que contiene el código
         });
     });
+
+    document.getElementById('generate-btn').click();
+    document.getElementById('translate-btn').click(); 
 });
 
 // Evento del botón de guardar
@@ -57,30 +62,9 @@ document.getElementById('open-btn').addEventListener('click', () => {
     });
 });
 
-document.getElementById('transform-btn').addEventListener('click', async () => {
+document.getElementById('translate-btn').addEventListener('click', async () => {
     // Obtener el código Mermaid del área de texto
     const input = document.getElementById('mermaid-code').value;
-
-    try {
-        // Usar mermaid.mermaidAPI.getDiagramFromText para obtener la estructura interna
-        const { diagram, parser } = await mermaid.mermaidAPI.getDiagramFromText(input);
-
-        // Extraer nodos y relaciones usando la API de Mermaid
-        const edges = diagram.getEdges();  // Esto debería devolver los bordes
-        const vertices = diagram.getVertices();  // Esto debería devolver los vértices
-
-        // Mostrar los bordes y vértices en el div 'ast'
-        const result = {
-            edges: edges,
-            vertices: vertices,
-        };
-
-        // Mostrar el resultado
-        document.getElementById('ast').textContent = JSON.stringify(result, null, 2);
-    } catch (error) {
-        console.error("Error al procesar el código Mermaid:", error);
-
-        // Mostrar un mensaje de error en el div
-        document.getElementById('ast').textContent = "Error al procesar el código Mermaid: " + error.message;
-    }
+    const zLatexDiv = document.getElementById('zLatex');
+    zLatexDiv.value = zLatex(parse(input));
 });

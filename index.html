@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Z Notation Generator from an ERD</h1>
+    <div class="container">
+        <h1>Z Notation Generator from an ERD</h1>
 
-    <!-- Textarea para ingresar código Mermaid -->
-    <label for="mermaid-code">ER Mermaid Syntax:</label><br>
-    <textarea id="mermaid-code" rows="10" cols="50">
+        <!-- Contenedor para los textareas -->
+        <div class="textarea-container">
+            <!-- Textarea para ingresar código Mermaid -->
+            <div class="textarea-wrapper">
+                <label for="mermaid-code">ER Mermaid Syntax:</label><br>
+                <textarea id="mermaid-code" rows="10" cols="50">
 erDiagram
     direction LR
     CUSTOMER ||--o{ ORDER : places
@@ -31,15 +35,27 @@ erDiagram
         float pricePerUnit
     }
     </textarea>
-    <br>
+            </div>
 
-    <!-- Botón para generar el diagrama -->
-    <button id="generate-btn">Draw</button>
-    <button id="save-btn">Save</button>
-    <button id="open-btn">Open</button>
-    <button id="transform-btn">Transform</button>
-    
+            <!-- Segundo Textarea (para otro propósito, como la visualización o modificación) -->
+            <div class="textarea-wrapper">
+                <label for="zLatex">The Z notation in LaTeX style:</label><br>
+                <textarea id="zLatex" rows="10" cols="50"></textarea>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div style="text-align: center;">
+            <button id="generate-btn">Draw</button>
+            <button id="save-btn">Save</button>
+            <button id="open-btn">Open</button>
+            <button id="translate-btn">Translate to Z</button>
+            <button id="download-btn">Download PDF</button>
+        </div>
+
+        <div id="erDiagram"></div>
+    </div>
+
     <script type="module" type="text/javascript" src="controller.js"></script>
-    <div id="ast"></div>
 </body>
 </html>
