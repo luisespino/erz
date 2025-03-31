@@ -58,3 +58,39 @@
                   | <digit>
 
 <digit> ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+```
+
+## Install Fuzz Type-Checker
+
+Install dependencies(for Arch Linux, modify pacman for other distributions):
+```
+sudo pacman -S texlive-core base-devel
+```
+
+Clone the Fuzz Repo:
+```
+git clone https://github.com/Spivoxity/fuzz.git
+cd fuzz
+```
+
+Configure the installation:
+```
+./configure
+```
+
+Build the type-checker:
+```
+make
+```
+
+Install the type-cheker:
+```
+sudo make install
+```
+
+Save the LaTeX format in a file (z.tex) and Check:
+```
+fuzz z.tex
+```
+
+If no errors occur, everything is all right!

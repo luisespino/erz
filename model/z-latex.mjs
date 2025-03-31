@@ -1,3 +1,12 @@
+String.prototype.escapeUpper = function() {
+    return this.replace(/[-_]/g, '\\_').toUpperCase();
+};
+
+String.prototype.escapeLower = function() {
+    return this.replace(/[-_]/g, '\\_').toLowerCase();
+};
+
+
 export function zLatex(data) {
     let z = '\\documentstyle[fuzz]{article}\r\n'
     z += '\\begin{document}\r\n';
@@ -8,28 +17,40 @@ export function zLatex(data) {
     z += '\\subsection*{Specification of entities and their attributes}';
     for (let entityName in data.entities) {
         const entity = data.entities[entityName];
-        z += `\\subsubsection*{Entity: ${entity.name.toUpperCase()}}\r\n`;
+        z += `\\subsubsection*{Entity: ${entity.name.escapeUpper()}}\r\n`;
 
         // basic type definition
         z += `Basic type definition:\r\n`;
         z += '\\begin{zed}\r\n\t[';
         entity.attr.forEach((attr, index) => {
-            z += attr.name;
+            z += attr.name.escapeUpper();
             if (index < entity.attr.length - 1) z += ', ';
         });
         z += ']\r\n\\end{zed}\r\n';
 
-        // basic type definition
+        // Schema of entity information
         z += `Schema of entity information:\r\n`;
-        z += `\\begin{schema}{${entity.name.toUpperCase()}\\_INFORMATION}\r\n`;
+        z += `\\begin{schema}{${entity.name.escapeUpper()}\\_INFORMATION}\r\n`;
         entity.attr.forEach((attr, index) => {
-            if (!attr.key) z += `\t${attr.name}\\\\\r\n`;
+            if (!attr.key) z += `\t${attr.name.escapeLower()}: ${attr.name.escapeUpper()}\\\\\r\n`;
         });
-        z += '\\end{schema}\r\n';        
+        z += '\\end{schema}\r\n';
+        
+        // Schema of entity instance
+        let key = '';
+        z += `Schema of entity instance:\r\n`;
+        z += `\\begin{schema}{${entity.name.escapeUpper()}\\_INSTANCE}\r\n`;
+        entity.attr.forEach((attr, index) => {
+            if (attr.key && attr.key === 'PK') {
+                key = attr.name;
+            } 
+        });
+        z += `${key.escapeLower()}: \\power ${key.escapeUpper()}\\\\\r\n`;
+        z += `${entity.name.escapeLower()}\\_information: ${key.escapeUpper()} \\pfun ${entity.name.escapeUpper()}\\_INFORMATION\r\n`;
+        z += '\\where\r\n';
+        z += `${key.escapeLower()} = \\dom ${entity.name.escapeLower()}\\_information\r\n`;
+        z += '\\end{schema}\r\n';
     }
-
     z += '\\end{document}\r\n'
-
-    
     return z;
 }

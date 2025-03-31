@@ -71,8 +71,9 @@ name
   = ID
 
 key
-  = "PK"i
-  / "FK"i
+  = "PK"i { return 'PK';}
+  / "FK"i { return 'FK';}
+  / "UK"i { return 'UK';}
 
 comment
   /* 
