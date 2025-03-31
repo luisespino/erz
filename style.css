@@ -97,3 +97,32 @@ button:hover {
     font-size: 0.9rem;
     color: #444;
 }
+
+#zLatex {
+    position: relative; /* Para poder posicionar el botón dentro del textarea */
+    display: inline-block;
+}
+
+.textarea-container-with-btn {
+    position: relative;
+}
+
+/* Estilo del botón dentro del textarea */
+.copy-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background-color: #5d4b8d; /* Color lila */
+    color: #fff;
+    border: none;
+    padding: 6px 15px;
+    font-size: 60%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect para el botón */
+.copy-btn:hover {
+    background-color: #3d1c46; /* Un tono más oscuro de lila */
+}

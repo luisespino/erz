@@ -68,3 +68,14 @@ document.getElementById('translate-btn').addEventListener('click', async () => {
     const zLatexDiv = document.getElementById('zLatex');
     zLatexDiv.value = zLatex(parse(input));
 });
+
+
+document.getElementById('copy-btn').addEventListener('click', () => {
+    const textarea = document.getElementById('zLatex').value;
+
+    navigator.clipboard.writeText(textarea).then(() => {
+    }).catch(err => {
+        console.error('Copy error: ', err);
+    });
+
+});
