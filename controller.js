@@ -2,7 +2,7 @@ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.mi
 import { saveFile, openFile } from './model/io.mjs';
 import { StartRules, SyntaxError, parse } from './model/parser.mjs'
 import { zLatex } from './model/z-latex.mjs'
-
+import { zPDF } from './model/z-pdf.mjs'
 
 // Esperamos que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
@@ -67,6 +67,12 @@ document.getElementById('translate-btn').addEventListener('click', async () => {
     const input = document.getElementById('mermaid-code').value;
     const zLatexDiv = document.getElementById('zLatex');
     zLatexDiv.value = zLatex(parse(input));
+});
+
+document.getElementById('download-btn').addEventListener('click', async () => {
+    // Obtener el código Mermaid del área de texto
+    const input = document.getElementById('mermaid-code').value;
+    zPDF(parse(input));
 });
 
 

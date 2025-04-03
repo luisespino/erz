@@ -40,7 +40,7 @@ export function zLatex(data) {
         let key = '';
         z += `Schema of entity instance:\r\n`;
         z += `\\begin{schema}{${entity.name.escapeUpper()}\\_INSTANCE}\r\n`;
-        entity.attr.forEach((attr, index) => {
+        entity.attr.forEach((attr) => {
             if (attr.key && attr.key === 'PK') {
                 key = attr.name;
             } 
