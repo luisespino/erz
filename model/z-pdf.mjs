@@ -16,6 +16,22 @@ const m1 = 25;
 const m2 = 30;
 let doc = null;
 
+const lPadSym = 1;
+const rPadSym = 5;
+const tPadSym = 3;
+const symW = 3;
+const symH = 3;
+
+const rPadRect = 1;
+const lPadRect = 2;
+const tPadRect = 1;
+const rectH = 2;
+
+function globalInit() {
+    y = 15;
+    doc = null;
+}
+
 // increment currentY
 function i() {
     y = y + h;
@@ -30,6 +46,7 @@ function checkEndPage() {
 }
 
 export function zPDF(data) {
+    globalInit();
     doc = new jsPDF('portrait', 'mm', 'letter');
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
@@ -44,22 +61,25 @@ export function zPDF(data) {
     // Procesar las entidades y sus atributos
     doc.setFontSize(12);
     doc.text("Specification of entities and their attributes:",m,i());
+    y = y + 3;
     doc.setFontSize(10);
     console.log(doc.getFontList())
     for (let entityName in data.entities) {
 
         // Entity title
-        checkEndPage();
         i();
+        checkEndPage();
         const entity = data.entities[entityName];
         doc.setFont("helvetica", "bold");
         doc.text(`Entity: ${entity.name.escapeUpper()}`, m, i());
-        i();
+
 
         // basic type definition
         checkEndPage();
         doc.setFont("helvetica", "normal");
+        y = y + 3;
         doc.text('Basic type definition:', m, i());
+        y = y + 2;
         let attrib = '[';
         entity.attr.forEach((attr, index) => {
             attrib += attr.name.escapeUpper();
@@ -76,21 +96,21 @@ export function zPDF(data) {
         doc.setFont("helvetica", "normal");
         doc.text('Schema of entity information:', m, i());
         doc.setFont("times", "italic");
-        i();
-        let line1Y = y - 1; // Posición vertical de la línea
-        let textY = y; // Posición vertical del texto, un poco por encima de la línea
-        let text = `${entity.name.escapeUpper()}_INFORMATION`;
+        y = y + 7;
+        let line1Y = y;
+        let textY = y;
+        let text = `${entity.name.escapeUpper()}__INFORMATION`;
         doc.setLineWidth(0.1); // Establece el grosor de la línea
         doc.line(m1, line1Y, 195, line1Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
         doc.setFillColor(255, 255, 255); // Blanco
-        doc.rect(m2 - 1, textY - 3, doc.getTextWidth(text) + 4, 8, 'F'); // Dibuja un rectángulo con el fondo blanco, cubriendo el área del texto
+        doc.rect(m2 - rPadRect, textY - tPadRect, doc.getTextWidth(text) + lPadRect, rectH, 'F');
         doc.text(text, m2, textY); // Coloca el texto en la posición deseada
         entity.attr.forEach((attr, index) => {
             if (!attr.key) 
                 doc.text(`${attr.name.escapeLower()}: ${attr.name.escapeUpper()}`, m2, i());
         });
-        i();
-        let line2Y = y - 1; // Posición vertical de la línea
+        y = y + 3;
+        let line2Y = y; // Posición vertical de la línea
         doc.setLineWidth(0.1); // Establece el grosor de la línea
         doc.line(m1, line2Y, 195, line2Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
         doc.line(m1, line1Y, m1, line2Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
@@ -101,15 +121,15 @@ export function zPDF(data) {
         checkEndPage();
         doc.setFont("helvetica", "normal");
         doc.text('Schema of entity instance:', m, i());
-        i();
+        y = y + 7;
         doc.setFont("times", "italic");
-        line1Y = y - 1; // Posición vertical de la línea
-        textY = y; // Posición vertical del texto, un poco por encima de la línea
-        text = `${entity.name.escapeUpper()}_INSTANCE`;
+        line1Y = y;
+        textY = y;
+        text = `${entity.name.escapeUpper()}__INSTANCE`;
         doc.setLineWidth(0.1); // Establece el grosor de la línea
         doc.line(m1, line1Y, 195, line1Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
         doc.setFillColor(255, 255, 255); // Blanco
-        doc.rect(m2 - 1, textY - 3, doc.getTextWidth(text) + 4, 8, 'F'); // Dibuja un rectángulo con el fondo blanco, cubriendo el área del texto
+        doc.rect(m2 - rPadRect, textY - tPadRect, doc.getTextWidth(text) + lPadRect, rectH, 'F');
         doc.text(text, m2, textY); // Coloca el texto en la posición deseada
         let key = '';
         entity.attr.forEach((attr) => {
@@ -120,27 +140,186 @@ export function zPDF(data) {
         const apower = `${key.escapeUpper()}`;
         doc.text(bpower, m2, i());
         let imgUrl = 'img/power.png';
-        doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(bpower) + 2, y - 3, 3, 3);    
-        doc.text(apower, m2 + doc.getTextWidth(bpower) + 6, y);
+        doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(bpower) + lPadSym, y - tPadSym, symW, symH);    
+        doc.text(apower, m2 + doc.getTextWidth(bpower) + rPadSym, y);
 
-        const bpfun = `${entity.name.escapeLower()}_information: ${key.escapeUpper()}`;
-        const apfun = `${entity.name.escapeUpper()}_INFORMATION`;
+        const bpfun = `${entity.name.escapeLower()}__information: ${key.escapeUpper()}`;
+        const apfun = `${entity.name.escapeUpper()}__INFORMATION`;
         doc.text(bpfun, m2, i());
         imgUrl = 'img/pfun.png';
-        doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(bpfun) + 2, y - 3, 3, 3);    
-        doc.text(apfun, m2 + doc.getTextWidth(bpfun) + 6, y);
+        doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(bpfun) + lPadSym, y - tPadSym, symW, symH);
+        doc.text(apfun, m2 + doc.getTextWidth(bpfun) + rPadSym, y);
 
-        i();
-        const line3Y = y - 1; // Posición vertical de la línea
+        y = y + 3;
+        const line3Y = y; // Posición vertical de la línea
         doc.setLineWidth(0.1); // Establece el grosor de la línea
         doc.line(m1, line3Y, 75, line3Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
-        doc.text(`${key.escapeLower()} = dom ${entity.name.escapeLower()}_information`, m2, i());
-        i();
+        doc.text(`${key.escapeLower()} = dom ${entity.name.escapeLower()}__information`, m2, i());
+        y = y + 4;
         line2Y = y - 1; // Posición vertical de la línea
         doc.setLineWidth(0.1); // Establece el grosor de la línea
         doc.line(m1, line2Y, 195, line2Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
         doc.line(m1, line1Y, m1, line2Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
-        i();
     }
+
+    checkEndPage();
+    doc.setFont("helvetica", "bold");
+    i();
+    // Procesar las relaciones
+    doc.setFontSize(12);
+    doc.text("Specification of relationships:",m,i());
+    doc.setFontSize(10);
+
+    for (let relationshipName in data.relationships) {
+
+        const rel = data.relationships[relationshipName];
+
+        // Schema of relationship
+        i();i();
+        checkEndPage();
+        doc.setFont("times", "italic");
+        let line1Y = y;
+        let textY = y;
+        let text = `${rel.name.escapeUpper()}__RELATIONSHIP`;
+        doc.setLineWidth(0.1); // Establece el grosor de la línea
+        doc.line(m1, line1Y, 195, line1Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
+        doc.setFillColor(255, 255, 255); // Blanco
+        doc.rect(m2 - rPadRect, textY - tPadRect, doc.getTextWidth(text) + lPadRect, rectH, 'F');
+        doc.text(text, m2, textY); // Coloca el texto en la posición deseada
+
+        let entity = data.entities[rel.entityLeft];
+        let keyLeft = '';
+        entity.attr.forEach((attr) => {
+            if (attr.key && attr.key === 'PK') 
+                keyLeft = attr.name;
+        });
+        let bpower = `${keyLeft.escapeLower()}:`;
+        let apower = `${keyLeft.escapeUpper()}`;
+        doc.text(bpower, m2, i());
+        let imgUrl = 'img/power.png';
+        doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(bpower) + lPadSym, y - tPadSym, symW, symH);
+        doc.text(apower, m2 + doc.getTextWidth(bpower) + rPadSym, y);
+
+        entity = data.entities[rel.entityRight];
+        let keyRight = '';
+        entity.attr.forEach((attr) => {
+            if (attr.key && attr.key === 'PK') 
+                keyRight = attr.name;
+        });
+        bpower = `${keyRight.escapeLower()}:`;
+        apower = `${keyRight.escapeUpper()}`;
+        doc.text(bpower, m2, i());
+        doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(bpower) + lPadSym, y - tPadSym, symW, symH);
+        doc.text(apower, m2 + doc.getTextWidth(bpower) + rPadSym, y);
+        
+        let brel = `${rel.name.escapeLower()}__relationship: ${keyLeft.escapeUpper()}`;
+        let arel = `${keyRight.escapeUpper()}`;
+        doc.text(brel, m2, i());
+        imgUrl = 'img/rel.png';        
+        doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(brel) + lPadSym, y - tPadSym, symW, symH);
+        doc.text(arel, m2 + doc.getTextWidth(brel) + rPadSym, y);
+        
+        // where
+        y = y + 3;
+        let line3Y = y;
+        doc.setLineWidth(0.1);
+        doc.line(m1, line3Y, 75, line3Y);
+
+
+        let bin, ain, x;
+        let t1, t2, t3, t4;
+
+        // |o--o|
+        if (rel.cardLeft == 0 && rel.cardRight == 0){ 
+
+    
+        }
+        // ||--o{ each entityLeft may be related to one o many entityRights 
+        else if (rel.cardLeft == 1 && rel.cardRight == 2) { 
+            // dom subseteq
+            bin = `dom ${rel.name.escapeLower()}__relationship`;
+            ain = `${keyLeft.escapeLower()}`;
+            doc.text(bin, m2, i());
+            imgUrl = 'img/subseteq.png'; 
+            doc.addImage(imgUrl, 'PNG', m2 + doc.getTextWidth(bin) + lPadSym, y - tPadSym, symW, symH);
+            doc.text(ain, m2 + doc.getTextWidth(bin) + rPadSym, y);
+
+            // ran equal
+            doc.text(`ran ${rel.name.escapeLower()}__relationship = ${keyRight.escapeLower()}`, m2, i());
+            
+            // inverse relation in parcial function
+            t1 = `${rel.name.escapeLower()}__relationship`;
+            t2 = `${keyRight.escapeUpper()}`;
+            t3 = `${keyLeft.escapeUpper()}:`;
+            doc.text(t1, m2, i());
+            imgUrl = 'img/inv.png';
+            x = m2 + doc.getTextWidth(t1) + lPadSym;
+            doc.addImage(imgUrl, 'PNG', x, y - tPadSym, symW, symH);
+            x = x + rPadSym - 1;
+            imgUrl = 'img/in.png';
+            doc.addImage(imgUrl, 'PNG', x, y - tPadSym, symW, symH);
+            x = x + rPadSym - 1;
+            doc.text(t2, x, y);
+            imgUrl = 'img/pfun.png';
+            x = x + doc.getTextWidth(t2) + lPadSym;
+            doc.addImage(imgUrl, 'PNG', x, y - tPadSym, symW, symH);
+            x = x + rPadSym - 1;
+            doc.text(t3, x, y);
+        }
+        // ||--|{ each entityLeft must be related to one o many entityRights 
+        else if (rel.cardLeft == 1 && rel.cardRight == 3) { 
+            // dom equal
+            doc.text(`rdom ${rel.name.escapeLower()}__relationship = ${keyLeft.escapeLower()}`, m2, i());
+            
+            // ran equal
+            doc.text(`ran ${rel.name.escapeLower()}__relationship = ${keyRight.escapeLower()}`, m2, i());
+            
+            // inverse r    elation in parcial function
+            t1 = `${rel.name.escapeLower()}__relationship`;
+            t2 = `${keyRight.escapeUpper()}`;
+            t3 = `${keyLeft.escapeUpper()}:`;
+            doc.text(t1, m2, i());
+            imgUrl = 'img/inv.png';
+            x = m2 + doc.getTextWidth(t1) + lPadSym;
+            doc.addImage(imgUrl, 'PNG', x, y - tPadSym, symW, symH);
+            x = x + rPadSym - 1;
+            imgUrl = 'img/in.png';
+            doc.addImage(imgUrl, 'PNG', x, y - tPadSym, symW, symH);
+            x = x + rPadSym - 1;
+            doc.text(t2, x, y);
+            imgUrl = 'img/pfun.png';
+            x = x + doc.getTextWidth(t2) + lPadSym;
+            doc.addImage(imgUrl, 'PNG', x, y - tPadSym, symW, symH);
+            x = x + rPadSym - 1;
+            doc.text(t3, x, y);
+        }
+            
+            /*
+            name:el+"__"+er,
+            entity_left:el, 
+          card_left:r.left, 
+          entity_right:er,
+          card_right:r.right,
+          label:l
+card_left
+  = "|o" { return 0; }
+  / "||" { return 1; }
+  / "}o" { return 2; }
+  / "}|" { return 3; }
+
+card_right
+  = "o|" { return 0; }
+  / "||" { return 1; }
+  / "o{" { return 2; }
+  / "|{" { return 3; }
+
+*/
+        y = y + 4;
+        let line2Y = y - 1; // Posición vertical de la línea
+        doc.setLineWidth(0.1); // Establece el grosor de la línea
+        doc.line(m1, line2Y, 195, line2Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
+        doc.line(m1, line1Y, m1, line2Y); // Dibuja la línea desde (10, lineY) hasta (200, lineY)
+    }
+    
     doc.save("znotation.pdf");
 }

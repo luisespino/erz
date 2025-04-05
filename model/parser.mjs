@@ -236,10 +236,11 @@ function peg$parse(input, options) {
   };
   var peg$f1 = function(el, r, er, l) {
   	relationships[el+"__"+er] = {
-    	entity_left:el, 
-        card_left:r.left, 
-        entity_right:er,
-        card_right:r.right,
+        name:el+"__"+er,
+    	  entityLeft:el, 
+        cardLeft:r.left, 
+        entityRight:er,
+        cardRight:r.right,
         label:l
  	}
   };
